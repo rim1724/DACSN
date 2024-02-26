@@ -1,0 +1,358 @@
+
+
+/*head*/
+.container{
+    max-width: 1150px;
+    margin: 0px auto;
+    
+    }
+    #header {
+        background-image: linear-gradient(to left, rgb(12, 156, 222),  rgb(187, 224, 229));
+        height: 70px;
+    }
+    nav{
+    display: flex;
+    
+    justify-items: center;
+    }
+    
+    #logo{
+        padding: 9px 0px;
+    }
+    #logo img{
+        max-width: 50px; 
+        height: auto;
+        padding-right: 300px;
+    }
+    
+    #main-menu{
+        display: flex; 
+        list-style: none;
+    margin: 0; 
+    padding: 0;
+    }
+    #main-menu li{
+        position: relative;
+    }
+    
+    #main-menu li a{
+    color: #000000;
+    display: block;
+    padding: 25px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    
+    #main-menu ul.sub-menu{
+        position: absolute;
+        background-color: rgb(131, 219, 246) ;
+        padding: 0px 0px;
+        list-style: none;
+        width: 195px;
+        border: 1px solid #054672;
+        display: none;
+        top: 70px;
+    
+    }
+    #main-menu li:hover>ul.sub-menu{
+        display:block;
+    }
+    #main-menu ul.sub-menu a{
+        padding: 8px 15px;
+        border-bottom: 1px solid #000000;
+        left: 0;
+    }
+    #main-menu ul.sub-menu ul.sub-menu{
+        left: 195px;
+        top: -0.5px;
+        border-bottom: 1px solid #054672;
+    }
+    #main-menu ul.sub-menu li:hover>a{ 
+        color: #054672;
+        border-bottom: 1px solid #5e9bc4 ;
+        }
+        
+    
+        #main-menu ul.sub-menu li:last-child>a{
+        border: none;
+        }
+        #main-menu ul.sub-menu2{
+            position: absolute;
+            background-color: rgb(131, 219, 246) ;
+            padding: 0px 0px;
+            list-style: none;
+            width: 185px;
+            border: 1px solid #054672;
+            display: none;
+            top: 70px;
+        }
+        #main-menu li:hover ul.sub-menu2{
+            display:block;
+        }
+        #main-menu ul.sub-menu2 a{
+            padding: 8px 15px;
+            border-bottom: 1px solid #000000;
+            float: right;
+        
+            
+        }
+        #main-menu ul.sub-menu2 li:hover a{ 
+            color: #054672;
+            border-bottom: 1px solid #5e9bc4 ;
+            }
+            
+        
+            #main-menu ul.sub-menu2 li:last-child a{
+            border: none;
+            }
+            
+        .button{
+            border: 3px solid #e5e222;
+            border-radius: 5px;
+            background-color: #e5e222;
+            margin-top: 12px;
+            margin-left: 17px;
+            padding: 10px 15px 14px 15px;
+            height: 18px;
+            float: right;
+            
+            
+        }
+        .button a{
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+    
+        }
+        #main-menu>li:hover>a{
+            color: #054672;
+        }
+    
+
+        
+        /*vach ngan*/
+        .bulkhead-container{
+            width: 100%;
+            height: 50px;
+            background-color: rgb(87, 87, 87);
+        
+        }
+        .bulkhead-container p{
+            color: #ffffff;
+            padding-left: 190px;
+            padding-top: 16px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 0px;
+        }
+
+
+
+
+
+
+        /*Đổi thông tin cá nhân*/
+        .change-all{
+            width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 30px;
+            margin-bottom: 60px;
+            height: 450px;
+            display: flex;
+        }
+        .listall{
+
+            background-color: #f4f4f4f6;
+            width: 160px;
+            height: 117px;
+            border: 1px solid #d1d1d1;
+            margin-top: 40px;
+
+        }
+        .listall ul {
+            display: flex;
+            flex-direction: column; /* Hiển thị các mục theo chiều dọc */
+            padding: 0;
+            list-style: none;
+            margin: 0px;
+        }
+        
+        .listall li {
+            list-style: none;
+            border-bottom: 1px solid #d1d1d1; /* Đường viền giữa các ô */
+            padding: 10px;
+
+        }
+        .listall a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            
+        }
+        .see {
+            background-color: #08c;
+        }
+        .see a{
+            color: #fff;
+        }
+        .listall li.hover:hover{
+            background-color: #08c;
+        }
+        .listall li.hover:hover a{
+            color: #fff;
+        }
+        
+
+        .listmini {
+            background-color: #f4f4f4;
+            width: 970px;
+            height: 40px;
+            display: flex;
+            align-items: center; /* Thêm dòng này để căn giữa theo chiều dọc */
+
+        }
+        
+        .listmini ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        
+        }
+        
+        .listmini ul li {
+            margin-left: 10px;
+        }
+        
+        .listmini ul li a {
+            text-decoration: none;
+
+            font-weight: bold;
+            padding-left: 20px;
+            padding-right: 20px;
+            
+
+        }
+        .see2 a,
+        .listmini li.hover2:hover a {
+            padding-bottom: 9px;
+            border-bottom: 4px solid #08c;
+            color: #08c;
+            font-size: 17.5px;
+        }
+
+
+
+        /*thay đổi cụ thể*/
+        .change{
+            margin-left: 70px;
+            width: 970px;
+            height: 450px;
+        }
+        .verify-main{
+            width: 970px;
+            height: 280px;
+            border: 1px solid #d2d2d2;
+        }
+        .type{
+            height: 40px;
+            border-bottom: 1px solid #d2d2d2;
+font-size: 20px;
+        }
+        .sdt p{
+            margin: 5px 0px;
+            padding-left: 20px;
+        }
+        .sdt ul{
+            margin: 0px;
+            padding-left: 35px;
+        }
+        .sdt li{
+            margin-bottom: 5px;
+        }
+        .sdt input{
+            margin: 15px 400px 15px 398px;
+            height: 20px;
+            width: 170px;
+            padding: 0px;
+        }
+        .sdt input::placeholder{
+            font-size: 15px;
+
+        }
+        .button-sdt{
+            width: 170px;
+            height: 35px;
+            border-radius: 10px;
+            background-color: #e5e222;
+            margin: auto;
+            padding-top: 12px;
+
+        }
+        .button-sdt a{
+            text-decoration: none;
+            color: #000000;
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            padding-left: 23px;
+        }
+        .button-sdt a:hover{
+            color: #08009c;
+            font-size: 20px;
+        }
+
+
+
+
+
+
+        /*back-top về đầu trang*/
+.back-top{
+    width: 50px;
+    height: 50px;
+    background: tomato;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+
+}
+
+
+
+
+
+/*chân trang*/
+.footer{
+    background-color: #000000;
+    height: 300px;
+    display: flex;
+}
+.footer img{
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 60px;
+}
+.col{
+    padding-top: 100px;
+    line-height: 33px;
+    
+}
+.col p{
+    color: #ffffff;
+}
+.col a{
+    color: #ffffff;
+    text-decoration: none;
+}
+    

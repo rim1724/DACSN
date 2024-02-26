@@ -1,0 +1,279 @@
+/*All*/
+*{
+    box-sizing:border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: arial;
+    }
+    body{
+    font-family: arial;
+    font-size: 18px;
+    justify-content: center;
+    height: 100vh;
+    background: whitesmoke;
+    align-items: center;
+    }
+
+
+
+/*header*/
+#wrapper {
+    position: relative;
+    z-index: 2;
+    right: 0px;
+    left: 0px;
+}
+.container{
+    max-width: 1150px;
+    margin: 0px auto;
+    
+    }
+    #header {
+        background-image: linear-gradient(to left, rgb(12, 156, 222),  rgb(187, 224, 229));
+        height: 70px;
+    }
+    nav{
+    display: flex;
+    
+    justify-items: center;
+    }
+    
+    #logo{
+        padding: 9px 0px;
+    }
+    #logo img{
+        height: 53px; 
+
+        padding-right: 250px;
+    }
+    
+    #main-menu{
+        display: flex; 
+        list-style: none;
+    margin: 0; 
+    padding: 0;
+    }
+    #main-menu li{
+        position: relative;
+    }
+    
+    #main-menu li a{
+    color: #000000;
+    display: block;
+    padding: 25px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    
+    #main-menu ul.sub-menu{
+        position: absolute;
+        background-color: rgb(131, 219, 246) ;
+        padding: 0px 0px;
+        list-style: none;
+        width: 195px;
+        border: 1px solid #054672;
+        display: none;
+        top: 70px;
+    
+    }
+    #main-menu li:hover>ul.sub-menu{
+        display:block;
+    }
+    #main-menu ul.sub-menu a{
+        padding: 8px 15px;
+        border-bottom: 1px solid #000000;
+        left: 0;
+    }
+    #main-menu ul.sub-menu ul.sub-menu{
+        left: 195px;
+        top: -0.5px;
+        border-bottom: 1px solid #054672;
+    }
+    #main-menu ul.sub-menu li:hover>a{ 
+        color: #054672;
+        border-bottom: 1px solid #5e9bc4 ;
+        }
+        
+    
+        #main-menu ul.sub-menu li:last-child>a{
+        border: none;
+        }
+        #main-menu ul.sub-menu2{
+            position: absolute;
+            background-color: rgb(131, 219, 246) ;
+            padding: 0px 0px;
+            list-style: none;
+            width: 195px;
+            border: 1px solid #054672;
+            display: none;
+            top: 70px;
+        }
+        #main-menu li:hover>ul.sub-menu2{
+            display:block;
+        }
+        #main-menu ul.sub-menu2 a{
+            padding: 8px 15px;
+            border-bottom: 1px solid #000000;
+            float: right;
+        
+            
+        }
+        #main-menu ul.sub-menu2 li:hover a{ 
+            color: #054672;
+            border-bottom: 1px solid #5e9bc4 ;
+            }
+            
+        
+            #main-menu ul.sub-menu2 li:last-child a{
+            border: none;
+            }
+            
+        .button{
+            border: 3px solid #e5e222;
+            border-radius: 5px;
+            background-color: #e5e222;
+            margin-top: 12px;
+            margin-left: 17px;
+            padding: 10px 15px 14px 15px;
+            height: 18px;
+            float: right;
+            
+            
+        }
+        .button a{
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+    
+        }
+        #main-menu>li:hover>a{
+            color: #054672;
+        }
+    
+        
+    
+/*vách ngăn*/
+.bulkhead-container{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(87, 87, 87);
+}
+.bulkhead-container p{
+    color: #ffffff;
+    padding-left: 190px;
+    padding-top: 16px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+/*danh sách người ứng tuyển*/
+
+.list-candidate{
+    width: 1150px;
+    height: 420px;
+    margin: auto;
+}
+.khuyenkhich{
+    height:80px; 
+    padding-top: 12px;
+    border-bottom: 1px solid #d8d8d8;  
+    line-height: 1.4;
+}
+.khuyenkhich h3{
+    font-size: 20px;
+}
+.khuyenkhich p{
+    font-size: 17px;
+}
+.list{
+    margin-top: 10px;
+}
+.ungvien img{
+    height: 40px;
+}
+.ungvien{
+    display: flex;
+    margin-top: 5px;
+    height: 60px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-left: 8px;
+}
+.info-candidate {
+    margin-left: 15px;
+}
+.info-candidate p{
+    font-size: 18px;
+}
+.info-candidate a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #1c6985;
+}
+.pagination{
+    width: 1150px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 30px;
+    justify-content: center; /* Căn giữa các phần tử bên trong */
+}
+
+.pagination li {
+    display: inline-block; /* Để các phần tử đứng cạnh nhau */
+    margin: 0 5px; /* Khoảng cách giữa các phần tử */
+}
+
+.pagination li a {
+    color: #000000;
+    text-decoration: none; /* Loại bỏ hiệu ứng text-decoration none */
+    padding: 5px 10px; /* Tùy chỉnh khoảng cách và padding cho số trang */
+}
+
+
+
+/*trở lại đầu trang*/
+.back-top{
+    width: 50px;
+    height: 50px;
+    background: tomato;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+
+}
+    
+
+
+/*footer chân trang*/
+.footer{
+    background-color: #000000;
+    height: 300px;
+    display: flex;
+}
+.footer img{
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 60px;
+}
+.col{
+    padding-top: 100px;
+    line-height: 33px;
+    
+}
+.col p{
+    color: #ffffff;
+}
+.col a{
+    color: #ffffff;
+    text-decoration: none;
+}
+    

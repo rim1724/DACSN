@@ -1,0 +1,650 @@
+/*All*/
+*{
+    box-sizing:border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: arial;
+    }
+    body{
+    font-family: arial;
+    font-size: 18px;
+    justify-content: center;
+    height: 100vh;
+    background: whitesmoke;
+    align-items: center;
+    }
+
+
+
+/*header*/
+#wrapper {
+    position: relative;
+    z-index: 2;
+    right: 0px;
+    left: 0px;
+}
+.container{
+    max-width: 1150px;
+    margin: 0px auto;
+    
+    }
+    #header {
+        background-image: linear-gradient(to left, rgb(12, 156, 222),  rgb(187, 224, 229));
+        height: 70px;
+    }
+    nav{
+    display: flex;
+    
+    justify-items: center;
+    }
+    
+    #logo{
+        padding: 9px 0px;
+    }
+    #logo img{
+        height: 53px; 
+
+        padding-right: 250px;
+    }
+    
+    #main-menu{
+        display: flex; 
+        list-style: none;
+    margin: 0; 
+    padding: 0;
+    }
+    #main-menu li{
+        position: relative;
+    }
+    
+    #main-menu li a{
+    color: #000000;
+    display: block;
+    padding: 25px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    
+    #main-menu ul.sub-menu{
+        position: absolute;
+        background-color: rgb(131, 219, 246) ;
+        padding: 0px 0px;
+        list-style: none;
+        width: 195px;
+        border: 1px solid #054672;
+        display: none;
+        top: 70px;
+    
+    }
+    #main-menu li:hover>ul.sub-menu{
+        display:block;
+    }
+    #main-menu ul.sub-menu a{
+        padding: 8px 15px;
+        border-bottom: 1px solid #000000;
+        left: 0;
+    }
+    #main-menu ul.sub-menu ul.sub-menu{
+        left: 195px;
+        top: -0.5px;
+        border-bottom: 1px solid #054672;
+    }
+    #main-menu ul.sub-menu li:hover>a{ 
+        color: #054672;
+        border-bottom: 1px solid #5e9bc4 ;
+        }
+        
+    
+        #main-menu ul.sub-menu li:last-child>a{
+        border: none;
+        }
+        
+            
+        .button{
+            border: 3px solid #e5e222;
+            border-radius: 5px;
+            background-color: #e5e222;
+            margin-top: 12px;
+            margin-left: 17px;
+            padding: 10px 15px 14px 15px;
+            height: 18px;
+            float: right;
+            
+            
+        }
+        .button a{
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+    
+        }
+        #main-menu>li:hover>a{
+            color: #054672;
+        }
+    
+        
+    
+/*vách ngăn*/
+.bulkhead-container{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(87, 87, 87);
+}
+.bulkhead-container p{
+    color: #ffffff;
+    padding-left: 190px;
+    padding-top: 16px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+/* Slideshow container */
+   .slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+    }
+    /* Ẩn các slider */
+    .mySlides {
+    display: none;
+    }
+    /* Định dạng nội dung Caption */
+    .text {
+    color: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    }
+    /* định dạng các chấm chuyển đổi các slide */
+    .dot {
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease; /*???*/
+    }
+    /* khi được hover, active đổi màu nền */
+    .active, .dot:hover {
+    background-color: #717171;
+    }
+    /* Thêm hiệu ứng khi chuyển đổi các slide */
+    .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 3s;
+    animation-name: fade;
+    animation-duration: 3s;
+    }
+    @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+    @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+    }
+    .text{
+        color: rgb(255, 255, 255);
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    .slideshow-container img{
+        clip: rect(0px, 100%, 100%, 0px);
+    }
+
+
+
+
+
+
+/*Phần dưới slide show công việc nổi bật*/
+.findwork-container{
+    background-color: #ffffff;
+   
+}
+.findwork-all{
+    width: 1200px;
+    height: 430px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.findwork-all a{
+    color: rgb(88, 164, 199) ;
+    text-decoration: none;
+    font-size: 25px;
+    background-image: linear-gradient(to top, rgb(255, 242, 64) 15%, transparent 0px);
+}
+
+.findwork-slogan h3{
+    font-size: 38px;
+    font-weight: bold;
+    background-image: linear-gradient(to top, rgb(255, 242, 64) 40%, transparent 0px);
+    width: 578px;
+margin-left: auto;
+margin-right: auto;
+}
+.findwork-slogan p{
+    text-align: center;
+    color: #717171;
+    margin-top: 25px;
+    margin-bottom: 45px;
+}
+.find1{
+    width: 480px;
+    height: 430px;
+    border-bottom: 1px solid #dadada;
+
+}
+.find2{
+    width: 480px;
+    height: 430px;
+    border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada;
+    border-left: 1px solid #dadada;
+}
+.find3{
+    width:240px ;
+    height: 430px;
+    border-bottom: 1px solid #dadada;
+}
+/*ô lớn thứ nhất*/
+.find1-1 {
+    height: 270px;
+    border-bottom: 1px solid #dadada; 
+    display: flex;
+}
+.find1-1-1{
+    width: 240px;
+    height: 270px;
+    border-right: 1px solid #dadada; 
+}
+.find1-1-1:hover{
+    background-image: url(../img/finding-img/1.1.1.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find1-1-1:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find1-1-2{
+    width: 240px;
+    height: 270px;
+}
+
+.find1-1-2-1{
+    width: 240px;
+    height: 135px;
+    border-bottom: 1px solid #dadada;
+}
+.find1-1-2-1:hover{
+    background-image: url(../img/finding-img/1.1.2.1.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find1-1-2-1:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find1-1-2-2{
+    width: 240px;
+    height: 135px;
+}
+.find1-1-2-2:hover{
+    background-image: url(../img/finding-img/1.1.2.2.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find1-1-2-2:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find1-2{
+    width: 480px;
+    height: 160px;
+}
+.find1-2:hover{
+    background-image: url(../img/finding-img/1.2.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find1-2:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+/*ô lớn thứ 2*/
+.find2-1{
+    width: 480px;
+    height: 160px;
+    border-bottom: 1px solid #dadada; ;
+}
+.find2-1:hover{
+    background-image: url(../img/finding-img/2.1.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find2-1:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find2-2{
+    width: 480px;
+    height: 270px;
+    display: flex;
+}
+.find2-2-1{
+width: 240px;
+    height: 270px;
+    border-right: 1px solid #dadada; 
+}
+.find2-2-1:hover{
+    background-image: url(../img/finding-img/2.2.1.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find2-2-1:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find2-2-2{
+    width: 240px;
+    height: 270px;
+}
+
+.find2-2-2-1{
+    width:  240px;
+    height: 135px;
+    border-right: 1px solid #dadada; 
+}
+.find2-2-2-1:hover{
+    background-image: url(../img/finding-img/2.2.2.1.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find2-2-2-1:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find2-2-2-2{
+    width:  240px;
+    height: 135px;
+}
+.find2-2-2-2:hover{
+    background-image: url(../img/finding-img/2.2.2.2.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find2-2-2-2:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+/*ô lớn thứ 3*/
+.find3-1 {
+    height: 295px;
+    width: 240px;
+    border-bottom: 1px solid #dadada; ;
+}
+.find3-1:hover{
+    background-image: url(../img/finding-img/3.1.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+.find3-1:hover a{
+    color: #ffffff;
+    font-size: 40px;
+}
+.find3-2 {
+    height:135px ;
+    width: 240px;
+}
+.find3-2:hover{
+    background-image: url(../img/finding-img/3.2.webp);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-color: rgb(69, 193, 237);
+    box-shadow: rgba(69, 193, 237, 0.85) 0px 0px 0px 1000px inset;
+}
+
+.find3-2:hover a{
+    color: #ffffff;
+    font-size: 40px;
+    
+}
+
+/*step*/
+.step-container{
+    width: 100%;
+    height: 2000px;
+
+}
+.step1{
+    height: 500px;
+    background-color: #f5f5f5;
+    display: flex;
+}
+.images{
+    height: 350px;
+    width: 640px;
+    margin: 75px 0px;
+    padding-left: 110px;
+
+
+}
+.images img{ 
+    height: 100%;
+}
+.Ghichu{
+    height: 300px;
+    width: 640px;
+    padding-left:  90px;
+    margin: 100px 0px;
+
+}
+.Ghichu h4{
+    margin: 60px 0 24px;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: -.05em;
+}
+.step-container span{
+    font-weight: 600;
+}
+.Ghichu p{
+    width: 450px;
+    font-size: 16px;
+    letter-spacing: -.03em;
+    color: #666;
+    display: inline-block;
+}
+.step2{
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+}
+.images2{
+    height: 350px;
+    width: 640px;
+    margin: 75px 0px;
+    padding-left: 110px;
+
+
+}
+.images2 img{ 
+    height: 100%;
+}
+.Ghichu2{
+    height: 300px;
+    width: 640px;
+    padding-left:  90px;
+    margin: 100px 0px 100px 110px;
+
+}
+.Ghichu2 h4{
+    margin: 60px 0 24px;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: -.05em;
+}
+.Ghichu2 p{
+    width: 450px;
+    font-size: 16px;
+    letter-spacing: -.03em;
+    color: #666;
+    display: inline-block;
+}
+.step3{
+    height: 500px;
+    background-color: #f5f5f5;
+    display: flex;
+}
+.step4{
+    height: 500px;
+    background-color: #fff;
+    display: flex;
+}
+
+
+/*vach ngan 2*/
+.bulkhead2-container {
+    height: 16px;
+    background-color: #e6e6e6;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* 1 số mục nổi bật*/
+.outstandingjob-container{
+    height: 800px;
+}
+.outstandingcompany-container{ /*cong ty*/
+    height: 800px;
+}
+.outstandingcompany-container h3{
+    margin: 0;
+    padding-top: 64px;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: -.05em;/*giong job nen de o day*/
+}
+.outstandingjob-container h3{
+    margin: 0;
+    padding-top: 64px;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: -.05em;
+}
+.list-container{
+    padding: 40px 0 60px;
+    width: 1200px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+.list-container img{
+    border: 8px solid #cacaca;
+}
+.list-row1{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.list-row2{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+
+
+/*trở lại đầu trang*/
+.back-top{
+    width: 50px;
+    height: 50px;
+    background: tomato;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+
+}
+    
+
+
+/*footer chân trang*/
+.footer{
+    background-color: #000000;
+    height: 300px;
+    display: flex;
+}
+.footer img{
+    width: 200px;
+    height: 200px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 60px;
+}
+.col{
+    padding-top: 100px;
+    line-height: 33px;
+    
+}
+.col p{
+    color: #ffffff;
+}
+.col a{
+    color: #ffffff;
+}
+    

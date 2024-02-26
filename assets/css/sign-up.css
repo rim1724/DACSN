@@ -1,0 +1,84 @@
+
+body{
+    margin: 0px 0px;
+    background-image: linear-gradient(to left, rgb(38, 163, 221),  rgb(206, 219, 221));
+}
+body img{
+    position: absolute;
+    width: 169px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+#wrapper{
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 778px;
+    margin-left: 760px;
+    border-left: 1px color #000000;
+  border-radius: 10px;
+  background-image: url(../img/background-sign-in.png);
+  box-shadow: 0px 0px 20px 5px rgba(168, 168, 168, 0.8);
+}
+#form-login{
+    max-width: 450px;
+    background: rgba(87, 87, 87, 0.45);
+    flex-grow: 1;
+    padding: 50px 50px 65px;
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.8);
+    }
+
+.form-heading{
+  
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-group{
+     border-bottom: 1px solid #ffffff;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    }
+   
+.form-input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #ffffff;
+    flex-grow: 1;
+    font-weight: bold;
+    }
+.form-input::placeholder{
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+}
+.form-submit{
+    font-weight: bold;
+    background: transparent; 
+    border: 1px solid #ffffff; 
+    color: #ffffff;
+    width: 100%;
+    text-transform: uppercase; 
+    padding: 6px 10px;
+    transition: 0.25s ease-in-out; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 18px;
+ }
+.form-submit:hover{
+    border: 1px solid #3e3e3e;
+ }    
+.link {
+    padding-left: 129px;/* Text-aligt:center k hoạt động*/
+    padding-right: 129px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
