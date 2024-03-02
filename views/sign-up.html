@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../assets/css/sign-up.css">
-    </head>
-    <body>
-      <img src="../assets/img/logo-web.png" alt="" >
-      <div id="wrapper">
-        <form action="" id="form-login">
-        <h1 class="form-heading">Tạo tài khoản mới</h1> 
-        <div class="form-group">
-        <input type="text" class="form-input" placeholder="Tên đăng nhập">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-input" placeholder="Email">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-input" placeholder="Mật khẩu">
-        </div>
-        <div class="form-group">
-        <input type="password" class="form-input" placeholder="Nhập lại mật khẩu"> 
-      </div>
-        <a href="index-main.html"><input type="submit" value="Đăng kí" class="form-submit"></a>
-      </form>
-      
-    </div>
-    
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/sign-up.css">
+    <title>Tạo tài khoản mới</title>
+</head>
+<body>
+    <img src="../assets/img/logo-web.png" alt="">
+    <div id="wrapper">
+        <form id="form-login" method="POST" action="../API/register.php">
+            <h1 class="form-heading">Tạo tài khoản mới</h1>
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="Tên đăng nhập" name="username" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-input" placeholder="Email" name="email" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Mật khẩu" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-input" placeholder="Nhập lại mật khẩu" name="re_password" required>
+            </div>
+            <input type="submit" value="Đăng kí" class="form-submit">
+            <div class="link">
+                <a href="sign-up.html">Nhấp vào đây để đăng kí</a>
+                <a href="" class="left">Quên mật khẩu</a>
+            </div>
+        </form>
         
-    </body>
+    </div>
+</body>
 </html>

@@ -58,12 +58,16 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
       'success' => true,
       'message' => 'thanh cong',
     ]);
+    // Redirect to index.html
+  header('Location:../views/index-main.html');
+  exit;
   } else {
     // Login failed
     echo json_encode([
       'success' => false,
       'message' => 'Không chính xác tên đăng nhập hoặc mật khẩu',
     ]);
+    header('location:../views/sign-in.html');
   }
 
   $conn->close();
@@ -72,7 +76,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   // Handle missing data case
   echo json_encode([
     'success' => false,
-    'message' => 'Tên đăng nhập hoặc mật khẩu bị thiếu',
+    'message' => 'ten dang nhap hoac mat khau bi thieu',
   ]);
   exit;
 }
