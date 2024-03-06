@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -67,11 +68,26 @@
             </ul>
             </li>  
         <li><a href="candidate/info-user.html"><i class="fa-solid fa-user" style="padding-right:5px ;"></i> Người dùng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i> </a>
-            <ul class="sub-menu2">
-                <li><a href="sign-in.html">Đăng nhập</a></li>
-                <li><a href="candidate/info-user.html" style="padding-left: 67px;">Đổi thông tin</a></li>
-                <li><a href="candidate/change-password.html" style="padding-left: 63px; width: 193px;">Đổi mật khẩu</a></li>
-                <li><a href="sign-in.html">Đăng xuất</a></li>
+                    <ul class="sub-menu2">
+                <?php
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start(); // Start session if not already started
+                }
+
+                if (!isset($_SESSION['user_id'])) {
+                    // User is not logged in, show login link
+                    ?>
+                    <li><a href="sign-in.html">Đăng nhập</a></li>
+                    <?php
+                } else {
+                    // User is logged in, show profile and logout links
+                    ?>
+                    <li><a href="candidate/info-user.html" style="padding-left: 67px;">Đổi thông tin</a></li>
+                    <li><a href="candidate/change-password.html" style="padding-left: 63px; width: 193px;">Đổi mật khẩu</a></li>
+                    <li><a href="../php/sign-out.php">Đăng xuất</a></li>
+                    <?php
+                }
+                ?>
             </ul>
             </li>
             </ul>     
@@ -355,7 +371,3 @@
     
 
 </html>
-
-
-
-
