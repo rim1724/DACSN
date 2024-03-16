@@ -68,7 +68,7 @@
             </ul>
             </li>  
         <li><a href="candidate/info-user.html"><i class="fa-solid fa-user" style="padding-right:5px ;"></i> Người dùng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i> </a>
-                    <ul class="sub-menu2">
+        <ul class="sub-menu2">
                 <?php
                 if (session_status() === PHP_SESSION_NONE) {
                     session_start(); // Start session if not already started

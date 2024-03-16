@@ -3,19 +3,24 @@
 // Define database constants (only define once)
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASSWORD', ''); // Update with your actual password
+// **Avoid storing password in plain text:**
+define('DB_PASSWORD', '');  // Replace with actual password (Not recommended)
 define('DB_NAME', 'dacsn-n12');
-define('DB_PASS', ''); // Thay thế bằng mật khẩu thực tế
+define('DB_PASS', 'your_database_password');
 
+// **Optional: Consider using environment variables for password**
+// Put your password in a `.env` file outside document root
+//  and access it using:
+// $db_password = getenv('DB_PASSWORD');
 
 // Create a new connection
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+$conn = new mysqli(DB_HOST, DB_USER, getenv('DB_PASSWORD'), DB_NAME);
 
 // Check connection and provide user feedback
 if ($conn->connect_error) {
-    echo "Failed to connect to MySQL: " . $conn->connect_error;
+  echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;
 } else {
-    echo "Connected to MySQL database successfully!";
+  echo "Connected to MySQL database successfully!";
 }
 
 // (Optional) You can add further actions here, like database queries
