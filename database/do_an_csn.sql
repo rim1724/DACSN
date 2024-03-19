@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Feb 26, 2024 at 07:41 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 19, 2024 lúc 07:42 AM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `do_an_csn`
+-- Cơ sở dữ liệu: `dacsn-n12`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
-CREATE TABLE `Admins` (
+CREATE TABLE `admins` (
   `admin_id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -35,49 +35,19 @@ CREATE TABLE `Admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `Admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
-INSERT INTO `Admins` (`admin_id`, `username`, `password`, `email`) VALUES
+INSERT INTO `admins` (`admin_id`, `username`, `password`, `email`) VALUES
 (1, 'hoanggiakiet', 'kiet', 'giakiethoang07102004@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Applicants`
+-- Cấu trúc bảng cho bảng `applications`
 --
 
-CREATE TABLE `Applicants` (
-  `applicant_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  `resume` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `Applicants`
---
-
-INSERT INTO `Applicants` (`applicant_id`, `name`, `email`, `phone`, `resume`) VALUES
-(1, 'John Doe', 'john.doe@email.com', '123-456-7890', '/resumes/john_doe_resume.pdf'),
-(2, 'Jane Smith', 'jane.smith@email.com', '987-654-3210', '/resumes/jane_smith_resume.pdf'),
-(3, 'Michael Johnson', 'michael.johnson@email.com', '111-222-3333', '/resumes/michael_johnson_resume.pdf'),
-(4, 'Emily Davis', 'emily.davis@email.com', '444-555-6666', '/resumes/emily_davis_resume.pdf'),
-(5, 'Robert Brown', 'robert.brown@email.com', '777-888-9999', '/resumes/robert_brown_resume.pdf'),
-(6, 'Sophia Miller', 'sophia.miller@email.com', '222-333-4444', '/resumes/sophia_miller_resume.pdf'),
-(7, 'William Wilson', 'william.wilson@email.com', '555-666-7777', '/resumes/william_wilson_resume.pdf'),
-(8, 'Emma Anderson', 'emma.anderson@email.com', '888-999-0000', '/resumes/emma_anderson_resume.pdf'),
-(9, 'Daniel Martinez', 'daniel.martinez@email.com', '333-444-5555', '/resumes/daniel_martinez_resume.pdf'),
-(10, 'Olivia Taylor', 'olivia.taylor@email.com', '999-000-1111', '/resumes/olivia_taylor_resume.pdf');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Applications`
---
-
-CREATE TABLE `Applications` (
+CREATE TABLE `applications` (
   `application_id` int(11) NOT NULL,
   `job_id` int(11) DEFAULT NULL,
   `applicant_id` int(11) DEFAULT NULL,
@@ -85,10 +55,10 @@ CREATE TABLE `Applications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `Applications`
+-- Đang đổ dữ liệu cho bảng `applications`
 --
 
-INSERT INTO `Applications` (`application_id`, `job_id`, `applicant_id`, `application_date`) VALUES
+INSERT INTO `applications` (`application_id`, `job_id`, `applicant_id`, `application_date`) VALUES
 (1, 1, 1, '2024-01-02'),
 (2, 2, 2, '2024-01-03'),
 (3, 3, 3, '2024-01-04'),
@@ -103,10 +73,31 @@ INSERT INTO `Applications` (`application_id`, `job_id`, `applicant_id`, `applica
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Companies`
+-- Cấu trúc bảng cho bảng `candidate`
 --
 
-CREATE TABLE `Companies` (
+CREATE TABLE `candidate` (
+  `id_applicant` int(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
+  `id_identify` int(20) NOT NULL,
+  `fullname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `realfullname` varchar(100) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `received_date` date NOT NULL,
+  `birthday` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `companies`
+--
+
+CREATE TABLE `companies` (
   `company_id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `industry` varchar(255) DEFAULT NULL,
@@ -115,20 +106,20 @@ CREATE TABLE `Companies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `Companies`
+-- Đang đổ dữ liệu cho bảng `companies`
 --
 
-INSERT INTO `Companies` (`company_id`, `name`, `industry`, `location`, `website`) VALUES
+INSERT INTO `companies` (`company_id`, `name`, `industry`, `location`, `website`) VALUES
 (1, 'TechCorp', 'Technology', 'Silicon Valley', 'http://www.techcorp.com'),
 (2, 'HealthTech', 'Healthcare', 'New York', 'http://www.healthtech.com');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Jobs`
+-- Cấu trúc bảng cho bảng `jobs`
 --
 
-CREATE TABLE `Jobs` (
+CREATE TABLE `jobs` (
   `job_id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `company_id` int(11) DEFAULT NULL,
@@ -139,10 +130,10 @@ CREATE TABLE `Jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `Jobs`
+-- Đang đổ dữ liệu cho bảng `jobs`
 --
 
-INSERT INTO `Jobs` (`job_id`, `title`, `company_id`, `location`, `description`, `requirements`, `posted_date`) VALUES
+INSERT INTO `jobs` (`job_id`, `title`, `company_id`, `location`, `description`, `requirements`, `posted_date`) VALUES
 (1, 'Software Engineer', 1, 'Silicon Valley', 'Develop cutting-edge software solutions.', 'Bachelor\'s degree in Computer Science.', '2024-01-01'),
 (2, 'Data Analyst', 1, 'Silicon Valley', 'Analyze and interpret complex data sets.', 'Bachelor\'s degree in Statistics or related field.', '2024-01-02'),
 (3, 'Product Manager', 1, 'Silicon Valley', 'Lead the development of new products.', '5+ years of product management experience.', '2024-01-03'),
@@ -151,84 +142,152 @@ INSERT INTO `Jobs` (`job_id`, `title`, `company_id`, `location`, `description`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Users`
+-- Cấu trúc bảng cho bảng `project`
 --
 
-CREATE TABLE `Users` (
-  `user_id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+CREATE TABLE `project` (
+  `id_project` int(255) NOT NULL,
+  `service` varchar(50) NOT NULL,
+  `specific_service` varchar(1000) NOT NULL,
+  `job_title` varchar(100) NOT NULL,
+  `job_description` varchar(1000) NOT NULL,
+  `required_skills` varchar(1000) NOT NULL,
+  `deadline` date NOT NULL,
+  `work_type` varchar(100) NOT NULL,
+  `workplace` varchar(150) NOT NULL,
+  `payment_method` varchar(50) NOT NULL,
+  `budget` float NOT NULL,
+  `employment_type` tinyint(1) NOT NULL,
+  `attached_file` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `Users`
+-- Đang đổ dữ liệu cho bảng `project`
 --
 
-INSERT INTO `Users` (`user_id`, `username`, `password`, `email`) VALUES
-(1, 'phuoc', 'phuoc123', 'phuoc123@gmail.com'),
-(2, 'day', 'day123', 'day123@gmail.com'),
-(3, 'kiet', 'kiet123', 'kiet123gmail.com');
+INSERT INTO `project` (`id_project`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
+(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '0000-00-00', '[value-8]', '[value-9]', '[value-10]', 0, 0, '[value-13]'),
+(5, 'web', '1', 'web chơi', 'full code', 'php', '0000-00-00', 'ads', 'sàu gòn', 'tháng', 20, 0, '../uploads/65f9031d7177e.pdf'),
+(6, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9058e6f7d2.docx'),
+(7, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9062516d2c.docx');
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Cấu trúc bảng cho bảng `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(255) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `re_password` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`) VALUES
+(20, 'test', '$argon2id$v=19$m=65536,t=4,p=1$L21DUnlQTU9lZm14SHZOVw$ipbXN/YgHTPi0bktkJTctVCAWfzHWXnWxknieYOoyA0', '', 'test@gmail.com'),
+(29, 'phuoc', '$argon2id$v=19$m=65536,t=4,p=1$RWxhYjVaMjhDNjdLLkJvTw$VSBzsECaka+mh9Gy7kBELnLxEPAJnQLTF+s9ip/yI7M', '', 'phuoc@gmail.com'),
+(30, 'moi', '$argon2id$v=19$m=65536,t=4,p=1$RlhoYmpJNTdzYzYzSFF3Wg$2/A4WHxNkokn1GzT8owV4LTqVJLIIqR+9reI5NJFsGA', '', 'moi@gmail.com');
+
+--
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `Admins`
+-- Chỉ mục cho bảng `admins`
 --
-ALTER TABLE `Admins`
+ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `Applicants`
+-- Chỉ mục cho bảng `applications`
 --
-ALTER TABLE `Applicants`
-  ADD PRIMARY KEY (`applicant_id`);
-
---
--- Indexes for table `Applications`
---
-ALTER TABLE `Applications`
+ALTER TABLE `applications`
   ADD PRIMARY KEY (`application_id`),
   ADD KEY `job_id` (`job_id`),
   ADD KEY `applicant_id` (`applicant_id`);
 
 --
--- Indexes for table `Companies`
+-- Chỉ mục cho bảng `candidate`
 --
-ALTER TABLE `Companies`
+ALTER TABLE `candidate`
+  ADD PRIMARY KEY (`id_applicant`),
+  ADD KEY `FK_candidate_users` (`user_id`);
+
+--
+-- Chỉ mục cho bảng `companies`
+--
+ALTER TABLE `companies`
   ADD PRIMARY KEY (`company_id`);
 
 --
--- Indexes for table `Jobs`
+-- Chỉ mục cho bảng `jobs`
 --
-ALTER TABLE `Jobs`
+ALTER TABLE `jobs`
   ADD PRIMARY KEY (`job_id`),
   ADD KEY `company_id` (`company_id`);
 
 --
--- Indexes for table `Users`
+-- Chỉ mục cho bảng `project`
 --
-ALTER TABLE `Users`
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`id_project`);
+
+--
+-- Chỉ mục cho bảng `users`
+--
+ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- Constraints for table `Applications`
+-- AUTO_INCREMENT cho bảng `candidate`
 --
-ALTER TABLE `Applications`
-  ADD CONSTRAINT `applications_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `Jobs` (`job_id`),
-  ADD CONSTRAINT `applications_ibfk_2` FOREIGN KEY (`applicant_id`) REFERENCES `Applicants` (`applicant_id`);
+ALTER TABLE `candidate`
+  MODIFY `id_applicant` int(255) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for table `Jobs`
+-- AUTO_INCREMENT cho bảng `project`
 --
-ALTER TABLE `Jobs`
-  ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `Companies` (`company_id`);
+ALTER TABLE `project`
+  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
+--
+
+--
+-- Các ràng buộc cho bảng `applications`
+--
+ALTER TABLE `applications`
+  ADD CONSTRAINT `applications_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `jobs` (`job_id`),
+  ADD CONSTRAINT `applications_ibfk_2` FOREIGN KEY (`applicant_id`) REFERENCES `applicants` (`applicant_id`);
+
+--
+-- Các ràng buộc cho bảng `candidate`
+--
+ALTER TABLE `candidate`
+  ADD CONSTRAINT `FK_candidate_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+
+--
+-- Các ràng buộc cho bảng `jobs`
+--
+ALTER TABLE `jobs`
+  ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `companies` (`company_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
