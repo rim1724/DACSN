@@ -212,8 +212,9 @@
 /*Phần dưới slide show công việc nổi bật*/
 .findwork-container{
     background-color: #ffffff;
-   
+    text-align: center;
 }
+
 .findwork-all{
     width: 1200px;
     height: 430px;
@@ -222,10 +223,12 @@
     display: flex;
 }
 .findwork-all a{
-    color: rgb(88, 164, 199) ;
+    color: rgb(255, 255, 255) ;
     text-decoration: none;
     font-size: 25px;
-    background-image: linear-gradient(to top, rgb(255, 242, 64) 15%, transparent 0px);
+    font-family: cursive;
+    text-shadow: 2px 2px 4px #000000;
+    margin-top: ;
 }
 
 .findwork-slogan h3{
@@ -270,9 +273,10 @@ margin-right: auto;
     width: 240px;
     height: 270px;
     border-right: 1px solid #dadada; 
+    background-image: url(../img/finding-img/1.1.1.webp);
+    background-size: cover;
 }
 .find1-1-1:hover{
-    background-image: url(../img/finding-img/1.1.1.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -292,9 +296,10 @@ margin-right: auto;
     width: 240px;
     height: 135px;
     border-bottom: 1px solid #dadada;
+    background-image: url(../img/finding-img/1.1.2.1.webp);
+    background-size: cover;
 }
 .find1-1-2-1:hover{
-    background-image: url(../img/finding-img/1.1.2.1.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -308,9 +313,11 @@ margin-right: auto;
 .find1-1-2-2{
     width: 240px;
     height: 135px;
+    background-image: url(../img/finding-img/1.1.2.2.webp);
+    background-size: cover;
 }
 .find1-1-2-2:hover{
-    background-image: url(../img/finding-img/1.1.2.2.webp);
+
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -324,9 +331,10 @@ margin-right: auto;
 .find1-2{
     width: 480px;
     height: 160px;
+    background-image: url(../img/finding-img/1.2.webp);
+    background-size: cover;
 }
 .find1-2:hover{
-    background-image: url(../img/finding-img/1.2.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -341,10 +349,11 @@ margin-right: auto;
 .find2-1{
     width: 480px;
     height: 160px;
-    border-bottom: 1px solid #dadada; ;
+    border-bottom: 1px solid #dadada; 
+    background-image: url(../img/finding-img/2.1.webp);
+    background-size: cover;
 }
 .find2-1:hover{
-    background-image: url(../img/finding-img/2.1.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -363,10 +372,11 @@ margin-right: auto;
 .find2-2-1{
 width: 240px;
     height: 270px;
-    border-right: 1px solid #dadada; 
+    border-right: 1px solid #dadada;
+    background-image: url(../img/finding-img/2.2.1.webp); 
+    background-size: cover;
 }
 .find2-2-1:hover{
-    background-image: url(../img/finding-img/2.2.1.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -386,9 +396,10 @@ width: 240px;
     width:  240px;
     height: 135px;
     border-right: 1px solid #dadada; 
+    background-image: url(../img/finding-img/2.2.2.1.webp);
+    background-size: cover;
 }
 .find2-2-2-1:hover{
-    background-image: url(../img/finding-img/2.2.2.1.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -402,9 +413,10 @@ width: 240px;
 .find2-2-2-2{
     width:  240px;
     height: 135px;
+    background-image: url(../img/finding-img/2.2.2.2.webp);
+    background-size: cover;
 }
 .find2-2-2-2:hover{
-    background-image: url(../img/finding-img/2.2.2.2.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -419,10 +431,11 @@ width: 240px;
 .find3-1 {
     height: 295px;
     width: 240px;
-    border-bottom: 1px solid #dadada; ;
+    border-bottom: 1px solid #dadada; 
+    background-image: url(../img/finding-img/3.1.webp);
+    background-size: cover;
 }
 .find3-1:hover{
-    background-image: url(../img/finding-img/3.1.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -436,9 +449,10 @@ width: 240px;
 .find3-2 {
     height:135px ;
     width: 240px;
+    background-image: url(../img/finding-img/3.2.webp);
+    background-size: cover;
 }
 .find3-2:hover{
-    background-image: url(../img/finding-img/3.2.webp);
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
