@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 19, 2024 lúc 07:42 AM
+-- Thời gian đã tạo: Th3 19, 2024 lúc 08:19 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -77,7 +77,7 @@ INSERT INTO `applications` (`application_id`, `job_id`, `applicant_id`, `applica
 --
 
 CREATE TABLE `candidate` (
-  `id_applicant` int(255) NOT NULL,
+  `id_candidate` int(255) NOT NULL,
   `img` varchar(255) NOT NULL,
   `id_identify` int(20) NOT NULL,
   `fullname` varchar(50) NOT NULL,
@@ -90,6 +90,13 @@ CREATE TABLE `candidate` (
   `received_date` date NOT NULL,
   `birthday` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `candidate`
+--
+
+INSERT INTO `candidate` (`id_candidate`, `img`, `id_identify`, `fullname`, `email`, `phone`, `city`, `address`, `realfullname`, `user_id`, `received_date`, `birthday`) VALUES
+(2, '[value-2]', 0, '[value-4]', '[value-5]', 0, '[value-7]', '[value-8]', '[value-9]', 30, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -216,7 +223,7 @@ ALTER TABLE `applications`
 -- Chỉ mục cho bảng `candidate`
 --
 ALTER TABLE `candidate`
-  ADD PRIMARY KEY (`id_applicant`),
+  ADD PRIMARY KEY (`id_candidate`),
   ADD KEY `FK_candidate_users` (`user_id`);
 
 --
@@ -252,7 +259,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `candidate`
 --
 ALTER TABLE `candidate`
-  MODIFY `id_applicant` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_candidate` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT cho bảng `project`
