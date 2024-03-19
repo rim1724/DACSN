@@ -92,7 +92,7 @@
             </li>
             </ul>     
             <div class="button" style="height: 43.8px;">
-                <a href="employer/post-project.html">Đăng dự án</a>
+                <a href="employer/post-project.php">Đăng dự án</a>
             </div>  
             </nav>
             </div>

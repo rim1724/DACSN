@@ -91,158 +91,178 @@
 
         <div class="postproject">
             <h1>Đăng thông tin</h1>
-            <form action="../../API/add_project.php" id="my-form" method="post">
-                <div class="post-all">
-                    <!--Hình 1-->
-                    <div class="post" style="display:flex;" >
-                        <div class="post-img">
-                            <img src="../../assets/img/postproject-img/post1.png" alt="">
-                        </div>
-                        <div class="post-infomation">
-                            <h2>Công việc mà bạn muốn đăng tuyển</h2>
-                            <p>Chọn lĩnh vực cần tuyển</p>
-                            <input type="text" class="Vidu" placeholder="VD: Lập trình web" name="service">
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                            <p>Chọn dịch vụ phù hợp với yêu cầu tuyển free lance của bạn nhất</p>
-                            <input type="text" class="Vidu" placeholder="VD: Bảo trì máy tính" name="specific_service">
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                            <p>Tên cụ thể của công việc cần tuyển</p>
-                            <input type="text" class="Vidu" placeholder="VD: Thiết kế trang web bán hàng" name="job_title">
-                        </div>
-                    </div>
-                    <!--Hình 2-->
-                    <div class="post" style="display: flex;">
-                        <div class="post-img">
-                            <img src="../../assets/img/postproject-img/post2.png" alt="">
-                        </div>
-                        <div class="post-infomation">
-                            <h2>Thông tin đầy đủ về yêu cầu tuyển dụng</h2>
-                            <p>Nội dung chi tiết về tất cả những yêu cầu (càng chi tiết dàng dễ tìm kiếm Freelancer phù hợp để thực hiện)</p>
-                            <input type="text" style="word-wrap: break-word;" id="Vidu2" name="job_description" placeholder="VD: Website cần thiết kế theo mô hình như nào, giao diện gồm trang chủ, trang tìm kiếm,...">
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                        <p>Thêm tệp đính kèm</p>
-                        <input type="file" id="file-uploader" name="attached_file">
-                    </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                            <p>Kỹ năng yêu cầu</p>
-                            <input type="text" class="Vidu3" name="required_skills" placeholder="VD: Photoshop, Ngoại ngữ,...">
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                            <p>Hạn cuối nhận việc (theo Part-time)</p>
-                            <input type="text" class="Vidu3" name="deadline" placeholder="VD: 11/01/2024">
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                            <p>Hình thức làm việc</p>
-                            <input type="text" class="Vidu3" name="work_type" placeholder="VD: Full-Time or Part-Time,...">
-                        </div>
-                    </div>
-                    <!-- Hình 3-->
-                    <div class="post" style="display: flex;">
-                        <div class="post-img">
-                            <img src="../../assets/img/postproject-img/post3.png" alt="">
-                        </div>
-                        <div class="post-infomation">
-                            <h2>Yêu cầu khác</h2>
-                            <p>Địa điểm làm việc (chủ yếu dành cho Full-Time)</p>
-                            <input type="text" class="Vidu3" name="workplace" placeholder="VD: Huế,Sài gòn,...">
-                        </div>
-                    </div>
-                    <!--Hình 4-->
-                    <div class="post" style="display: flex;">
-                        <div class="post-img">
-                            <img src="../../assets/img/postproject-img/post4.png" alt="">
-                        </div>
-                        <div class="post-infomation">
-                            <h2>Ngân sách dự kiến</h2>
-                            <p>Hình thức trả lương</p>
-                            <input type="text" class="Vidu3" name="payment_method" placeholder="VD: Theo giờ, theo tháng,...">
-                        </div>
-                    </div>
-                    <div class="post">
-                        <div class="post-info">
-                            <p>Mức lương dự kiến</p>
-                            <input type="text" class="Vidu3" name="budget"  placeholder="VD: 20-25 triệu đồng,...">
-                        </div>
-                    </div>
-                    <!--Hình 5-->
-                    <div class="post" style="display: flex;">
-                        <div class="post-img">
-                            <img src="../../assets/img/postproject-img/post5.png" alt="">
-                        </div>
-                        <div class="post-infomation">
-                            <h2>Hình thức tuyển dụng</h2>
-                            <p>Bạn muốn tuyển dụng theo hình thức:</p>
-                            <div class="choose" style="display: flex;height: 50px;">
-                            <input type="radio" name="emloyment_type" value="0" id="myrad1" style="margin-left: 0px;"><label for="myrad1"><h5 style="font-size: 21px;margin: 15px 20px 55px 5px">Full-Time</h5></label> 
-                            <input type="radio" name="emloyment_type" value="1" id="myrad2"><label for="myrad2"><h5 style="font-size: 21px;margin-top: 15px; margin-left: 5px;">Part-Time</h5></label> 
-                        </div>
-                        </div>
-                    </div>
+            <form action="../../API/add_project.php" id="my-form" method="post" enctype="multipart/form-data">
+            <div class="post-all">
+              <div class="post" style="display: flex;">
+                <div class="post-img">
+                  <img src="../../assets/img/postproject-img/post1.png" alt="">
                 </div>
-            <div class="post-agree">
-                <div class="xacnhan">
-                    <input type="submit" value="Đăng tin">
+                <div class="post-infomation">
+                  <h2>Công việc mà bạn muốn đăng tuyển</h2>
+                  <p>Chọn lĩnh vực cần tuyển</p>
+                  <input type="text" class="Vidu" placeholder="VD: Lập trình web" name="service" required>
                 </div>
-                <div class="ghichu">
-                    <p>Bạn xác định về việc đăng thông tin về tin tuyển dụng này lên hãy lên lạc với chúng tôi qua email @12345 để xác minh tinh xác thực thông tin</p>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Chọn dịch vụ phù hợp với yêu cầu tuyển free lance của bạn nhất</p>
+                  <input type="text" class="Vidu" placeholder="VD: Bảo trì máy tính" name="specific_service" required>
                 </div>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Tên cụ thể của công việc cần tuyển</p>
+                  <input type="text" class="Vidu" placeholder="VD: Thiết kế trang web bán hàng" name="job_title" required>
+                </div>
+              </div>
+              <div class="post" style="display: flex;">
+                <div class="post-img">
+                  <img src="../../assets/img/postproject-img/post2.png" alt="">
+                </div>
+                <div class="post-infomation">
+                  <h2>Thông tin đầy đủ về yêu cầu tuyển dụng</h2>
+                  <p>Nội dung chi tiết về tất cả những yêu cầu (càng chi tiết càng dễ tìm kiếm Freelancer phù hợp để thực hiện)</p>
+                  <input type="text" style="word-wrap: break-word;" id="Vidu2" name="job_description" placeholder="VD: Website cần thiết kế theo mô hình như nào, giao diện gồm trang chủ, trang tìm kiếm,...">
+                </div>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Thêm tệp đính kèm</p>
+                  <input type="file" id="file-uploader" name="attached_file">
+                </div>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Kỹ năng yêu cầu</p>
+                  <input type="text" class="Vidu3" name="required_skills" placeholder="VD: Photoshop, Ngoại ngữ,...">
+                </div>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Hạn cuối nhận việc (theo Part-time)</p>
+                  <input type="text" class="Vidu3" name="deadline" placeholder="VD: 11/01/2024">
+                </div>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Hình thức làm việc</p>
+                  <input type="text" class="Vidu3" name="work_type" placeholder="VD: Full-Time or Part-Time,...">
+                </div>
+              </div>
+              <div class="post" style="display: flex;">
+                <div class="post-img">
+                  <img src="../../assets/img/postproject-img/post3.png" alt="">
+                </div>
+                <div class="post-infomation">
+                  <h2>Yêu cầu khác</h2>
+                  <p>Địa điểm làm việc (chủ yếu dành cho Full-Time)</p>
+                  <input type="text" class="Vidu3" name="workplace" placeholder="VD: Huế,Sài Gòn,...">
+                </div>
+              </div>
+              <div class="post" style="display: flex;">
+                <div class="post-img">
+                  <img src="../../assets/img/postproject-img/post4.png" alt="">
+                </div>
+                <div class="post-infomation">
+                  <h2>Ngân sách dự kiến</h2>
+                  <p>Hình thức trả lương</p>
+                  <input type="text" class="Vidu3" name="payment_method" placeholder="VD: Theo giờ, theo tháng,...">
+                </div>
+              </div>
+              <div class="post">
+                <div class="post-info">
+                  <p>Mức lương dự kiến</p>
+                  <input type="text" class="Vidu3" name="budget" placeholder="VD: 20-25 triệu đồng,...">
+                </div>
+              </div>
+              <div class="post" style="display: flex;">
+                <div class="post-img">
+                  <img src="../../assets/img/postproject-img/post5.png" alt="">
+                </div>
+                <div class="post-infomation">
+                  <h2>Hình thức tuyển dụng</h2>
+                  <p>Bạn muốn tuyển dụng theo hình thức:</p>
+                  <div class="choose">
+                    <input type="radio" name="employment_type" value="1" id="myrad1" checked>
+                    <label for="myrad1">Full-Time</label>
+                    <input type="radio" name="employment_type" value="0" id="myrad2">
+                    <label for="myrad2">Part-Time</label>
+                  </div>
+                </div>
+              </div>
             </div>
-            </form>
+            <div class="post-agree">
+              <div class="xacnhan">
+                <input type="submit" value="Đăng tin">
+              </div>
+              <div class="ghichu">
+                <p>Vui lòng liên lạc với chúng tôi qua email @12345 để xác minh thông tin.</p>
+              </div>
+            </div>
+          </form>
         </div> 
         <script>
-            // Lấy dữ liệu từ form
-var formData = {
-  service: $("#service").val(),
-  specific_service: $("#specific_service").val(),
-  job_title: $("#job_title").val(),
-  job_description: $("#job_description").val(),
-  attached_file: $("#file-uploader").val(),
-  required_skills: $("#required_skills").val(),
-  deadline: $("#deadline").val(),
-  work_type: $("#work_type").val(),
-  workplace: $("#workplace").val(),
-  payment_method: $("#payment_method").val(),
-  budget: $("#budget").val(),
-  employment_type: $('input[name="employment_type"]:checked').val(),
-};
+          const form = document.getElementById('my-form');
 
-// Mã hóa dữ liệu theo định dạng JSON
-var jsonData = JSON.stringify(formData);
+          form.addEventListener('submit', (event) => {
+            event.preventDefault();
 
-// Gửi yêu cầu API
-$.ajax({
-  url: "../../API/apiproject.php",
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  data: jsonData,
-  success: function (response) {
-    // Xử lý kết quả trả về từ API
-    if (response.success) {
-      // Hiển thị thông báo thành công
-      alert("Đăng tin dự án thành công!");
-    } else {
-      // Hiển thị thông báo lỗi
-      alert(response.error);
-    }
-  },
-});
+            const service = form.querySelector('input[name="service"]').value;
+            const jobTitle = form.querySelector('input[name="job_title"]').value;
+            const jobDescription = form.querySelector('input[name="job_description"]').value;
+
+            // Kiểm tra các trường dữ liệu bắt buộc
+
+            if (!service || !jobTitle || !jobDescription) {
+              alert('Vui lòng nhập đầy đủ các trường thông tin bắt buộc!');
+              return;
+            }
+
+            // ... (kiểm tra thêm các trường dữ liệu khác)
+
+            // Gửi dữ liệu form
+
+            form.submit();
+          });
+
+                      // Lấy dữ liệu từ form
+          var formData = {
+            service: $("#service").val(),
+            specific_service: $("#specific_service").val(),
+            job_title: $("#job_title").val(),
+            job_description: $("#job_description").val(),
+            attached_file: $("#file-uploader").val(),
+            required_skills: $("#required_skills").val(),
+            deadline: $("#deadline").val(),
+            work_type: $("#work_type").val(),
+            workplace: $("#workplace").val(),
+            payment_method: $("#payment_method").val(),
+            budget: $("#budget").val(),
+            employment_type: $('input[name="employment_type"]:checked').val(),
+          };
+
+          // Mã hóa dữ liệu theo định dạng JSON
+          var jsonData = JSON.stringify(formData);
+
+          // Gửi yêu cầu API
+          $.ajax({
+            url: "../../API/apiproject.php",
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            data: jsonData,
+            success: function (response) {
+              // Xử lý kết quả trả về từ API
+              if (response.success) {
+                // Hiển thị thông báo thành công
+                alert("Đăng tin dự án thành công!");
+              } else {
+                // Hiển thị thông báo lỗi
+                alert(response.error);
+              }
+            },
+          });
 
         </script>
 

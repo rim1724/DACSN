@@ -1,107 +1,124 @@
 <?php
-
 require_once '../config/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  // Truy cập dữ liệu sử dụng $_POST
-  $data = $_POST;
+  // Kiểm tra các trường bắt buộc
+  $required_fields = ['service', 'specific_service', 'job_title', 'job_description', 'required_skills', 'deadline', 'work_type', 'workplace', 'payment_method', 'budget', 'employment_type'];
+  foreach ($required_fields as $field) {
+    if (!isset($_POST[$field])) {
+      $response = array('message' => "Thiếu trường bắt buộc '$field' trong yêu cầu POST.");
+      echo json_encode($response);
+      exit;
+    }
+  }
 
-  // Xử lý và xác thực dữ liệu
-  $errors = validate_data($data);
-
-  // Nếu có lỗi, trả về thông báo lỗi
-  if (!empty($errors)) {
-    $response['success'] = false;
-    $response['errors'] = $errors;
+  // Xử lý tải tệp
+  if (!isset($_FILES['attached_file']) || $_FILES['attached_file']['error'] !== UPLOAD_ERR_OK) {
+    $response = array('message' => 'Lỗi khi tải tệp lên.');
     echo json_encode($response);
     exit;
   }
 
-  // Chuẩn bị và thực thi câu lệnh SQL
-  $sql = "INSERT INTO project (service, specific_service, job_title, 
-    job_description, attached_file, required_skills, deadline, 
-    work_type, workplace, payment_method, budget, employment_type)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-  $stmt = $conn->prepare($sql);
-
-  // Xử lý giá trị employment_type
-  $employment_type = ($data['employment_type'] === '0') ? 1 : 0;
-
-  // Bind các biến tương ứng với '?' trong câu lệnh SQL
-  $stmt->bind_param('ssssssssssssss', $data['service'], $data['specific_service'], 
-    $data['job_title'], $data['job_description'], 
-    $data['attached_file'], $data['required_skills'], 
-    $data['deadline'], $data['work_type'], $data['workplace'], 
-    $data['payment_method'], $data['budget'], $employment_type);
-
-  // Thực thi câu lệnh SQL
-  $stmt->execute();
-
-  // Xử lý kết quả
-  $response = array();
-  if ($stmt->affected_rows === 1) {
-    $response['success'] = true;
-    $response['message'] = 'Dự án đã được thêm thành công!';
-    $response['id_project'] = $stmt->insert_id;
-  } else {
-    $response['success'] = false;
-    $response['errors'] = array('message' => 'Lỗi khi thêm dự án!');
+  // Xử lý thư mục tải lên
+  $upload_dir = '../uploads/';
+  if (!file_exists($upload_dir) && !mkdir($upload_dir, 0777, true)) {
+    $response = array('message' => 'Lỗi khi tạo thư mục tải lên.');
+    echo json_encode($response);
+    exit;
   }
 
-  // Đóng kết nối database
-  $stmt->close();
-  $conn->close();
+  $file_extension = pathinfo($_FILES['attached_file']['name'], PATHINFO_EXTENSION);
+  $allowed_extensions = array('doc', 'docx', 'pdf', 'jpg', 'jpeg', 'png', 'gif');
 
-  // Trả về kết quả dưới dạng JSON
+  if (!in_array($file_extension, $allowed_extensions)) {
+    $response = array('message' => 'Loại tệp không được hỗ trợ.');
+    echo json_encode($response);
+    exit;
+  }
+
+  $uploaded_file = $upload_dir . uniqid() . '.' . $file_extension;
+  if (!move_uploaded_file($_FILES['attached_file']['tmp_name'], $uploaded_file)) {
+    $response = array('message' => 'Lỗi khi di chuyển tệp đã tải lên đến thư mục đích.');
+    echo json_encode($response);
+    exit;
+  }
+
+  // Kết nối cơ sở dữ liệu
+  try {
+    $pdo = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USERNAME, DB_PASSWORD);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  } catch (PDOException $e) {
+    $response = array('message' => 'Lỗi kết nối: ' . $e->getMessage());
+    echo json_encode($response);
+    exit;
+  }
+
+  // Chuẩn bị truy vấn SQL với tham số được đặt tên để đảm bảo an toàn
+  $sql = "INSERT INTO project (
+    service,
+    specific_service,
+    job_title,
+    job_description,
+    attached_file,
+    required_skills,
+    deadline,
+    work_type,
+    workplace,
+    payment_method,
+    budget,
+    employment_type
+  )
+  VALUES (
+    :service,
+    :specific_service,
+    :job_title,
+    :job_description,
+    :attached_file,
+    :required_skills,
+    :deadline,
+    :work_type,
+    :workplace,
+    :payment_method,
+    :budget,
+    :employment_type
+  )";
+
+  // Xác định loại công việc (Full-Time hoặc Part-Time)
+  $employment_type = isset($_POST['employment_type']) && $_POST['employment_type'] == '1' ? 'Full-Time' : 'Part-Time';
+
+  // Gán tham số với giá trị từ form
+  $stmt = $pdo->prepare($sql);
+  $stmt->bindParam(':service', $_POST['service'], PDO::PARAM_STR);
+  $stmt->bindParam(':specific_service', $_POST['specific_service'], PDO::PARAM_STR);
+  $stmt->bindParam(':job_title', $_POST['job_title'], PDO::PARAM_STR);
+  $stmt->bindParam(':job_description', $_POST['job_description'], PDO::PARAM_STR);
+  $stmt->bindParam(':attached_file', $uploaded_file, PDO::PARAM_STR);
+  $stmt->bindParam(':required_skills', $_POST['required_skills'], PDO::PARAM_STR);
+  $stmt->bindParam(':deadline', $_POST['deadline'], PDO::PARAM_STR);
+  $stmt->bindParam(':work_type', $_POST['work_type'], PDO::PARAM_STR);
+  $stmt->bindParam(':workplace', $_POST['workplace'], PDO::PARAM_STR);
+  $stmt->bindParam(':payment_method', $_POST['payment_method'], PDO::PARAM_STR);
+  $stmt->bindParam(':budget', $_POST['budget'], PDO::PARAM_INT);
+  $stmt->bindParam(':employment_type', $employment_type, PDO::PARAM_STR);
+  
+  // Thực thi truy vấn
+  try {
+    $stmt->execute();
+    $response = array('message' => 'Lưu thành công');
+    header('location:../views/index-main.php');
+  } catch (PDOException $e) {
+    $response = array('message' => 'Lỗi khi thực thi truy vấn: ' . $e->getMessage());
+  }
+  
+  // Đóng kết nối cơ sở dữ liệu
+  $pdo = null;
+  
   echo json_encode($response);
   exit;
-}
-
-// Hàm kiểm tra dữ liệu
-function validate_data($data) {
-  $errors = array();
-
-  // Kiểm tra các trường bắt buộc
-  if (empty($data['service'])) {
-    $errors['service'] = 'Vui lòng chọn lĩnh vực dịch vụ.';
   }
-  if (empty($data['job_title'])) {
-    $errors['job_title'] = 'Vui lòng nhập tiêu đề công việc.';
-  }
-  if (empty($data['job_description'])) {
-    $errors['job_description'] = 'Vui lòng nhập mô tả công việc.';
-  }
-  if (empty($data['required_skills'])) {
-    $errors['required_skills'] = 'Vui lòng nhập kỹ năng yêu cầu.';
-  }
-  if (empty($data['deadline'])) {
-    $errors['deadline'] = 'Vui lòng chọn hạn chót.';
-  }
-  if (empty($data['work_type'])) {
-    $errors['work_type'] = 'Vui lòng chọn loại hình công việc.';
-  }
-  if (empty($data['workplace'])) {
-    $errors['workplace'] = 'Vui lòng nhập địa điểm làm việc.';
-  }
-  if (empty($data['payment_method'])) {
-    $errors['payment_method'] = 'Vui lòng chọn phương thức thanh toán.';
-  }
-  if (empty($data['budget'])) {
-    $errors['budget'] = 'Vui lòng nhập ngân sách.';
-  }
-
-  // Kiểm tra giá trị employment_type
-  if (!isset($data['employment_type']) || !is_numeric($data['employment_type'])) {
-    $errors['employment_type'] = 'Lỗi dữ liệu loại hình tuyển dụng.';
-  } else {
-    $employment_type = ($data['employment_type'] === '0') ? 1 : 0;
-  }
-
-  // Kiểm tra định dạng
-
-
-  return $errors;
-}
-
-?>
+  
+  // Nếu không phải yêu cầu POST, trả về phản hồi JSON (không chắc $projects là gì)
+  header('Content-Type: application/json');
+  echo json_encode($projects);
+  ?>
+  
