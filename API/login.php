@@ -28,6 +28,7 @@ if (mysqli_num_rows($result) === 1) {
 
     // Lưu ID người dùng trong phiên
     $_SESSION['user_id'] = $user['user_id'];
+    $_SESSION['role'] = $user['role'];
 
     // Chuyển hướng đến trang chủ
     header("location: ../views/index-main.php");

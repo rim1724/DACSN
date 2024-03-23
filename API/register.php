@@ -2,15 +2,17 @@
 
 require_once '../config/config.php';
 
-if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['re_password'])) {
+$errors = [];
+
+if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['re_password'], $_POST['role'])) {
 
   $username = trim(strip_tags($_POST['username']));
   $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
   $password = trim($_POST['password']);
   $re_password = trim($_POST['re_password']);
+  $role = isset($_POST['role']) ? (int) $_POST['role'] : 0;
 
-  $errors = [];
-
+  // Kiểm tra dữ liệu
   if (empty($username)) {
     $errors[] = 'Tên đăng nhập không được phép trống';
   } else if (strlen($username) < 2) {
@@ -25,7 +27,7 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['re_pa
 
   if (empty($password)) {
     $errors[] = 'Mật khẩu không được phép trống';
-  } else if (strlen($password) < 2) {
+  } else if (strlen($password) < 4) {
     $errors[] = 'Mật khẩu phải ít nhất 6 ký tự';
   }
 
@@ -33,37 +35,31 @@ if (isset($_POST['username'], $_POST['email'], $_POST['password'], $_POST['re_pa
     $errors[] = 'Mật khẩu và nhập lại mật khẩu không trùng khớp';
   }
 
-  if (count($errors) > 0) {
-    echo json_encode([
-      'success' => false,
-      'errors' => $errors
-    ]);
-    exit;
-  }
+  // Lưu trữ dữ liệu
+  if (count($errors) === 0) {
 
-  // Mã hóa mật khẩu
-  $hashed_password = password_hash($password, PASSWORD_ARGON2ID); // Sử dụng Argon2id
+    // Hash mật khẩu
+    $hashed_password = password_hash($password, PASSWORD_ARGON2ID);
 
-  $stmt = $conn->prepare('INSERT INTO users (username, email, password) VALUES (?, ?, ?)');
-  $stmt->execute([$username, $email, $hashed_password]);
+    // Chuẩn bị câu lệnh INSERT
+    $stmt = $conn->prepare('INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)');
 
-  if ($stmt->affected_rows > 0) {
-    echo json_encode([
-      'success' => true,
-      'message' => 'Đăng ký thành công'
-    ]);
-    header('Location:../views/sign-in.html');
-    exit;
-  } else {
-    echo json_encode([
-      'success' => false,
-      'message' => 'Đăng ký thất bại. Vui lòng thử lại.'
-    ]);
+    // Thực thi câu lệnh
+    $stmt->execute([$username, $email, $hashed_password, $role]);
+
+    // Xử lý kết quả
+    if ($stmt->affected_rows > 0) {
+      echo json_encode([
+        'success' => true,
+        'message' => 'Đăng ký thành công'
+      ]);
+      header('Location: ../views/sign-in.html');
+      exit;
+    } else {
+      $errors[] = 'Đăng ký thất bại. Vui lòng thử lại.';
+    }
   }
 
 }
-
-// Đóng kết nối
-unset($conn);
 
 ?>
