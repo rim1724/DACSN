@@ -1,88 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="../../assets/css/cv.css">
-        <script src="https://kit.fontawesome.com/8aa3156f32.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div id="wrapper">
-            <div id="header">
-            <nav class="container">
-            <a href="../index-main.html" id="logo">
-            <img src="../../assets/img/logo-web.png" alt="Unitop.vn"> </a>
-            <ul id="main-menu">
-        <li><a href="../index-main.html">Trang chủ</a></li>
-        <li><a href="../full-search.html">Tìm kiếm <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i></a>
-            <ul class="sub-menu">
-                <li><a href="../full-search.html">Chức vụ <i class="fa-solid fa-caret-right" style="padding-left: 5px;"></i></a>
-                <ul class="sub-menu">
-                    <li><a href="../full-search.html">Intern</a></li>
-                    <li><a href="../full-search.html">Junior</a></li>
-                    <li><a href="../full-search.html">Senior</a></li>
-                    <li><a href="../full-search.html">Trưởng nhóm</a></li>
-                    <li><a href="../full-search.html">Trưởng phòng</a></li>
-                </ul></li>
-                <li><a href="../full-search.html">Loại hình <i class="fa-solid fa-caret-right" style="padding-left: 5px;"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="../full-search.html">Full-Time</a></li>
-                        <li><a href="../full-search.html">Part-Time</a></li>
-                    </ul>
-                </li>
-                <li><a href="../full-search.html">Địa điểm <i class="fa-solid fa-caret-right" style="padding-left:  5px;"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="../full-search.html">Hồ Chí Minh</a></li>
-                        <li><a href="../full-search.html">Hà nội</a></li>
-                        <li><a href="../full-search.html">Huế</a></li>
-                    </ul>
-                </li>
-                <li><a href="../full-search.html">Ngôn ngữ <i class="fa-solid fa-caret-right" style="padding-left: 5px ;"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="../full-search.html">Java</a></li>
-                        <li><a href="../full-search.html">JavaScript</a></li>
-                        <li><a href="../full-search.html">C#</a></li>
-                        <li><a href="../full-search.html">PHP</a></li>
-                        <li><a href="../full-search.html">C++</a></li>
-        
-                    </ul>
-                </li>
-                <li><a href="../full-search.html">Chức năng<i class="fa-solid fa-caret-right" style="padding-left: 5px;"></i></a>
-                    <ul class="sub-menu">
-                        <li><a href="../full-search.html">Font-End</a></li>
-                        <li><a href="../full-search.html">Back-End</a></li>
-                        <li><a href="../full-search.html">Database</a></li>
-                        <li><a href="../full-search.html">IT Security</a></li>
-                        <li><a href="../full-search.html">Wordpress</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li><a href="../index-main.html">Nhà tuyển dụng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i></a>
-            <ul class="sub-menu">
-                <li><a href="../employer/post-project.html">Đổi dự án</a></li>
-                <li><a href="../employer/candidate-list.html">Danh sách ứng tuyển</a></li>
-            </ul>
-            </li>  
-        <li><a href="../candidate/info-user.html"><i class="fa-solid fa-user" style="padding-right:5px ;"></i> Tên người dùng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i></a>
-            <ul class="sub-menu2">
-                <li><a href="../candidate/info-user.html" style="padding-left: 68.975px;">Đổi thông tin</a></li>
-                <li><a href="../candidate/change-password.html" style="padding-left: 64.4px;">Đổi mật khẩu</a></li>
-                <li><a href="../sign-in.html">Đăng xuất</a></li>
-            </ul>
-            </li>
-            </ul>     
-            <div class="button">
-                <a href="../employer/post-project.html">Đăng dự án</a>
-            </div>  
-            </nav>
-            </div>
-            </div>
-
-
-        <!--vach ngan-->
-
-
-        
+<?php include('header_can.php') ?>
+<link rel="stylesheet" href="../../assets/css/cv.css">
         <div class="bulkhead-container">
             <p>Nhà tuyển dụng đăng dự án <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhân sự vào tìm kiếm <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhận công việc từ nhà tuyển dụng</p>
         </div>
@@ -95,18 +12,18 @@
 <div class="change-all">
 <div class="listall">
     <ul>
-        <li class="see"><a href="info-user.html">Tài khoản</a></li>
-        <li class="hover"><a href="setting.html">Cài đặt chung</a></li>
-        <li class="hover"><a href="change-password.html">Đổi mật khẩu</a></li>
+        <li class="see"><a href="info-user.php">Tài khoản</a></li>
+        <li class="hover"><a href="setting.php">Cài đặt chung</a></li>
+        <li class="hover"><a href="change-password.php">Đổi mật khẩu</a></li>
     </ul>
 </div>
 <div class="change">
     <div class="listmini">
         <ul>
-            <li class="hover2"><a href="info-user.html">Thông tin cá nhân</a></li>
-            <li class="see2"><a href="cv.html">Hồ sơ năng lực(CV)</a></li>
-            <li class="hover2"><a href="apply-list.html">Danh sách công việc ứng tuyển</a></li>
-            <li class="hover2"><a href="verified-phonenumber.html">Xác thực thông tin</a></li>
+            <li class="hover2"><a href="info-user.php">Thông tin cá nhân</a></li>
+            <li class="see2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
+            <li class="hover2"><a href="apply-list.php">Danh sách công việc ứng tuyển</a></li>
+            <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
         </ul>
     </div>
     <div class="doithongtin">
