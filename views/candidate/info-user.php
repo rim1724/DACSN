@@ -25,7 +25,7 @@
             <li class="hover2"><a href="verified-phonenumber.html">Xác thực thông tin</a></li>
         </ul>
     </div>
- <form action="">   
+ <form action="../../API/add_candidate.php" method="post" enctype="multipart/form-data">   
     <div class="doithongtin">
 <div class="phan1">
     <h1>Thông tin chung</h1>
@@ -39,14 +39,14 @@
             <img src="../../assets/img/user.jpg" alt="">
         </div>
         <div class="upload">
-            <input type="file" id="img-uploader">
+            <input type="file" id="img-uploader" name="img">
         </div>
     </dd>
     <dt>
         Họ và tên <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="name" placeholder="Nguyễn Văn A">
+        <input type="text" name="fullname" placeholder="Nguyễn Văn A">
     </dd>
     <dt>
         Email <span class="redtext">*</span>
@@ -58,13 +58,13 @@
         Sđt <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="phonenumber" placeholder="0000000000">
+        <input type="text" name="phone" placeholder="0000000000">
     </dd>
     <dt>
         Thành phố <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="place"  placeholder="Huế">
+        <input type="text" name="city"  placeholder="Huế">
     </dd>
     <dt>
         Địa chỉ <span class="redtext">*</span>
@@ -81,29 +81,29 @@
         Họ tên trên CCCD <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="name-cccd" placeholder="Nguyễn Văn A">
+        <input type="text" name="realfullname" placeholder="Nguyễn Văn A">
     </dd>
     <dt>
         Số CCCD <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="phonenumber-cccd" placeholder="000000000000">
+        <input type="text" name="id_identify" placeholder="000000000000">
     </dd>
     <dt>
         Ngày nhận <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="day-cccd" placeholder="14/01/2024">
+        <input type="date" name="received_date" placeholder="14/01/2024">
     </dd>
     <dt>
         Ngày sinh <span class="redtext">*</span>
     </dt>
     <dd>
-        <input type="text" name="birth-cccd" placeholder="01/07/2004">
+        <input type="date" name="birthday" placeholder="14/01/2024">
     </dd>
 </dl>
 <div class="submit">
-    <input type="button" name="submit-form" id="" value="Lưu thay đổi" >
+    <input type="submit" name="submit-form" value="Lưu thay đổi" >
 </div>
 
 
