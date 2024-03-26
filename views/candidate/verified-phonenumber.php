@@ -1,6 +1,11 @@
 <?php include('header_can.php') ?>
-<link rel="stylesheet" href="../../assets/css/info-user.css">
 
+<link rel="stylesheet" href="../../assets/css/verified-phonenumber.css">
+
+        <!--vach ngan-->
+
+
+        
         <div class="bulkhead-container">
             <p>Nhà tuyển dụng đăng dự án <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhân sự vào tìm kiếm <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhận công việc từ nhà tuyển dụng</p>
         </div>
@@ -9,7 +14,7 @@
 
 
 
-<!--Đổi thông tin cá nhân-->
+<!--Xác minh SĐT-->
 <div class="change-all">
 <div class="listall">
     <ul>
@@ -21,100 +26,38 @@
 <div class="change">
     <div class="listmini">
         <ul>
-            <li class="see2"><a href="info-user.php">Thông tin cá nhân</a></li>
+            <li class="hover2"><a href="info-user.php">Thông tin cá nhân</a></li>
             <li class="hover2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
             <li class="hover2"><a href="apply-list.php">Danh sách công việc ứng tuyển</a></li>
-            <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
+            <li class="see2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
         </ul>
     </div>
- <form action="../../API/add_candidate.php" method="post" enctype="multipart/form-data">   
-    <div class="doithongtin">
-<div class="phan1">
-    <h1>Thông tin chung</h1>
-</div>
-<dl>
-    <dt>
-        Ảnh đại diện <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <div class="img">
-            <img src="../../assets/img/user.jpg" alt="">
-        </div>
-        <div class="upload">
-            <input type="file" id="img-uploader" name="img">
-        </div>
-    </dd>
-    <dt>
-        Họ và tên <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="fullname" placeholder="Nguyễn Văn A">
-    </dd>
-    <dt>
-        Email <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="email" placeholder="A@vaa.edu.vn">
-    </dd>
-    <dt>
-        Sđt <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="phone" placeholder="0000000000">
-    </dd>
-    <dt>
-        Thành phố <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="city"  placeholder="Huế">
-    </dd>
-    <dt>
-        Địa chỉ <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="address" placeholder="1 Đ. Cộng Hòa, Phường 4">
-    </dd>
-</dl>
-<div class="phan2">
-    <h1>Thông tin xác thực</h1>
-</div>
-<dl>
-    <dt>
-        Họ tên trên CCCD <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="realfullname" placeholder="Nguyễn Văn A">
-    </dd>
-    <dt>
-        Số CCCD <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" name="id_identify" placeholder="000000000000">
-    </dd>
-    <dt>
-        Ngày nhận <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="date" name="received_date" placeholder="14/01/2024">
-    </dd>
-    <dt>
-        Ngày sinh <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="date" name="birthday" placeholder="14/01/2024">
-    </dd>
-</dl>
-<div class="submit">
-    <input type="submit" name="submit-form" value="Lưu thay đổi" >
-</div>
 
-
+<div class="verify">
+    <div class="title">
+        <h2>Xác thực ID tài khoản</h2>
+        <p>Xác thực chính xác thông tin cá nhân là cách giúp bạn nhận được sự tin tưởng từ những nhà tuyển dụng.</p>
     </div>
-</form>
+    <div class="verify-main">
+        <div class="type">
+            <i class="fa-solid fa-circle-check" style="margin-left: 15px;margin-right: 15px;margin-top: 10px;"></i> Xác thực số điện thoại
+        </div>
+        <div class="sdt">
+            <p>Lợi ích của việc xác thực thông tin bằng số điện thoại</p>
+            <ul>
+                <li>Tăng độ tin cậy khi thực hiện việc đăng tin tuyển dụng hay tìm công việc</li>
+                <li>Có thể liên hệ trực tiếp bằng số điện thoại đã xác minh</li>
+                <li>Giúp mọi người tránh mất thời gian, tiền bạc khi gặp những đơn tuyển dụng giả</li>
+            </ul>
+            <input type="text" placeholder="0000000000">
+            <div class="button-sdt">
+                <a href="">Xác thực SĐT</a>
+            </div>
+            
+        </div>
+    </div>
+</div> 
 </div>
-
-
-
 </div>
 
 
@@ -153,11 +96,11 @@
         
         <!--Script back top-->
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="../../js/back-top.js"></script>
+        <script src="../../js/back-top.js">
+        </script>
 
 
-<!--Script upload files-->
-<script src="../../js/upload-info-user.js"></script>
+
             
                 
         </html>
