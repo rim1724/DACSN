@@ -32,9 +32,9 @@
                                 <img src="../assets/img/anhcv1.png" alt="">
                             </div>
                             <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
+                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
                             <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
+                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
                             <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
                         </div>
                         </div>
@@ -43,9 +43,9 @@
                                 <img src="../assets/img/anhcv1.png" alt="">
                             </div>
                             <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
+                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
                             <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
+                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
                             <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
                         </div>
                         </div>
@@ -54,9 +54,9 @@
                                 <img src="../assets/img/anhcv1.png" alt="">
                             </div>
                             <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
+                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
                             <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
+                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
                             <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
                         </div>
                         </div>
@@ -65,9 +65,9 @@
                                 <img src="../assets/img/anhcv2.png" alt="">
                             </div>
                             <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
+                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
                             <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
+                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
                             <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
                         </div>
                         </div>
@@ -121,7 +121,7 @@
                 <div class="info1">
                 <div class="apply">
                 <div class="img-info"><img src="../assets/img/anhcv1.png" alt=""></div>
-                <div class="button-apply"><a href="">Ứng tuyển</a></div>
+                <div class="button-apply"><a href="info-job.php">Ứng tuyển</a></div>
                 </div>
                 <h2>HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</h2>
                 <p>Lĩnh vực: IT</p>
@@ -165,100 +165,6 @@
                 <h3>Cách thức ứng tuyển </h3> 
                 <p>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ở phía trên.</p>
                 </div>
-                <div class="info2">
-                    <div class="apply">
-                    <div class="img-info"><img src="../assets/img/anhcv2.png" alt=""></div>
-                    <div class="button-apply"><a href="">Ứng tuyển</a></div>
-                    </div>
-                    <h2>HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</h2>
-                    <p>Lĩnh vực: IT</p>
-                    <p>Công việc: Tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin</p>
-                    <p>Mức lương: 20-30 triệu đồng</p>
-                    <p>Địa điểm: TP Hồ Chí Minh</p>
-                    <p>Hình thức làm việc: Trực tiếp(Full-Time)</p>
-    
-    
-                    <h3>Mô tả công việc</h3>
-                    <ul>
-                        <li>Cài đặt, cấu hình và quản trị các thiết bị bảo mật (Firewall, WAF, IPS, DLP, v.v) theo chính sách nhằm đảm bảo an toàn cho hạ tầng CNTT.</li>
-                        <li>Phối hợp quản trị hệ thống phòng chống mã độc, hỗ trợ giải quyết các vấn đề liên quan đến mã độc trên máy chủ, máy trạm.</li>
-                        <li>Dò quét điểm yếu kỹ thuật; kiểm thử an ninh mạng, hệ thống máy chủ và tìm kiếm phương án khắc cụ các điểm yếu.</li>
-                        <li>Tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin.</li>
-                        <li>Giám sát, quản trị vận hành và khắc phục các vấn đề về an toàn thông tin.</li>
-                        <li>Nghiên cứu, thử nghiệm và đề xuất các giải pháp bảo mật nhằm nâng cao hiệu quả bảo vệ an toàn thông tin.</li>
-                        <li>Thực hiện báo cáo tình hình an toàn thông tin cho cấp trên theo định kỳ, hoặc khi được yêu cầu trực tiếp.</li>
-                    </ul>
-                    
-    
-    
-                    <h3>Yêu cầu đối với các ứng viên:</h3>
-                    <ul>
-                        <li>Tuổi từ 22-30 tuổi.</li>
-                        <li>Ưu tiên người có kinh nghiệm, chưa có kinh nghiệm sẽ được đào tạo.</li>
-                        <li>Năng động, tự tin, nhiệt tình và trách nhiệm cao trong công việc.</li>
-                        <li>Ưu tiên tuyển dụng người có bằng cấp tốt và các chứng chỉ ngoại ngữ</li>
-                    </ul>
-    
-    
-    
-                    <h3>Yêu cầu kĩ năng: </h3>  
-                    <ul>
-                        <li>Kỹ năng giao tiếp tốt</li>
-                        <li>Khả năng làm việc nhóm, làm việc độc lập</li>
-                        <li>Khả năng chịu áp lực công việc lớn</li>
-                        <li>Quản lý thời gian và sắp xếp công việc hiệu quả</li>
-                    </ul> 
-                    
-                    <h3>Cách thức ứng tuyển </h3> 
-                    <p>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ở phía trên.</p>
-                </div>
-                <div class="info3">
-                    <div class="apply">
-                    <div class="img-info"><img src="../assets/img/anhcv1.png" alt=""></div>
-                    <div class="button-apply"><a href="">Ứng tuyển</a></div>
-                    </div>
-                    <h2>HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</h2>
-                    <p>Lĩnh vực: IT</p>
-                    <p>Công việc: Tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin</p>
-                    <p>Mức lương: 20-30 triệu đồng</p>
-                    <p>Địa điểm: TP Hồ Chí Minh</p>
-                    <p>Hình thức làm việc: Trực tiếp(Full-Time)</p>
-    
-    
-                    <h3>Mô tả công việc</h3>
-                    <ul>
-                        <li>Cài đặt, cấu hình và quản trị các thiết bị bảo mật (Firewall, WAF, IPS, DLP, v.v) theo chính sách nhằm đảm bảo an toàn cho hạ tầng CNTT.</li>
-                        <li>Phối hợp quản trị hệ thống phòng chống mã độc, hỗ trợ giải quyết các vấn đề liên quan đến mã độc trên máy chủ, máy trạm.</li>
-                        <li>Dò quét điểm yếu kỹ thuật; kiểm thử an ninh mạng, hệ thống máy chủ và tìm kiếm phương án khắc cụ các điểm yếu.</li>
-                        <li>Tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin.</li>
-                        <li>Giám sát, quản trị vận hành và khắc phục các vấn đề về an toàn thông tin.</li>
-                        <li>Nghiên cứu, thử nghiệm và đề xuất các giải pháp bảo mật nhằm nâng cao hiệu quả bảo vệ an toàn thông tin.</li>
-                        <li>Thực hiện báo cáo tình hình an toàn thông tin cho cấp trên theo định kỳ, hoặc khi được yêu cầu trực tiếp.</li>
-                    </ul>
-                    
-    
-    
-                    <h3>Yêu cầu đối với các ứng viên:</h3>
-                    <ul>
-                        <li>Tuổi từ 22-30 tuổi.</li>
-                        <li>Ưu tiên người có kinh nghiệm, chưa có kinh nghiệm sẽ được đào tạo.</li>
-                        <li>Năng động, tự tin, nhiệt tình và trách nhiệm cao trong công việc.</li>
-                        <li>Ưu tiên tuyển dụng người có bằng cấp tốt và các chứng chỉ ngoại ngữ</li>
-                    </ul>
-    
-    
-    
-                    <h3>Yêu cầu kĩ năng: </h3>  
-                    <ul>
-                        <li>Kỹ năng giao tiếp tốt</li>
-                        <li>Khả năng làm việc nhóm, làm việc độc lập</li>
-                        <li>Khả năng chịu áp lực công việc lớn</li>
-                        <li>Quản lý thời gian và sắp xếp công việc hiệu quả</li>
-                    </ul> 
-                    
-                    <h3>Cách thức ứng tuyển </h3> 
-                    <p>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ở phía trên.</p>
-                </div>
             </div>
             </div>
         </div>
@@ -280,7 +186,7 @@
 
                 <!--footer-->
                 <div class="footer">
-                    <img src="../../assets/img/logo-web.png" alt="">
+                    <img src="../assets/img/logo-web.png" alt="">
                     <div class="col">
                         <p><i class="fa-solid fa-envelope" style="padding-right: 15px;"></i>Email: <a href="">123@gmail.com</a></p>
                         <p><i class="fa-solid fa-phone" style="padding-right: 15px;"></i>Hotline: 0999999999</p>

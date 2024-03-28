@@ -10,7 +10,7 @@
             <section class="info-job-company">
                 <section class="location-logo">
                     <div class="logo-company">
-                        <img src="../assets/img/logo-company.png" alt="">
+                        <img src="../assets/img/anhcv1.png" alt="">
                     </div>
                     <div class="info-location">
                         <h1>SOFWARE ENGINEER INTERN</h1>
@@ -190,7 +190,7 @@
 
                 <!--footer-->
                 <div class="footer">
-                    <img src="../../assets/img/logo-web.png" alt="">
+                    <img src="../assets/img/logo-web.png" alt="">
                     <div class="col">
                         <p><i class="fa-solid fa-envelope" style="padding-right: 15px;"></i>Email: <a href="">123@gmail.com</a></p>
                         <p><i class="fa-solid fa-phone" style="padding-right: 15px;"></i>Hotline: 0999999999</p>

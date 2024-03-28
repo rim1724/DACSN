@@ -102,7 +102,7 @@
             </ul>
             </li>
             </ul>     
-            <div class="button" >
+            <div class="button" style="height: 43.8px;" >
             <?php 
             if(!isset($_SESSION['user_id'])){
              ?>

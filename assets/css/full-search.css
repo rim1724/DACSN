@@ -114,7 +114,7 @@
             margin-top: 12px;
             margin-left: 17px;
             padding: 10px 15px 14px 15px;
-            height: 18px;
+            height: 14px;
             float: right;
             
             
@@ -193,6 +193,7 @@
     width: 650px;
     height: auto;
     border-right: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
 }
 .find-box{
     border: 1px solid #a7a7a7;
