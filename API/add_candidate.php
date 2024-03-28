@@ -67,7 +67,7 @@ if (isset($_POST['submit-form'])) {
     if ($image_size > 5000000) { // 1 MB limit (adjust as needed)
       echo json_encode([
         'success' => false,
-        'message' => 'Image size exceeds 1 MB limit.'
+        'message' => 'Image size exceeds 5 MB limit.'
       ]);
       exit;
     }
