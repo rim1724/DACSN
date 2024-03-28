@@ -1,4 +1,5 @@
-<?php include('header_emloy.php') ?>      
+<?php include('header_emloy.php') ?>    
+<link rel="stylesheet" href="../../assets/css/post-project.css">  
         <div class="bulkhead-container">
             <p>Nhà tuyển dụng đăng dự án <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhân sự vào tìm kiếm <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhận công việc từ nhà tuyển dụng</p>
         </div>

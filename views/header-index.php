@@ -102,7 +102,7 @@
             </ul>
             </li>
             </ul>     
-            <div class="button" >
+            <div class="button" style="height: 43.8px;" >
             <?php 
             if(!isset($_SESSION['user_id'])){
              ?>
@@ -111,7 +111,7 @@
             }else{ 
                 if (isset($_SESSION['user_id']) && $_SESSION['role'] === 0) {
              ?>
-                <a href="candidate/info-user.php">Tạo CV</a>
+                <a href="employer/post-project.php">Tạo CV</a>
             <?php
              }else{
             ?> 

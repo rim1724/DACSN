@@ -26,6 +26,7 @@
             <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
         </ul>
     </div>
+    <form action="">
     <div class="doithongtin">
 <div class="phan1">
     <h1>Sơ yếu lí lịch</h1>
@@ -148,9 +149,8 @@
 <div class="submit">
     <input type="submit" name="submit-form" id="" value="Lưu thay đổi" >
 </div>
-
-
     </div>
+    </form>
 </div>
 
 

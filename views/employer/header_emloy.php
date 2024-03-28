@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="../../assets/css/post-project.css">
+
         <script src="https://kit.fontawesome.com/8aa3156f32.js" crossorigin="anonymous"></script>
         <script src="../../js/upload-post-project.js"></script>
     </head>
@@ -80,8 +80,8 @@
                 } else {
                     // User is logged in, show profile and logout links
                     ?>
-                    <li><a href="candidate/info-user.php" style="padding-left: 67px;">Đổi thông tin</a></li>
-                    <li><a href="candidate/change-password.php" style="padding-left: 63px; width: 193px;">Đổi mật khẩu</a></li>
+                    <li><a href="../candidate/info-user.php" style="padding-left: 67px;">Đổi thông tin</a></li>
+                    <li><a href="../candidate/change-password.php" style="padding-left: 63px; width: 108px;">Đổi mật khẩu</a></li>
                     <li><a href="../../php/sign-out.php">Đăng xuất</a></li>
                     <?php
                 }

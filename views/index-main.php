@@ -1,5 +1,5 @@
-<?php include('header.php') ?>
-
+<?php include('header-index.php') ?>
+<link rel="stylesheet" href="../assets/css/index-main.css">
             <!--Dải phân cách -->
 
         
