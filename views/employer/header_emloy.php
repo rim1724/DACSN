@@ -62,7 +62,7 @@
         <li><a href="../index-main.php">Nhà tuyển dụng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i></a>
             <ul class="sub-menu">
                 <li><a href="../employer/post-project.php">Đổi dự án</a></li>
-                <li><a href="../employer/candidate-list.php">Danh sách ứng tuyển</a></li>
+                <li><a href="../candidate/apply-list.php">Danh sách ứng tuyển</a></li>
             </ul>
             </li>  
         <li><a href="../candidate/info-user.php"><i class="fa-solid fa-user" style="padding-right:5px ;"></i> Tên người dùng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i></a>

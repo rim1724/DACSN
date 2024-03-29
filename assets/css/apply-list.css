@@ -283,6 +283,7 @@
 
 
 
+
 /*Danh sách*/
 .list-apply {
     margin-top: 30px;
@@ -298,6 +299,18 @@
   .img-cancel img{
     max-width: 200px;
     max-height: 52px;
+    margin: 10px 9px;
+  }
+  .img-cancel-1 {
+    height: 70px;
+    width: 70px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    margin: 15px;
+  }
+  .img-cancel-1 img{
+    max-width: 50px;
+    max-height: 50px;
     margin: 10px 9px;
   }
   .cancel {
@@ -363,6 +376,7 @@ margin-left: auto;
 #pagination button:hover {
     color: #ff0000;
 }
+
 
 
 

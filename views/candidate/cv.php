@@ -26,131 +26,155 @@
             <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
         </ul>
     </div>
-    <form action="">
-    <div class="doithongtin">
-<div class="phan1">
-    <h1>Sơ yếu lí lịch</h1>
-</div>
-<dl>
-    <dt>
-        Họ và tên <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Nguyễn Văn A">
-    </dd>
-    <dt>
-        Giới tính <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Nam/Nữ">
-    </dd>
+    <div class="cv-all">
+    <header>
+        <h1>Ứng tuyển vị trí [Tên vị trí]</h1>
+        <h2>Công ty Công nghệ Thông tin</h2>
+    </header>
+
+    <main>
+        <form action="API/add_cv.php" method="post" enctype="multipart/form-data">
+            <section id="thong-tin-ca-nhan">
+                <h3>Thông tin cá nhân</h3>
+                <ul>
+                    <li>
+                        <label for="fullname">Họ và tên:</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </li>
+                    <li>
+                      <label for="photo">Ảnh :</label>
+                      <input type="file" id="img" name="photo" required>
+                  </li>
+                    <li>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </li>
+                    <li>
+                        <label for="phone">Số điện thoại:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </li>
+                    <li>
+                        <label for="dob">Ngày sinh:</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </li>
+                    <li>
+                        <label for="gender">Giới tính:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Chọn giới tính</option>
+                            <option value="male">Nam</option>
+                            <option value="female">Nữ</option>
+                        </select>
+                    </li>
+                    <li>
+                      <label for="city">Thành Phố:</label>
+                      <input type="text" id="city" name="city" required>
+                  </li>
+                    <li>
+                        <label for="address">Địa chỉ cụ thể:</label>
+                        <input type="text" id="address" name="address" required>
+                    </li>
+                    <li>
+                      <label for="myseo">Giới thiệu bản thân</label>
+                      <textarea id="" name="myseo" required></textarea>
+                    </li>
+                    
+                </ul>
+            </section>
+
+            <section id="muc-tieu-nghe-nghiep">
+                <h3>Mục tiêu nghề nghiệp</h3>
+                <textarea id="career-objective" name="career-objective" required></textarea>
+            </section>
+
+            <section id="kinh-nghiem-lam-viec">
+                <h3>Kinh nghiệm làm việc</h3>
+                <ul id="work-experience">
+                    <li>
+                        <label for="company-1">Công ty:</label>
+                        <input type="text" id="company-1" name="company-1">
+                        <label for="position-1">Chức vụ:</label>
+                        <input type="text" id="position-1" name="position-1">
+                        <label for="start-date-1">Thời gian bắt đầu:</label>
+                        <input type="date" id="start-date-1" name="start-date-1">
+                        <label for="end-date-1">Thời gian kết thúc:</label>
+                        <input type="date" id="end-date-1" name="end-date-1">
+                        <textarea id="description-1" name="description-1"></textarea>
+                    </li>
+                </ul>
+                <button type="button" id="add-work-experience">Thêm kinh nghiệm làm việc</button>
+            </section>
+
+            <section id="trinh-do-hoc-van">
+                <h3>Trình độ học vấn</h3>
+                <ul id="education">
+                    <li>
+                        <label for="school-1">Trường học:</label>
+                        <input type="text" id="school-1" name="school-1">
+                        <label for="degree-1">Bằng cấp:</label>
+                        <input type="text" id="degree-1" name="degree-1">
+                        <label for="start-date-2">Thời gian bắt đầu:</label>
+                        <input type="date" id="start-date-2" name="start-date-2">
+                        <label for="end-date-2">Thời gian kết thúc:</label>
+                        <input type="date" id="end-date-2" name="end-date-2">
+                      </li>
+                    </ul>
+                    <button type="button" id="add-education">Thêm trình độ học vấn</button>
+                </section>
     
-    <dt>
-        Email <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="A@vaa.edu.vn">
-    </dd>
-    <dt>
-        Sđt liên hệ <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="0000000000">
-    </dd>
-    <dt>
-        Ngày sinh <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="01/07/2004">
-    </dd>
-    <dt>
-        Nơi sinh <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Thành phố huế">
-    </dd>
-    <dt>
-        Chỗ ở hiện nay <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="1 Đ. Cộng Hòa, Phường 4">
-    </dd>
-    <dt>
-        Số CCCD/CMND <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="000000000000">
-    </dd>
-</dl>
-<div class="phan2">
-    <h1>Hồ sơ bản thân</h1>
-</div>
-<dl>
-    <dt>
-        Mục tiêu nghề nghiệp <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Rèn luyện, Sự ổn định,..." style="padding-bottom: 80px;">
-    </dd>
-    <dt>
-        Học Vấn <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Học viện Hàng không Việt Nam">
-    </dd>
-    <dt>
-        Bằng cấp <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Chứng chỉ Ielts, Bằng đại học,...">
-    </dd>
-    <dt>
-        Kinh nghiệm làm việc <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="1 năm kinh nghiệm tại công ty ABCXYZ" style="padding-bottom: 80px;">
-    </dd>
-    <dt>
-        Hoạt động <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Tham gia vào CLB, tham gia các dự án thời đại học...">
-    </dd>
-    <dt>
-        Giải thưởng <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Sinh viên 5 tốt">
-    </dd>
-    <dt>
-        Kĩ năng cá nhân <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Giao tiếp, thuyết trình,...">
-    </dd>
-    <dt>
-        Sở thích <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Đá bóng, Ca hát, Nghiên cứu công nghệ,...">
-    </dd>
-</dl>
-<div class="phan2">
-    <h1>Thông tin ngoài lề</h1>
-</div>
-<dl>
-    <dt>
-        Thông tin thêm <span class="redtext">*</span>
-    </dt>
-    <dd>
-        <input type="text" placeholder="Điền thêm thông tin khác nếu có" style="padding-bottom: 80px;">
-    </dd>
-</dl>
-<div class="submit">
-    <input type="submit" name="submit-form" id="" value="Lưu thay đổi" >
-</div>
+                <section id="ky-nang">
+                    <h3>Kỹ năng</h3>
+                    <ul>
+                        <li>
+                            <label for="skills">Kỹ năng chuyên môn:</label>
+                            <textarea id="skills" name="skills" required></textarea>
+                        </li>
+                        <li>
+                            <label for="soft-skills">Kỹ năng mềm:</label>
+                            <textarea id="soft-skills" name="soft-skills" required></textarea>
+                        </li>
+                        <li>
+                            <label for="languages">Ngoại ngữ:</label>
+                            <ul id="languages">
+                                <li>
+                                    <input type="text" id="language-1" name="language-1" placeholder="Tên ngôn ngữ">
+                                    <select id="proficiency-1" name="proficiency-1">
+                                        <option value="">Chọn trình độ</option>
+                                        <option value="basic">Cơ bản</option>
+                                        <option value="intermediate">Trung cấp</option>
+                                        <option value="advanced">Nâng cao</option>
+                                    </select>
+                                    
+                                </li>
+                            </ul>
+                            <button type="button" id="add-language">Thêm ngôn ngữ</button>
+                        </li>
+                    </ul>
+                </section>
+    
+                <section id="thanh-tuu-va-giai-thuong">
+                    <h3>Thành tựu và giải thưởng</h3>
+                    <ul id="achievements">
+                        <li>
+                            <input type="text" id="achievement-1" name="achievement-1">
+                        </li>
+                    </ul>
+                    <button type="button" id="add-achievement">Thêm thành tựu</button>
+                </section>
+    
+                <section id="so-thich">
+                    <h3>Sở thích</h3>
+                    <ul id="hobbies">
+                        <li>
+                            <input type="text" id="hobby-1" name="hobby-1">
+                        </li>
+                    </ul>
+                    <button type="button" id="add-hobby">Thêm sở thích</button>
+                </section>
+    
+                <button type="submit" style="margin-left: 440px;">Gửi thông tin</button>
+            </form>
+        </main>
     </div>
-    </form>
 </div>
 
 
@@ -196,7 +220,7 @@
        <script src="../../js/back-top.js"></script>
 
 
-
+       <script src="../../js/cv.js"> </script>
             
                 
         </html>

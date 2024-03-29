@@ -64,7 +64,7 @@
         <li><a href="index-main.php">Nhà tuyển dụng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i></a>
             <ul class="sub-menu">
                 <li><a href="employer/post-project.php">Đổi dự án</a></li>
-                <li><a href="employer/candidate-list.php">Danh sách ứng tuyển</a></li>
+                <li><a href="candidate/apply-list.php">Danh sách ứng tuyển</a></li>
             </ul>
             </li>  
         <li><a href="candidate/info-user.php"><i class="fa-solid fa-user" style="padding-right:5px ;"></i> Người dùng <i class="fa-solid fa-caret-down" style="padding-left: 5px;"></i> </a>
@@ -85,7 +85,7 @@
                     // User is logged in as a candidate (role = 0)
                     ?>
                     <li><a href="candidate/info-user.php" style="padding-left: 67px;">Đổi thông tin</a></li>
-                    <li><a href="candidate/change-password.php" style="padding-left: 63px; width: 193px;">Đổi mật khẩu</a></li>
+                    <li><a href="candidate/change-password.php" style="padding-left: 63px; width: 108px;">Đổi mật khẩu</a></li>
                     <?php
                     } else {
                     // User is logged in with a different role (not candidate)

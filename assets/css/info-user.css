@@ -251,6 +251,7 @@
             margin-left: 70px;
             width: 970px;
             height: 500px;
+            
         }
         .redtext{
             color: red;
@@ -267,8 +268,8 @@
 .doithongtin dd {
     flex: 1; /* Dùng phần còn lại của không gian */
     margin-left: 20px; /* Khoảng cách giữa dd và dt */
-    margin-right: 500px;
     margin-bottom: 20px;
+    margin-right: 500px;
 }
 .img img{
     width: 100px;
