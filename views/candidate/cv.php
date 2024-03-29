@@ -26,6 +26,32 @@
     
 
     <main>
+    <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Xử lý dữ liệu biểu mẫu ở đây
+    // Chẳng hạn, bạn có thể lấy các giá trị từ $_POST và thực hiện các hành động tiếp theo
+    // Ví dụ:
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $dob = $_POST['dob'];
+    $gender = $_POST['gender'];
+    $city = $_POST['city'];
+    $address = $_POST['address'];
+    $myseo = $_POST['myseo'];
+    $career_objective = $_POST['career-objective'];
+    $skills = $_POST['skills'];
+    $soft_skills = $_POST['soft-skills'];
+
+    // Lưu ý: Bạn cần kiểm tra và xử lý các giá trị đầu vào trước khi sử dụng chúng để tránh các vấn đề bảo mật và lỗi
+
+    // Sau khi xử lý dữ liệu, bạn có thể chuyển hướng người dùng đến một trang khác hoặc hiển thị thông báo thành công
+    // Ví dụ:
+    echo "<h2>Thành công!</h2>";
+    echo "<p>Cảm ơn bạn đã gửi thông tin!</p>";
+} else {
+    // Nếu biểu mẫu chưa được gửi, hiển thị biểu mẫu
+?>
         <form action="../../API/add_cv.php" method="post" enctype="multipart/form-data">
             <section class="sec" id="thong-tin-ca-nhan">
                 <h3>Thông tin cá nhân</h3>
@@ -166,6 +192,9 @@
     
                 <button class="but" type="submit" style="margin-left: 440px;">Gửi thông tin</button>
             </form>
+            <?php
+}
+?>
         </main>
     </div>
 </div>
