@@ -1,13 +1,9 @@
 <?php include('header_can.php') ?>
 <link rel="stylesheet" href="../../assets/css/cv.css">
+<link rel="stylesheet" href="../../assets/css/test.css">
         <div class="bulkhead-container">
             <p>Nhà tuyển dụng đăng dự án <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhân sự vào tìm kiếm <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhận công việc từ nhà tuyển dụng</p>
         </div>
-  
-
-
-
-
 <!--Đổi thông tin hồ sơ CV cá nhân-->
 <div class="change-all">
 <div class="listall">
@@ -27,117 +23,114 @@
         </ul>
     </div>
     <div class="cv-all">
-    <header>
-        <h1>Ứng tuyển vị trí [Tên vị trí]</h1>
-        <h2>Công ty Công nghệ Thông tin</h2>
-    </header>
+    
 
     <main>
-        <form action="API/add_cv.php" method="post" enctype="multipart/form-data">
-            <section id="thong-tin-ca-nhan">
+        <form action="../../API/add_cv.php" method="post" enctype="multipart/form-data">
+            <section class="sec" id="thong-tin-ca-nhan">
                 <h3>Thông tin cá nhân</h3>
                 <ul>
                     <li>
-                        <label for="fullname">Họ và tên:</label>
-                        <input type="text" id="fullname" name="fullname" required>
+                        <label class="la" for="fullname">Họ và tên:</label>
+                        <input class="in"  type="text" id="fullname" name="fullname" required>
                     </li>
                     <li>
-                      <label for="photo">Ảnh :</label>
-                      <input type="file" id="img" name="photo" required>
+                      <label class="la"  for="photo">Ảnh :</label>
+                      <input class="in"  type="file" id="img" name="photo" required>
                   </li>
                     <li>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <label class="la"  for="email">Email:</label>
+                        <input class="in"  type="email" id="email" name="email" required>
                     </li>
                     <li>
-                        <label for="phone">Số điện thoại:</label>
-                        <input type="tel" id="phone" name="phone" required>
+                        <label class="la"  for="phone">Số điện thoại:</label>
+                        <input class="in"  type="tel" id="phone" name="phone" required>
                     </li>
                     <li>
-                        <label for="dob">Ngày sinh:</label>
-                        <input type="date" id="dob" name="dob" required>
+                        <label class="la"  for="dob">Ngày sinh:</label>
+                        <input class="in"  type="date" id="dob" name="dob" required>
                     </li>
                     <li>
-                        <label for="gender">Giới tính:</label>
-                        <select id="gender" name="gender" required>
+                        <label class="la"  for="gender">Giới tính:</label>
+                        <select class="in" id="gender" name="gender" required>
                             <option value="">Chọn giới tính</option>
                             <option value="male">Nam</option>
                             <option value="female">Nữ</option>
                         </select>
                     </li>
                     <li>
-                      <label for="city">Thành Phố:</label>
-                      <input type="text" id="city" name="city" required>
+                      <label class="la"  for="city">Thành Phố:</label>
+                      <input class="in"  type="text" id="city" name="city" required>
                   </li>
                     <li>
-                        <label for="address">Địa chỉ cụ thể:</label>
-                        <input type="text" id="address" name="address" required>
+                        <label class="la"  for="address">Địa chỉ cụ thể:</label>
+                        <input class="in"  type="text" id="address" name="address" required>
                     </li>
                     <li>
-                      <label for="myseo">Giới thiệu bản thân</label>
-                      <textarea id="" name="myseo" required></textarea>
+                      <label class="la"  for="myseo">Giới thiệu bản thân</label>
+                      <textarea class="in"  id="" name="myseo" required></textarea>
                     </li>
                     
                 </ul>
             </section>
 
-            <section id="muc-tieu-nghe-nghiep">
+            <section class="sec" id="muc-tieu-nghe-nghiep">
                 <h3>Mục tiêu nghề nghiệp</h3>
-                <textarea id="career-objective" name="career-objective" required></textarea>
+                <textarea class="in" id="career-objective" name="career-objective" required></textarea>
             </section>
 
-            <section id="kinh-nghiem-lam-viec">
+            <section class="sec" id="kinh-nghiem-lam-viec">
                 <h3>Kinh nghiệm làm việc</h3>
                 <ul id="work-experience">
                     <li>
-                        <label for="company-1">Công ty:</label>
-                        <input type="text" id="company-1" name="company-1">
-                        <label for="position-1">Chức vụ:</label>
-                        <input type="text" id="position-1" name="position-1">
-                        <label for="start-date-1">Thời gian bắt đầu:</label>
-                        <input type="date" id="start-date-1" name="start-date-1">
-                        <label for="end-date-1">Thời gian kết thúc:</label>
-                        <input type="date" id="end-date-1" name="end-date-1">
-                        <textarea id="description-1" name="description-1"></textarea>
+                        <label class="la"  for="company-1">Công ty:</label>
+                        <input class="in"  type="text" id="company-1" name="company-1">
+                        <label class="la"  for="position-1">Chức vụ:</label>
+                        <input class="in"  type="text" id="position-1" name="position-1">
+                        <label class="la"  for="start-date-1">Thời gian bắt đầu:</label>
+                        <input class="in"  type="date" id="start-date-1" name="start-date-1">
+                        <label  class="la" for="end-date-1">Thời gian kết thúc:</label>
+                        <input class="in"  type="date" id="end-date-1" name="end-date-1">
+                        <textarea class="in" id="description-1" name="description-1"></textarea>
                     </li>
                 </ul>
-                <button type="button" id="add-work-experience">Thêm kinh nghiệm làm việc</button>
+                <button class="but" type="button" id="add-work-experience">Thêm kinh nghiệm làm việc</button>
             </section>
 
-            <section id="trinh-do-hoc-van">
+            <section class="sec" id="trinh-do-hoc-van">
                 <h3>Trình độ học vấn</h3>
                 <ul id="education">
                     <li>
-                        <label for="school-1">Trường học:</label>
-                        <input type="text" id="school-1" name="school-1">
-                        <label for="degree-1">Bằng cấp:</label>
-                        <input type="text" id="degree-1" name="degree-1">
-                        <label for="start-date-2">Thời gian bắt đầu:</label>
-                        <input type="date" id="start-date-2" name="start-date-2">
-                        <label for="end-date-2">Thời gian kết thúc:</label>
-                        <input type="date" id="end-date-2" name="end-date-2">
+                        <label  class="la" for="school-1">Trường học:</label>
+                        <input class="in"  type="text" id="school-1" name="school-1">
+                        <label class="la"  for="degree-1">Bằng cấp:</label>
+                        <input class="in"  type="text" id="degree-1" name="degree-1">
+                        <label class="la"  for="start-date-2">Thời gian bắt đầu:</label>
+                        <input class="in"  type="date" id="start-date-2" name="start-date-2">
+                        <label class="la" for="end-date-2">Thời gian kết thúc:</label>
+                        <input class="in"  type="date" id="end-date-2" name="end-date-2">
                       </li>
                     </ul>
-                    <button type="button" id="add-education">Thêm trình độ học vấn</button>
+                    <button class="but" type="button" id="add-education">Thêm trình độ học vấn</button>
                 </section>
     
-                <section id="ky-nang">
+                <section class="sec" id="ky-nang">
                     <h3>Kỹ năng</h3>
                     <ul>
                         <li>
-                            <label for="skills">Kỹ năng chuyên môn:</label>
-                            <textarea id="skills" name="skills" required></textarea>
+                            <label class="la"  for="skills">Kỹ năng chuyên môn:</label>
+                            <textarea class="in" id="skills" name="skills" required></textarea>
                         </li>
                         <li>
-                            <label for="soft-skills">Kỹ năng mềm:</label>
-                            <textarea id="soft-skills" name="soft-skills" required></textarea>
+                            <label  class="la" for="soft-skills">Kỹ năng mềm:</label>
+                            <textarea  class="in" id="soft-skills" name="soft-skills" required></textarea>
                         </li>
                         <li>
-                            <label for="languages">Ngoại ngữ:</label>
+                            <label class="la" for="languages">Ngoại ngữ:</label>
                             <ul id="languages">
                                 <li>
-                                    <input type="text" id="language-1" name="language-1" placeholder="Tên ngôn ngữ">
-                                    <select id="proficiency-1" name="proficiency-1">
+                                    <input  class="in" type="text" id="language-1" name="language-1" placeholder="Tên ngôn ngữ">
+                                    <select class="in"id="proficiency-1" name="proficiency-1">
                                         <option value="">Chọn trình độ</option>
                                         <option value="basic">Cơ bản</option>
                                         <option value="intermediate">Trung cấp</option>
@@ -146,51 +139,44 @@
                                     
                                 </li>
                             </ul>
-                            <button type="button" id="add-language">Thêm ngôn ngữ</button>
+                            <button class="but" type="button" id="add-language">Thêm ngôn ngữ</button>
                         </li>
                     </ul>
                 </section>
     
-                <section id="thanh-tuu-va-giai-thuong">
+                <section class="sec"  id="thanh-tuu-va-giai-thuong">
                     <h3>Thành tựu và giải thưởng</h3>
                     <ul id="achievements">
                         <li>
-                            <input type="text" id="achievement-1" name="achievement-1">
+                            <input class="in"  type="text" id="achievement-1" name="achievement-1">
                         </li>
                     </ul>
-                    <button type="button" id="add-achievement">Thêm thành tựu</button>
+                    <button class="but" type="button" id="add-achievement">Thêm thành tựu</button>
                 </section>
     
-                <section id="so-thich">
+                <section class="sec" id="so-thich">
                     <h3>Sở thích</h3>
                     <ul id="hobbies">
                         <li>
-                            <input type="text" id="hobby-1" name="hobby-1">
+                            <input class="in"  type="text" id="hobby-1" name="hobby-1">
                         </li>
                     </ul>
-                    <button type="button" id="add-hobby">Thêm sở thích</button>
+                    <button class="but" type="button" id="add-hobby">Thêm sở thích</button>
                 </section>
     
-                <button type="submit" style="margin-left: 440px;">Gửi thông tin</button>
+                <button class="but" type="submit" style="margin-left: 440px;">Gửi thông tin</button>
             </form>
         </main>
     </div>
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
                 <!--footer-->
-                <div class="footer">
+              
+                <!-- Trở lại đầu trang-->
+                <div class="back-top" style="display: grid; grid-template-rows: 1fr auto;">
+                        <i class="fa-solid fa-circle-arrow-up" style=" font-size: 30px;"></i>
+                      </div> 
+                      <div class="footer">
                     <img src="../../assets/img/logo-web.png" alt="">
                     <div class="col">
                         <p><i class="fa-solid fa-envelope" style="padding-right: 15px;"></i>Email: <a href="">123@gmail.com</a></p>
@@ -199,28 +185,10 @@
                     </div>
             
                   </div>
-                
-                
-                <!-- Trở lại đầu trang-->
-                <div class="back-top">
-                        <i class="fa-solid fa-circle-arrow-up" style=" font-size: 30px;"></i>
-                
-                      </div>
-        
-        
-        
-                
-            </body>
-        
-        
-    
-        
+             
+ </body> 
         <!--Script back top-->
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-       <script src="../../js/back-top.js"></script>
-
-
-       <script src="../../js/cv.js"> </script>
-            
-                
-        </html>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../../js/back-top.js"></script>
+ <script src="../../js/cv.js"> </script>            
+</html>
