@@ -1,196 +1,172 @@
 <?php
+session_start();
 require_once('../config/config.php');
 
-$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
-if ($conn->connect_error) {
-  die("Kết nối thất bại: " . $conn->connect_error);
-}
-
+// Function to close database connection
 function db_close($conn) {
-  $conn->close();
+    if ($conn) {
+        $conn->close();
+    }
 }
 
-return $conn;
+// Check if the request method is POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Check if user_id is set in session and has a value
+    if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
+        $user_id = $_SESSION['user_id'];
 
-  // Xử lý thông tin cá nhân
-  $fullName = mysqli_real_escape_string($conn, $_POST['fullname']);
-  $img = mysqli_real_escape_string($conn, $_POST['img']); // Lưu ý bảo mật khi xử lý ảnh
-  $email = mysqli_real_escape_string($conn, $_POST['email']);
-  $phone = mysqli_real_escape_string($conn, $_POST['phone']);
-  $dob = mysqli_real_escape_string($conn, $_POST['dob']);
-  $gender = mysqli_real_escape_string($conn, $_POST['gender']);
-  $city = mysqli_real_escape_string($conn, $_POST['city']);
-  $address = mysqli_real_escape_string($conn, $_POST['address']);
-  $myseo = mysqli_real_escape_string($conn, $_POST['myseo']);
-  $careerObjective = mysqli_real_escape_string($conn, $_POST['career-objective']);
+        // Connect to the database
+        $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-  // Xử lý ảnh (upload và lưu trữ)
-  $image_uploaded = false;
-  $image_path = null;
+        // Check connection
+        if ($conn->connect_error) {
+            die("Kết nối thất bại: " . $conn->connect_error);
+        }
 
-  if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
-    $image_name = $_FILES['img']['name'];
-    $image_type = $_FILES['img']['type'];
-    $image_tmp_name = $_FILES['img']['tmp_name'];
-    $image_size = $_FILES['img']['size'];
+        // Process POST data
+        $data = array();
+        foreach ($_POST as $key => $value) {
+            $data[$key] = $conn->real_escape_string($value);
+        }
 
-    // Validate image type
-    $allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif'];
-    if (!in_array($image_type, $allowed_mime_types)) {
-      echo json_encode([
-        'success' => false,
-        'message' => 'Định dạng ảnh không hợp lệ. Chỉ hỗ trợ JPG, PNG và GIF.'
-      ]);
-      exit;
-    }
+        // Handle image upload
+        $image_uploaded = false;
+        $image_path = null;
 
-    // Validate image size
-    if ($image_size > 5000000) { // Giới hạn 5 MB
-      echo json_encode([
-        'success' => false,
-        'message' => 'Kích thước ảnh vượt quá 5 MB.'
-      ]);
-      exit;
-    }
+        if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
+            $image_name = $_FILES['img']['name'];
+            $image_tmp_name = $_FILES['img']['tmp_name'];
+            $image_type = $_FILES['img']['type'];
+            $image_size = $_FILES['img']['size'];
 
-    // Tạo tên file ảnh duy nhất
-    $image_filename = uniqid() . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
+            // Validate image type
+            $allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif'];
+            if (!in_array($image_type, $allowed_mime_types)) {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Invalid image type. Only JPG, PNG, and GIF allowed.'
+                ]);
+                exit;
+            }
 
-    // Lưu trữ ảnh
-    if (defined('IMAGE_UPLOAD_PATH')) {
-      $image_path = IMAGE_UPLOAD_PATH . $image_filename;
+            // Validate image size
+            if ($image_size > 5000000) { // 5 MB limit
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Image size exceeds 5 MB limit.'
+                ]);
+                exit;
+            }
+
+            // Define upload directory path
+            $upload_directory = __DIR__ . '/../uploads/';
+
+            // Generate a unique filename
+            $image_filename = uniqid() . '.' . pathinfo($image_name, PATHINFO_EXTENSION);
+
+            // Set the full path to the uploaded file
+            $image_path = $upload_directory . $image_filename;
+
+            // Move the uploaded file to the upload directory
+            if (move_uploaded_file($image_tmp_name, $image_path)) {
+                $image_uploaded = true;
+            } else {
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Failed to upload image.'
+                ]);
+                exit;
+            }
+        }
+
+        // Store personal information
+        $sql = "INSERT INTO cv (user_id, full_name, img, email, phone, dob, gender, city, address, myseo, career_objective)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('issssssssss', $user_id, $data['fullname'], $image_path, $data['email'], $data['phone'], $data['dob'], $data['gender'], $data['city'], $data['address'], $data['myseo'], $data['career-objective']);
+
+        if ($stmt->execute()) {
+            $cvId = $conn->insert_id;
+
+            // Store languages
+            $languages = $data['language-1'];
+            $proficiencies = $data['proficiency-1'];
+            $stmt = $conn->prepare("INSERT INTO languages (cv_id, language, proficiency) VALUES (?, ?, ?)");
+            $stmt->bind_param('iss', $cvId, $languages, $proficiencies);
+            $stmt->execute();
+            $stmt->close();
+          
+            // Store work experience
+            $company = $data['company-1'];
+            $position = $data['position-1'];
+            $startDate = $data['start-date-1'];
+            $endDate = $data['end-date-1'];
+            $description = $data['description-1'];
+            $stmt = $conn->prepare("INSERT INTO work_experience (cv_id, company, position, start_date, end_date, description) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param('isssss', $cvId, $company, $position, $startDate, $endDate, $description);
+            $stmt->execute();
+            $stmt->close();
+
+            // Store education
+            $school = $data['school-1'];
+            $degree = $data['degree-1'];
+            $startDate = $data['start-date-2'];
+            $endDate = $data['end-date-2'];
+            $stmt = $conn->prepare("INSERT INTO education (cv_id, school, degree, start_date, end_date) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param('issss', $cvId, $school, $degree, $startDate, $endDate);
+            $stmt->execute();
+            $stmt->close();
+          
+            // Store skills
+            $technicalSkills = $data['skills'];
+            $softSkills = $data['soft-skills'];
+            $stmt = $conn->prepare("INSERT INTO skills (cv_id, technical_skills, soft_skills) VALUES (?, ?, ?)");
+            $stmt->bind_param('iss', $cvId, $technicalSkills, $softSkills);
+            $stmt->execute();
+            $stmt->close();
+        
+            // Store hobbies
+            for ($i = 1; isset($data['hobby-' . $i]); $i++) {
+                $hobby = $data['hobby-' . $i];
+                $stmt = $conn->prepare("INSERT INTO hobbies (cv_id, hobby) VALUES (?, ?)");
+                $stmt->bind_param('is', $cvId, $hobby);
+                $stmt->execute();
+                $stmt->close();
+            }
+
+            // Store achievements
+            for ($i = 1; isset($data['achievement-' . $i]); $i++) {
+                $achievement = $data['achievement-' . $i];
+                $stmt = $conn->prepare("INSERT INTO achievements (cv_id, achievement) VALUES (?, ?)");
+                $stmt->bind_param('is', $cvId, $achievement);
+                $stmt->execute();
+                $stmt->close();
+            }
+
+            db_close($conn);
+
+            echo json_encode([
+                'success' => true,
+                'message' => 'Lưu trữ dữ liệu thành công.'
+            ]);
+        } else {
+            echo json_encode([
+                'success' => false,
+                'message' => 'Lưu trữ thông tin cá nhân thất bại. Vui lòng thử lại.'
+            ]);
+            $stmt->close();
+            db_close($conn);
+        }
     } else {
-      $image_path = $image_filename;
+        echo json_encode([
+            'success' => false,
+            'message' => 'Không tìm thấy phiên đăng nhập.'
+        ]);
     }
-
-    if (move_uploaded_file($image_tmp_name, $image_path)) {
-      $image_uploaded = true;
-    } else {
-      echo json_encode([
+} else {
+    echo json_encode([
         'success' => false,
-        'message' => 'Tải ảnh lên thất bại.'
-      ]);
-      exit;
-    }
-  }
-
-  // Lưu trữ thông tin cá nhân
-  $stmt = mysqli_prepare($conn, "INSERT INTO cv (full_name, img, email, phone, dob, gender, city, address, myseo, career_objective)
-                                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-  $stmt->bind_param('sssssssssss', $fullName, $img, $email, $phone, $dob, $gender, $city, $address, $myseo, $careerObjective);
-  $stmt->execute();
-  $cvId = mysqli_insert_id($conn);
-  $stmt->close();
-
-  // Xử lý kinh nghiệm làm việc
-  if (isset($_POST['company-1'])) {
-    $workExperiences = $_POST['company-1'];
-    for ($i = 0; isset($workExperiences[$i]); $i++) {
-      $company = mysqli_real_escape_string($conn, $workExperiences[$i]);
-$position = mysqli_real_escape_string($conn, $_POST['position-' . ($i + 1)]);
-$startDate = mysqli_real_escape_string($conn, $_POST['start-date-' . ($i + 1)]);
-$endDate = mysqli_real_escape_string($conn, isset($_POST['end-date-' . ($i + 1)]) ? $_POST['end-date-' . ($i + 1)] : null);
-$description = mysqli_real_escape_string($conn, $_POST['description-' . ($i + 1)]);
-
-$stmt = mysqli_prepare($conn, "INSERT INTO work_experience (cv_id, company, position, start_date, end_date, description)
-                                 VALUES (?, ?, ?, ?, ?, ?)");
-$stmt->bind_param('issssss', $cvId, $company, $position, $startDate, $endDate, $description);
-$stmt->execute();
-$stmt->close();
-    }
-  }
-
-  // Xử lý học vấn
-  if (isset($_POST['school-1'])) {
-    $schools = $_POST['school-1'];
-    for ($i = 0; isset($schools[$i]); $i++) {
-      $school = mysqli_real_escape_string($conn, $schools[$i]);
-      $degree = mysqli_real_escape_string($conn, $_POST['degree-' . ($i + 1)]);
-      $startDate = mysqli_real_escape_string($conn, $_POST['start-date-2' . ($i + 1)]);
-      $endDate = mysqli_real_escape_string($conn, isset($_POST['end-date-2' . ($i + 1)]) ? $_POST['end-date-2' . ($i + 1)] : null);
-
-      $stmt = mysqli_prepare($conn, "INSERT INTO education (cv_id, school, degree, start_date, end_date)
-                                 VALUES (?, ?, ?, ?, ?)");
-      $stmt->bind_param('issss', $cvId, $school, $degree, $startDate, $endDate);
-      $stmt->execute();
-      $stmt->close();
-    }
-  }
-
-  // Xử lý kỹ năng
-  $technicalSkills = mysqli_real_escape_string($conn, $_POST['skills']);
-  $softSkills = mysqli_real_escape_string($conn, $_POST['soft-skills']);
-
-  $stmt = mysqli_prepare($conn, "INSERT INTO skills (cv_id, technical_skills, soft_skills)
-                                 VALUES (?, ?, ?)");
-  $stmt->bind_param('iss', $cvId, $technicalSkills, $softSkills);
-  $stmt->execute();
-  $stmt->close();
-
-  // Xử lý ngôn ngữ
-  if (isset($_POST['language-1'])) {
-    $languages = $_POST['language-1'];
-    $proficiencies = $_POST['proficiency-1'];
-    for ($i = 0; isset($languages[$i]); $i++) {
-      $language = mysqli_real_escape_string($conn, $languages[$i]);
-      $proficiency = mysqli_real_escape_string($conn, $proficiencies[$i]);
-
-      $stmt = mysqli_prepare($conn, "INSERT INTO languages (cv_id, language, proficiency)
-                                 VALUES (?, ?, ?)");
-      $stmt->bind_param('iss', $cvId, $language, $proficiency);
-      $stmt->execute();
-      $stmt->close();
-    }
-  }
-
-  // Xử lý thành tích
-  if (isset($_POST['achievement-1'])) {
-    $achievements = $_POST['achievement-1'];
-    for ($i = 0; isset($achievements[$i]); $i++) {
-      $achievement = mysqli_real_escape_string($conn, $achievements[$i]);
-
-      $stmt = mysqli_prepare($conn, "INSERT INTO achievements (cv_id, achievement)
-                                 VALUES (?, ?)");
-      $stmt->bind_param('is', $cvId, $achievement);
-      $stmt->execute();
-      $stmt->close();
-    }
-  }
-
-  // Xử lý sở thích
-  if (isset($_POST['hobby-1'])) {
-    $hobbies = $_POST['hobby-1'];
-    for ($i = 0; isset($hobbies[$i]); $i++) {
-      $hobby = mysqli_real_escape_string($conn, $hobbies[$i]);
-
-      $stmt = mysqli_prepare($conn, "INSERT INTO hobbies (cv_id, hobby)
-                                 VALUES (?, ?)");
-      $stmt->bind_param('is', $cvId, $hobby);
-      $stmt->execute();
-      $stmt->close();
-    }
-  }
-
-  // Xử lý phản hồi
-  if ($image_uploaded) {
-    echo json_encode([
-      'success' => true,
-      'message' => 'CV đã được gửi thành công!',
-      'image_path' => $image_path
+        'message' => 'Phương thức yêu cầu không hợp lệ.'
     ]);
-  } else {
-    echo json_encode([
-      'success' => true,
-      'message' => 'CV đã được gửi thành công!',
-      'image_path' => null
-    ]);
-  }
-
-  db_close($conn); // Đóng kết nối
 }
-
-
-
 ?>

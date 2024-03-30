@@ -1,0 +1,67 @@
+
+.sec{
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+
+.la{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+.in{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.in:focus {
+  outline: none;
+  border-color: #999;
+}
+
+/* textarea {
+  height: 100px;
+}
+
+select {
+  padding: 10px 15px;
+} */
+.but{
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+
+}
+
+.but:hover {
+  background-color: #333;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  /* Chỉnh sửa giao diện cho thiết bị di động */
+  section {
+      padding: 15px;
+  }
+
+  button {
+      padding: 10px 15px;
+  }
+}
