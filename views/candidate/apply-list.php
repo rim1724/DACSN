@@ -41,8 +41,8 @@
                     ?>
                                 <li class="hover2"><a href="info-user.php">Thông tin cá nhân</a></li>
                                 <li class="hover2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
-                                <li class="see2"><a href="apply-list.php">Danh sách công việc đã tuyển</a></li>
-                                <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
+                                <li class="see2"><a href="apply-list.php">Danh sách công việc đã ứng tuyển</a></li>
+                                <li class="hover2"><a href="cv-list.php">Xác thực thông tin</a></li>
 
                     <?php
                     } else {
@@ -77,7 +77,7 @@
                     if (isset($_SESSION['user_id']) && $_SESSION['role'] === 0) {
                     // User is logged in as a candidate (role = 0)
                     ?>
-                                <div class="list-apply">
+<div class="list-apply">
     <div class="cancel">
         <div class="img-cancel">
             <img src="../../assets/img/anhcv1.png" alt="" >

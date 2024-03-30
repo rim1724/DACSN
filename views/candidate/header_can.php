@@ -106,7 +106,7 @@
             }else{ 
                 if (isset($_SESSION['user_id']) && $_SESSION['role'] === 0) {
              ?>
-                <a href="../employer/post-project.php">Tạo CV</a>
+                <a href="cv.php">Tạo CV</a>
             <?php
              }else{
             ?> 

@@ -40,7 +40,7 @@ include('header_can.php'); ?>
                     ?>
                                 <li class="see2"><a href="info-user.php">Thông tin cá nhân</a></li>
                                 <li class="hover2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
-                                <li class="hover2"><a href="apply-list.php">Danh sách công việc đã tuyển</a></li>
+                                <li class="hover2"><a href="apply-list.php">Danh sách công việc đã ứng tuyển</a></li>
                                 <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
 
                     <?php
