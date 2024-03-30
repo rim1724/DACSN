@@ -7,6 +7,7 @@ define('DB_NAME', 'dacsn-n12');
 define('DB_PASS', '');
 define('DB_USERNAME', 'root');
 define('IMAGE_UPLOAD_PATH', '/path/to/uploads/');
+
 $conn = new mysqli(DB_HOST, DB_USER, getenv('DB_PASSWORD'), DB_NAME);
 if ($conn->connect_error) {
   echo "Failed to connect to MySQL: (" . $conn->connect_errno . ") " . $conn->connect_error;

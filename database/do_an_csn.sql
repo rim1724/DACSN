@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 29, 2024 lúc 11:36 AM
+-- Thời gian đã tạo: Th3 30, 2024 lúc 09:46 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -32,6 +32,13 @@ CREATE TABLE `achievements` (
   `cv_id` int(11) NOT NULL,
   `achievement` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `achievements`
+--
+
+INSERT INTO `achievements` (`id`, `cv_id`, `achievement`) VALUES
+(11, 28, 'đạt giải');
 
 -- --------------------------------------------------------
 
@@ -113,7 +120,7 @@ CREATE TABLE `cv` (
   `cv_id` int(11) NOT NULL,
   `user_id` int(255) NOT NULL,
   `full_name` varchar(255) NOT NULL,
-  `img` varchar(255) DEFAULT NULL,
+  `img` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `dob` date NOT NULL,
@@ -129,10 +136,7 @@ CREATE TABLE `cv` (
 --
 
 INSERT INTO `cv` (`cv_id`, `user_id`, `full_name`, `img`, `email`, `phone`, `dob`, `gender`, `city`, `address`, `myseo`, `career_objective`) VALUES
-(3, 29, '19 nguyễn hồng phước', NULL, 'connguaho@gmail.com', '+84382578576', '0001-11-11', 'male', 'hcm', '84/5z ấp xuân thới đông 3', '1', '1'),
-(4, 29, '19 nguyễn hồng phước', NULL, 'connguaho@gmail.com', '+84382578576', '0001-11-11', 'male', 'hcm', '84/5z ấp xuân thới đông 3', '1', '1'),
-(5, 29, '19 nguyễn hồng phước', NULL, 'connguaho@gmail.com', '+84382578576', '0001-11-11', 'male', 'hcm', '84/5z ấp xuân thới đông 3', '1', '1'),
-(6, 29, '19 nguyễn hồng phước', NULL, 'connguaho@gmail.com', '+84382578576', '0001-11-11', 'male', 'hcm', '84/5z ấp xuân thới đông 3', '1', '1');
+(28, 37, 'nguyễn hồng phước', 'C:\\xampp\\htdocs\\DoAnCoSoNganh-Nhom12\\API/../uploads/6607d0a01746c.JPEG', 'connguaho@gmail.com', '0382578576', '2004-03-02', 'male', 'hcm', '84/5z ấp xuân thới đông 3', 'đỉnh', 'kiếm tiền');
 
 -- --------------------------------------------------------
 
@@ -143,7 +147,7 @@ INSERT INTO `cv` (`cv_id`, `user_id`, `full_name`, `img`, `email`, `phone`, `dob
 CREATE TABLE `education` (
   `id` int(11) NOT NULL,
   `cv_id` int(11) NOT NULL,
-  `school` varchar(255) NOT NULL,
+  `school` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `degree` varchar(255) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date DEFAULT NULL
@@ -154,106 +158,7 @@ CREATE TABLE `education` (
 --
 
 INSERT INTO `education` (`id`, `cv_id`, `school`, `degree`, `start_date`, `end_date`) VALUES
-(1, 3, 'h', '', '0000-00-00', '0000-00-00'),
-(2, 3, '?', '', '0000-00-00', '0000-00-00'),
-(3, 3, '?', '', '0000-00-00', '0000-00-00'),
-(4, 3, '?', '', '0000-00-00', '0000-00-00'),
-(5, 3, 'c', '', '0000-00-00', '0000-00-00'),
-(6, 3, ' ', '', '0000-00-00', '0000-00-00'),
-(7, 3, 'v', '', '0000-00-00', '0000-00-00'),
-(8, 3, 'i', '', '0000-00-00', '0000-00-00'),
-(9, 3, '?', '', '0000-00-00', '0000-00-00'),
-(10, 3, '?', '', '0000-00-00', '0000-00-00'),
-(11, 3, '?', '', '0000-00-00', '0000-00-00'),
-(12, 3, 'n', '', '0000-00-00', '0000-00-00'),
-(13, 3, ' ', '', '0000-00-00', '0000-00-00'),
-(14, 3, 'h', '', '0000-00-00', '0000-00-00'),
-(15, 3, '?', '', '0000-00-00', '0000-00-00'),
-(16, 3, '?', '', '0000-00-00', '0000-00-00'),
-(17, 3, 'n', '', '0000-00-00', '0000-00-00'),
-(18, 3, 'g', '', '0000-00-00', '0000-00-00'),
-(19, 3, ' ', '', '0000-00-00', '0000-00-00'),
-(20, 3, 'k', '', '0000-00-00', '0000-00-00'),
-(21, 3, 'h', '', '0000-00-00', '0000-00-00'),
-(22, 3, '?', '', '0000-00-00', '0000-00-00'),
-(23, 3, '?', '', '0000-00-00', '0000-00-00'),
-(24, 3, 'n', '', '0000-00-00', '0000-00-00'),
-(25, 3, 'g', '', '0000-00-00', '0000-00-00'),
-(26, 4, 'h', '', '0000-00-00', '0000-00-00'),
-(27, 4, '?', '', '0000-00-00', '0000-00-00'),
-(28, 4, '?', '', '0000-00-00', '0000-00-00'),
-(29, 4, '?', '', '0000-00-00', '0000-00-00'),
-(30, 4, 'c', '', '0000-00-00', '0000-00-00'),
-(31, 4, ' ', '', '0000-00-00', '0000-00-00'),
-(32, 4, 'v', '', '0000-00-00', '0000-00-00'),
-(33, 4, 'i', '', '0000-00-00', '0000-00-00'),
-(34, 4, '?', '', '0000-00-00', '0000-00-00'),
-(35, 4, '?', '', '0000-00-00', '0000-00-00'),
-(36, 4, '?', '', '0000-00-00', '0000-00-00'),
-(37, 4, 'n', '', '0000-00-00', '0000-00-00'),
-(38, 4, ' ', '', '0000-00-00', '0000-00-00'),
-(39, 4, 'h', '', '0000-00-00', '0000-00-00'),
-(40, 4, '?', '', '0000-00-00', '0000-00-00'),
-(41, 4, '?', '', '0000-00-00', '0000-00-00'),
-(42, 4, 'n', '', '0000-00-00', '0000-00-00'),
-(43, 4, 'g', '', '0000-00-00', '0000-00-00'),
-(44, 4, ' ', '', '0000-00-00', '0000-00-00'),
-(45, 4, 'k', '', '0000-00-00', '0000-00-00'),
-(46, 4, 'h', '', '0000-00-00', '0000-00-00'),
-(47, 4, '?', '', '0000-00-00', '0000-00-00'),
-(48, 4, '?', '', '0000-00-00', '0000-00-00'),
-(49, 4, 'n', '', '0000-00-00', '0000-00-00'),
-(50, 4, 'g', '', '0000-00-00', '0000-00-00'),
-(51, 5, 'h', '', '0000-00-00', '0000-00-00'),
-(52, 5, '?', '', '0000-00-00', '0000-00-00'),
-(53, 5, '?', '', '0000-00-00', '0000-00-00'),
-(54, 5, '?', '', '0000-00-00', '0000-00-00'),
-(55, 5, 'c', '', '0000-00-00', '0000-00-00'),
-(56, 5, ' ', '', '0000-00-00', '0000-00-00'),
-(57, 5, 'v', '', '0000-00-00', '0000-00-00'),
-(58, 5, 'i', '', '0000-00-00', '0000-00-00'),
-(59, 5, '?', '', '0000-00-00', '0000-00-00'),
-(60, 5, '?', '', '0000-00-00', '0000-00-00'),
-(61, 5, '?', '', '0000-00-00', '0000-00-00'),
-(62, 5, 'n', '', '0000-00-00', '0000-00-00'),
-(63, 5, ' ', '', '0000-00-00', '0000-00-00'),
-(64, 5, 'h', '', '0000-00-00', '0000-00-00'),
-(65, 5, '?', '', '0000-00-00', '0000-00-00'),
-(66, 5, '?', '', '0000-00-00', '0000-00-00'),
-(67, 5, 'n', '', '0000-00-00', '0000-00-00'),
-(68, 5, 'g', '', '0000-00-00', '0000-00-00'),
-(69, 5, ' ', '', '0000-00-00', '0000-00-00'),
-(70, 5, 'k', '', '0000-00-00', '0000-00-00'),
-(71, 5, 'h', '', '0000-00-00', '0000-00-00'),
-(72, 5, '?', '', '0000-00-00', '0000-00-00'),
-(73, 5, '?', '', '0000-00-00', '0000-00-00'),
-(74, 5, 'n', '', '0000-00-00', '0000-00-00'),
-(75, 5, 'g', '', '0000-00-00', '0000-00-00'),
-(76, 6, 'h', '', '0000-00-00', '0000-00-00'),
-(77, 6, '?', '', '0000-00-00', '0000-00-00'),
-(78, 6, '?', '', '0000-00-00', '0000-00-00'),
-(79, 6, '?', '', '0000-00-00', '0000-00-00'),
-(80, 6, 'c', '', '0000-00-00', '0000-00-00'),
-(81, 6, ' ', '', '0000-00-00', '0000-00-00'),
-(82, 6, 'v', '', '0000-00-00', '0000-00-00'),
-(83, 6, 'i', '', '0000-00-00', '0000-00-00'),
-(84, 6, '?', '', '0000-00-00', '0000-00-00'),
-(85, 6, '?', '', '0000-00-00', '0000-00-00'),
-(86, 6, '?', '', '0000-00-00', '0000-00-00'),
-(87, 6, 'n', '', '0000-00-00', '0000-00-00'),
-(88, 6, ' ', '', '0000-00-00', '0000-00-00'),
-(89, 6, 'h', '', '0000-00-00', '0000-00-00'),
-(90, 6, '?', '', '0000-00-00', '0000-00-00'),
-(91, 6, '?', '', '0000-00-00', '0000-00-00'),
-(92, 6, 'n', '', '0000-00-00', '0000-00-00'),
-(93, 6, 'g', '', '0000-00-00', '0000-00-00'),
-(94, 6, ' ', '', '0000-00-00', '0000-00-00'),
-(95, 6, 'k', '', '0000-00-00', '0000-00-00'),
-(96, 6, 'h', '', '0000-00-00', '0000-00-00'),
-(97, 6, '?', '', '0000-00-00', '0000-00-00'),
-(98, 6, '?', '', '0000-00-00', '0000-00-00'),
-(99, 6, 'n', '', '0000-00-00', '0000-00-00'),
-(100, 6, 'g', '', '0000-00-00', '0000-00-00');
+(4, 28, 'học viện hàng không', 'cử nhân', '2021-12-21', '2024-03-12');
 
 -- --------------------------------------------------------
 
@@ -266,6 +171,13 @@ CREATE TABLE `hobbies` (
   `cv_id` int(11) NOT NULL,
   `hobby` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `hobbies`
+--
+
+INSERT INTO `hobbies` (`id`, `cv_id`, `hobby`) VALUES
+(11, 28, 'hát');
 
 -- --------------------------------------------------------
 
@@ -302,7 +214,7 @@ INSERT INTO `jobs` (`job_id`, `title`, `company_id`, `location`, `description`, 
 CREATE TABLE `languages` (
   `id` int(11) NOT NULL,
   `cv_id` int(11) NOT NULL,
-  `language` varchar(255) NOT NULL,
+  `language` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `proficiency` enum('basic','intermediate','advanced') DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -311,10 +223,7 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `cv_id`, `language`, `proficiency`) VALUES
-(1, 3, '1', ''),
-(2, 4, '1', ''),
-(3, 5, '1', ''),
-(4, 6, '1', '');
+(1, 28, 'tiếng anh', 'advanced');
 
 -- --------------------------------------------------------
 
@@ -343,10 +252,7 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id_project`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
-(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '0000-00-00', '[value-8]', '[value-9]', '[value-10]', 0, 0, '[value-13]'),
-(5, 'web', '1', 'web chơi', 'full code', 'php', '0000-00-00', 'ads', 'sàu gòn', 'tháng', 20, 0, '../uploads/65f9031d7177e.pdf'),
-(6, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9058e6f7d2.docx'),
-(7, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9062516d2c.docx');
+(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '0000-00-00', '[value-8]', '[value-9]', '[value-10]', 0, 0, '[value-13]');
 
 -- --------------------------------------------------------
 
@@ -366,10 +272,7 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`id`, `cv_id`, `technical_skills`, `soft_skills`) VALUES
-(1, 3, '11', '11'),
-(2, 4, '11', '11'),
-(3, 5, '11', '11'),
-(4, 6, '11', '11');
+(10, 28, 'dev', 'nói');
 
 -- --------------------------------------------------------
 
@@ -391,10 +294,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`, `role`) VALUES
-(20, 'test', '$argon2id$v=19$m=65536,t=4,p=1$L21DUnlQTU9lZm14SHZOVw$ipbXN/YgHTPi0bktkJTctVCAWfzHWXnWxknieYOoyA0', '', 'test@gmail.com', 0),
-(29, 'phuoc', '$argon2id$v=19$m=65536,t=4,p=1$RWxhYjVaMjhDNjdLLkJvTw$VSBzsECaka+mh9Gy7kBELnLxEPAJnQLTF+s9ip/yI7M', '', 'phuoc@gmail.com', 0),
 (30, 'moi', '$argon2id$v=19$m=65536,t=4,p=1$RlhoYmpJNTdzYzYzSFF3Wg$2/A4WHxNkokn1GzT8owV4LTqVJLIIqR+9reI5NJFsGA', '', 'moi@gmail.com', 0),
-(34, 'hung', '$argon2id$v=19$m=65536,t=4,p=1$NTRRcnVUVmp0TG5YVU0vMw$faexqaFMMam2TH9DM6GYxNCkp3OE4bV/15kcROrVZ+o', '', 'hung@gmail.com', 1);
+(37, 'phuoc', '$argon2id$v=19$m=65536,t=4,p=1$Z21HcGU3dllrRW43dzJCbw$SvjEqeZ/gv6hTFpsSP7CrCvNTm/K8x8Gq+U3I4Ge5GI', '', 'phuoc@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -405,7 +306,7 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`, 
 CREATE TABLE `work_experience` (
   `id` int(11) NOT NULL,
   `cv_id` int(11) NOT NULL,
-  `company` varchar(255) NOT NULL,
+  `company` text CHARACTER SET utf8 COLLATE utf8_vietnamese_ci NOT NULL,
   `position` varchar(255) NOT NULL,
   `start_date` date NOT NULL,
   `end_date` date DEFAULT NULL,
@@ -417,46 +318,7 @@ CREATE TABLE `work_experience` (
 --
 
 INSERT INTO `work_experience` (`id`, `cv_id`, `company`, `position`, `start_date`, `end_date`, `description`) VALUES
-(1, 3, 'p', '', '0000-00-00', '0000-00-00', ''),
-(2, 3, 'u', '', '0000-00-00', '0000-00-00', ''),
-(3, 3, 's', '', '0000-00-00', '0000-00-00', ''),
-(4, 3, 'h', '', '0000-00-00', '0000-00-00', ''),
-(5, 3, 'e', '', '0000-00-00', '0000-00-00', ''),
-(6, 3, 'e', '', '0000-00-00', '0000-00-00', ''),
-(7, 3, 'n', '', '0000-00-00', '0000-00-00', ''),
-(8, 3, '1', '', '0000-00-00', '0000-00-00', ''),
-(9, 3, '2', '', '0000-00-00', '0000-00-00', ''),
-(10, 3, '2', '', '0000-00-00', '0000-00-00', ''),
-(11, 4, 'p', '', '0000-00-00', '0000-00-00', ''),
-(12, 4, 'u', '', '0000-00-00', '0000-00-00', ''),
-(13, 4, 's', '', '0000-00-00', '0000-00-00', ''),
-(14, 4, 'h', '', '0000-00-00', '0000-00-00', ''),
-(15, 4, 'e', '', '0000-00-00', '0000-00-00', ''),
-(16, 4, 'e', '', '0000-00-00', '0000-00-00', ''),
-(17, 4, 'n', '', '0000-00-00', '0000-00-00', ''),
-(18, 4, '1', '', '0000-00-00', '0000-00-00', ''),
-(19, 4, '2', '', '0000-00-00', '0000-00-00', ''),
-(20, 4, '2', '', '0000-00-00', '0000-00-00', ''),
-(21, 5, 'p', '', '0000-00-00', '0000-00-00', ''),
-(22, 5, 'u', '', '0000-00-00', '0000-00-00', ''),
-(23, 5, 's', '', '0000-00-00', '0000-00-00', ''),
-(24, 5, 'h', '', '0000-00-00', '0000-00-00', ''),
-(25, 5, 'e', '', '0000-00-00', '0000-00-00', ''),
-(26, 5, 'e', '', '0000-00-00', '0000-00-00', ''),
-(27, 5, 'n', '', '0000-00-00', '0000-00-00', ''),
-(28, 5, '1', '', '0000-00-00', '0000-00-00', ''),
-(29, 5, '2', '', '0000-00-00', '0000-00-00', ''),
-(30, 5, '2', '', '0000-00-00', '0000-00-00', ''),
-(31, 6, 'p', '', '0000-00-00', '0000-00-00', ''),
-(32, 6, 'u', '', '0000-00-00', '0000-00-00', ''),
-(33, 6, 's', '', '0000-00-00', '0000-00-00', ''),
-(34, 6, 'h', '', '0000-00-00', '0000-00-00', ''),
-(35, 6, 'e', '', '0000-00-00', '0000-00-00', ''),
-(36, 6, 'e', '', '0000-00-00', '0000-00-00', ''),
-(37, 6, 'n', '', '0000-00-00', '0000-00-00', ''),
-(38, 6, '1', '', '0000-00-00', '0000-00-00', ''),
-(39, 6, '2', '', '0000-00-00', '0000-00-00', ''),
-(40, 6, '2', '', '0000-00-00', '0000-00-00', '');
+(1, 28, 'phước', 'sếp', '2011-11-11', '2022-02-22', 'đỉnh cao');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -557,7 +419,7 @@ ALTER TABLE `work_experience`
 -- AUTO_INCREMENT cho bảng `achievements`
 --
 ALTER TABLE `achievements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `candidate`
@@ -569,25 +431,25 @@ ALTER TABLE `candidate`
 -- AUTO_INCREMENT cho bảng `cv`
 --
 ALTER TABLE `cv`
-  MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `hobbies`
 --
 ALTER TABLE `hobbies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT cho bảng `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `project`
@@ -599,19 +461,19 @@ ALTER TABLE `project`
 -- AUTO_INCREMENT cho bảng `skills`
 --
 ALTER TABLE `skills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT cho bảng `work_experience`
 --
 ALTER TABLE `work_experience`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -135,7 +135,7 @@ form.addEventListener("submit", function(event) {
                 // Thông báo thành công
                 alert("Thông tin của bạn đã được gửi đi!");
                 // Chuyển hướng đến trang khác
-                window.location.href = "your-success-page.html";
+                window.location.href = "../views/index-main.php";
             } else {
                 // Thông báo lỗi
                 alert("Có lỗi xảy ra khi gửi dữ liệu!");
