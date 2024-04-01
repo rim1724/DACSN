@@ -2,6 +2,11 @@
 include('header.php');
 require_once('../config/config.php');
 
+// Kiểm tra xem session đã được khởi tạo chưa
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); // Bắt đầu phiên làm việc
+}
+
 // Kiểm tra xem id_project được chuyển từ trang trước không
 if(isset($_GET['id_project'])) {
     // Lưu id_project vào session
@@ -35,7 +40,6 @@ if(isset($_GET['apply'])) {
     // Ví dụ: session_start(); và kiểm tra xem $_SESSION['id_user'] có tồn tại không
 
     // Lấy id_user từ session hoặc bất kỳ cách nào khác phù hợp
-    session_start(); // Bắt đầu phiên làm việc
     if(isset($_SESSION['user_id'])) {
         $id_user = $_SESSION['user_id'];
     } else {
