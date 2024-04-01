@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Mar 29, 2024 at 03:53 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th4 01, 2024 lúc 09:05 AM
+-- Phiên bản máy phục vụ: 10.4.28-MariaDB
+-- Phiên bản PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dacsnfinal`
+-- Cơ sở dữ liệu: `dacsn-n12`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `achievements`
+-- Cấu trúc bảng cho bảng `achievements`
 --
 
 CREATE TABLE `achievements` (
@@ -36,7 +36,7 @@ CREATE TABLE `achievements` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Cấu trúc bảng cho bảng `admins`
 --
 
 CREATE TABLE `admins` (
@@ -47,7 +47,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `admins`
+-- Đang đổ dữ liệu cho bảng `admins`
 --
 
 INSERT INTO `admins` (`admin_id`, `username`, `password`, `email`) VALUES
@@ -56,7 +56,7 @@ INSERT INTO `admins` (`admin_id`, `username`, `password`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `applications`
+-- Cấu trúc bảng cho bảng `applications`
 --
 
 CREATE TABLE `applications` (
@@ -67,7 +67,7 @@ CREATE TABLE `applications` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `applications`
+-- Đang đổ dữ liệu cho bảng `applications`
 --
 
 INSERT INTO `applications` (`application_id`, `job_id`, `applicant_id`, `application_date`) VALUES
@@ -85,7 +85,7 @@ INSERT INTO `applications` (`application_id`, `job_id`, `applicant_id`, `applica
 -- --------------------------------------------------------
 
 --
--- Table structure for table `candidate`
+-- Cấu trúc bảng cho bảng `candidate`
 --
 
 CREATE TABLE `candidate` (
@@ -104,7 +104,7 @@ CREATE TABLE `candidate` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `candidate`
+-- Đang đổ dữ liệu cho bảng `candidate`
 --
 
 INSERT INTO `candidate` (`id_candidate`, `img`, `id_identify`, `fullname`, `email`, `phone`, `city`, `address`, `realfullname`, `user_id`, `received_date`, `birthday`) VALUES
@@ -113,7 +113,7 @@ INSERT INTO `candidate` (`id_candidate`, `img`, `id_identify`, `fullname`, `emai
 -- --------------------------------------------------------
 
 --
--- Table structure for table `companies`
+-- Cấu trúc bảng cho bảng `companies`
 --
 
 CREATE TABLE `companies` (
@@ -125,7 +125,7 @@ CREATE TABLE `companies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `companies`
+-- Đang đổ dữ liệu cho bảng `companies`
 --
 
 INSERT INTO `companies` (`company_id`, `name`, `industry`, `location`, `website`) VALUES
@@ -135,7 +135,7 @@ INSERT INTO `companies` (`company_id`, `name`, `industry`, `location`, `website`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cv`
+-- Cấu trúc bảng cho bảng `cv`
 --
 
 CREATE TABLE `cv` (
@@ -154,7 +154,7 @@ CREATE TABLE `cv` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cv`
+-- Đang đổ dữ liệu cho bảng `cv`
 --
 
 INSERT INTO `cv` (`cv_id`, `user_id`, `full_name`, `img`, `email`, `phone`, `dob`, `gender`, `city`, `address`, `myseo`, `career_objective`) VALUES
@@ -166,7 +166,7 @@ INSERT INTO `cv` (`cv_id`, `user_id`, `full_name`, `img`, `email`, `phone`, `dob
 -- --------------------------------------------------------
 
 --
--- Table structure for table `education`
+-- Cấu trúc bảng cho bảng `education`
 --
 
 CREATE TABLE `education` (
@@ -179,7 +179,7 @@ CREATE TABLE `education` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `education`
+-- Đang đổ dữ liệu cho bảng `education`
 --
 
 INSERT INTO `education` (`id`, `cv_id`, `school`, `degree`, `start_date`, `end_date`) VALUES
@@ -287,7 +287,7 @@ INSERT INTO `education` (`id`, `cv_id`, `school`, `degree`, `start_date`, `end_d
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hobbies`
+-- Cấu trúc bảng cho bảng `hobbies`
 --
 
 CREATE TABLE `hobbies` (
@@ -299,7 +299,7 @@ CREATE TABLE `hobbies` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jobs`
+-- Cấu trúc bảng cho bảng `jobs`
 --
 
 CREATE TABLE `jobs` (
@@ -313,7 +313,7 @@ CREATE TABLE `jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `jobs`
+-- Đang đổ dữ liệu cho bảng `jobs`
 --
 
 INSERT INTO `jobs` (`job_id`, `title`, `company_id`, `location`, `description`, `requirements`, `posted_date`) VALUES
@@ -325,7 +325,7 @@ INSERT INTO `jobs` (`job_id`, `title`, `company_id`, `location`, `description`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `languages`
+-- Cấu trúc bảng cho bảng `languages`
 --
 
 CREATE TABLE `languages` (
@@ -336,7 +336,7 @@ CREATE TABLE `languages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `languages`
+-- Đang đổ dữ liệu cho bảng `languages`
 --
 
 INSERT INTO `languages` (`id`, `cv_id`, `language`, `proficiency`) VALUES
@@ -348,11 +348,12 @@ INSERT INTO `languages` (`id`, `cv_id`, `language`, `proficiency`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `project`
+-- Cấu trúc bảng cho bảng `project`
 --
 
 CREATE TABLE `project` (
   `id_project` int(255) NOT NULL,
+  `user_id` int(2) NOT NULL,
   `service` varchar(50) NOT NULL,
   `specific_service` varchar(1000) NOT NULL,
   `job_title` varchar(100) NOT NULL,
@@ -368,19 +369,22 @@ CREATE TABLE `project` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `project`
+-- Đang đổ dữ liệu cho bảng `project`
 --
 
-INSERT INTO `project` (`id_project`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
-(1, '[value-2]', '[value-3]', '[value-4]', '[value-5]', '[value-6]', '0000-00-00', '[value-8]', '[value-9]', '[value-10]', 0, 0, '[value-13]'),
-(5, 'web', '1', 'web chơi', 'full code', 'php', '0000-00-00', 'ads', 'sàu gòn', 'tháng', 20, 0, '../uploads/65f9031d7177e.pdf'),
-(6, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9058e6f7d2.docx'),
-(7, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9062516d2c.docx');
+INSERT INTO `project` (`id_project`, `user_id`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
+(7, 0, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9062516d2c.docx'),
+(8, 0, 'Lập trình web', 'Tạo website', 'Thiết kế front-end cho 1 trang web', '...', 'ngoại ngữ, kĩ năng lập trình ,...', '0000-00-00', 'Full-Time', 'huế', 'Theo tháng', 50, 0, '../uploads/6607b7a182ebc.png'),
+(9, 0, 'AAAA', 'BBBB', 'CCCCCC', 'DDDDĐ', 'EEEEEEEEEe', '0000-00-00', 'GGGGGGGGGGG', 'HHHHHHH', 'IIIIIIIi', 0, 0, '../uploads/6607c8c789c74.png'),
+(10, 0, 'dsdgfadsg', 'dfgsfdg', 'dfsgsfdgda', 'dfsgdgdfsg', 'dfsgfdsgfds', '0000-00-00', 'dfsgfdsgdsgdfsg', 'dfgsfdsgds', 'ddsgfdg', 0, 0, '../uploads/6607d4d86ffea.png'),
+(11, 0, 'gffdfd', 'fdgggrw', '2353254', '2453232', '325325', '0000-00-00', '325325', '32532532', '5325325', 321434, 0, '../uploads/6607d4edf35ba.png'),
+(12, 0, 'IT SUPPORT', 'hhhh', 'IT SUPPORT/HELPDESK INTERN FULL_TIME (CÓ XE ĐƯA ĐÓN HCM/ BIEN HOA)', 'Kịp thời phát hiện và xử lý các vấn đề liên quan đến sự cố máy tính. Theo dõi và tư vấn nâng cấp cho hệ thống mạng thông tin nội bộ trong trường hợp cần thiết. Bảo trì hệ thống mạng và máy tính của công ty. Thu thập địa chỉ email + NetSuite và mật khẩu của tất cả nhân viên Hướng dẫn cho tất cả các phần mềm sử dụng trong nhà máy, Chính sách CNTT, Chính sách thay thế máy tính Cam kết bảo mật thông tin cho tất cả nhân viên Hướng dẫn nhân viên cách sử dụng hệ thống phần mềm của công ty, cập nhật và quản lý chính sách IT', 'Kỹ năng & Chuyên môn Không yêu cầu kinh nghiệm SV năm 3 hoặc tốt nghiệp Trung cấp nghề/ Cao đẳng/ ĐH trở lên chuyên ngành Công nghệ thông tin, Quản trị mạng, Điện tử viễn thông,... (Có thể làm việc full-time) Nắm vững về hệ thống phần cứng máy vi tính Có kinh nghiệm hoặc hiểu biết về các ngôn ngữ lập trình C#, ReactJS, Python,... hoặc ngôn ngữ khác. là 1 lợi thế Tiếng Anh cơ bản (Đọc-Viết căn bản)', '0000-00-00', 'fadfsf', 'fsaffff', 'fsaf', 0, 0, '../uploads/6607d56c21680.jpg'),
+(13, 0, '45656456', '5465464566', '546456456456', '456456456', '6546456', '0000-00-00', '6456546', '45645646456', '45645', 6546460, 0, '../uploads/6607d582bcefa.png');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `skills`
+-- Cấu trúc bảng cho bảng `skills`
 --
 
 CREATE TABLE `skills` (
@@ -391,7 +395,7 @@ CREATE TABLE `skills` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `skills`
+-- Đang đổ dữ liệu cho bảng `skills`
 --
 
 INSERT INTO `skills` (`id`, `cv_id`, `technical_skills`, `soft_skills`) VALUES
@@ -403,7 +407,7 @@ INSERT INTO `skills` (`id`, `cv_id`, `technical_skills`, `soft_skills`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -411,22 +415,36 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(100) NOT NULL,
   `re_password` varchar(50) NOT NULL,
-  `email` varchar(50) NOT NULL
+  `email` varchar(50) NOT NULL,
+  `role` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`) VALUES
-(20, 'test', '$argon2id$v=19$m=65536,t=4,p=1$L21DUnlQTU9lZm14SHZOVw$ipbXN/YgHTPi0bktkJTctVCAWfzHWXnWxknieYOoyA0', '', 'test@gmail.com'),
-(29, 'phuoc', '$argon2id$v=19$m=65536,t=4,p=1$RWxhYjVaMjhDNjdLLkJvTw$VSBzsECaka+mh9Gy7kBELnLxEPAJnQLTF+s9ip/yI7M', '', 'phuoc@gmail.com'),
-(30, 'moi', '$argon2id$v=19$m=65536,t=4,p=1$RlhoYmpJNTdzYzYzSFF3Wg$2/A4WHxNkokn1GzT8owV4LTqVJLIIqR+9reI5NJFsGA', '', 'moi@gmail.com');
+INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`, `role`) VALUES
+(20, 'test', '$argon2id$v=19$m=65536,t=4,p=1$L21DUnlQTU9lZm14SHZOVw$ipbXN/YgHTPi0bktkJTctVCAWfzHWXnWxknieYOoyA0', '', 'test@gmail.com', 0),
+(29, 'phuoc', '$argon2id$v=19$m=65536,t=4,p=1$RWxhYjVaMjhDNjdLLkJvTw$VSBzsECaka+mh9Gy7kBELnLxEPAJnQLTF+s9ip/yI7M', '', 'phuoc@gmail.com', 0),
+(30, 'moi', '$argon2id$v=19$m=65536,t=4,p=1$RlhoYmpJNTdzYzYzSFF3Wg$2/A4WHxNkokn1GzT8owV4LTqVJLIIqR+9reI5NJFsGA', '', 'moi@gmail.com', 0),
+(31, 'hung', '$argon2id$v=19$m=65536,t=4,p=1$Y01PSUNHcnNnZHRkemNadg$0KZsbh7IesJ5yOu+fLU7I4BKvB1KlnpHzwRvcOjwdaA', '', 'hung@gmail.com', 0),
+(32, 'catlo', '$argon2id$v=19$m=65536,t=4,p=1$NkVoTDJ1WlFCdlEza09ydg$w6iG6mIYEpILEIwhTLBlEU2sHHIGDth0X17RCLDqePQ', '', 'catlo@gmail.com', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `work_experience`
+-- Cấu trúc bảng cho bảng `user_apply`
+--
+
+CREATE TABLE `user_apply` (
+  `user_id` int(2) NOT NULL,
+  `id_project` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `work_experience`
 --
 
 CREATE TABLE `work_experience` (
@@ -440,7 +458,7 @@ CREATE TABLE `work_experience` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `work_experience`
+-- Đang đổ dữ liệu cho bảng `work_experience`
 --
 
 INSERT INTO `work_experience` (`id`, `cv_id`, `company`, `position`, `start_date`, `end_date`, `description`) VALUES
@@ -486,24 +504,24 @@ INSERT INTO `work_experience` (`id`, `cv_id`, `company`, `position`, `start_date
 (40, 6, '2', '', '0000-00-00', '0000-00-00', '');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `achievements`
+-- Chỉ mục cho bảng `achievements`
 --
 ALTER TABLE `achievements`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cv_id` (`cv_id`);
 
 --
--- Indexes for table `admins`
+-- Chỉ mục cho bảng `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `applications`
+-- Chỉ mục cho bảng `applications`
 --
 ALTER TABLE `applications`
   ADD PRIMARY KEY (`application_id`),
@@ -511,190 +529,168 @@ ALTER TABLE `applications`
   ADD KEY `applicant_id` (`applicant_id`);
 
 --
--- Indexes for table `candidate`
+-- Chỉ mục cho bảng `candidate`
 --
 ALTER TABLE `candidate`
   ADD PRIMARY KEY (`id_candidate`),
   ADD KEY `FK_candidate_users` (`user_id`);
 
 --
--- Indexes for table `companies`
+-- Chỉ mục cho bảng `companies`
 --
 ALTER TABLE `companies`
   ADD PRIMARY KEY (`company_id`);
 
 --
--- Indexes for table `cv`
+-- Chỉ mục cho bảng `cv`
 --
 ALTER TABLE `cv`
   ADD PRIMARY KEY (`cv_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `education`
+-- Chỉ mục cho bảng `education`
 --
 ALTER TABLE `education`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cv_id` (`cv_id`);
 
 --
--- Indexes for table `hobbies`
+-- Chỉ mục cho bảng `hobbies`
 --
 ALTER TABLE `hobbies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cv_id` (`cv_id`);
 
 --
--- Indexes for table `jobs`
+-- Chỉ mục cho bảng `jobs`
 --
 ALTER TABLE `jobs`
   ADD PRIMARY KEY (`job_id`),
   ADD KEY `company_id` (`company_id`);
 
 --
--- Indexes for table `languages`
+-- Chỉ mục cho bảng `languages`
 --
 ALTER TABLE `languages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cv_id` (`cv_id`);
 
 --
--- Indexes for table `project`
+-- Chỉ mục cho bảng `project`
 --
 ALTER TABLE `project`
   ADD PRIMARY KEY (`id_project`);
 
 --
--- Indexes for table `skills`
+-- Chỉ mục cho bảng `skills`
 --
 ALTER TABLE `skills`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cv_id` (`cv_id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `work_experience`
+-- Chỉ mục cho bảng `user_apply`
+--
+ALTER TABLE `user_apply`
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `fk_user_apply_project` (`id_project`);
+
+--
+-- Chỉ mục cho bảng `work_experience`
 --
 ALTER TABLE `work_experience`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cv_id` (`cv_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `achievements`
+-- AUTO_INCREMENT cho bảng `achievements`
 --
 ALTER TABLE `achievements`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `candidate`
+-- AUTO_INCREMENT cho bảng `candidate`
 --
 ALTER TABLE `candidate`
   MODIFY `id_candidate` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `cv`
+-- AUTO_INCREMENT cho bảng `cv`
 --
 ALTER TABLE `cv`
   MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `education`
+-- AUTO_INCREMENT cho bảng `education`
 --
 ALTER TABLE `education`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT for table `hobbies`
---
-ALTER TABLE `hobbies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `languages`
---
-ALTER TABLE `languages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `project`
+-- AUTO_INCREMENT cho bảng `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT cho bảng `user_apply`
+--
+ALTER TABLE `user_apply`
+  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT;
+
+--
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `achievements`
+-- Các ràng buộc cho bảng `achievements`
 --
 ALTER TABLE `achievements`
   ADD CONSTRAINT `achievements_ibfk_1` FOREIGN KEY (`id`) REFERENCES `languages` (`id`);
 
 --
--- Constraints for table `applications`
---
-ALTER TABLE `applications`
-  ADD CONSTRAINT `applications_ibfk_1` FOREIGN KEY (`job_id`) REFERENCES `jobs` (`job_id`);
-
---
--- Constraints for table `candidate`
---
-ALTER TABLE `candidate`
-  ADD CONSTRAINT `candidate_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `cv`
---
-ALTER TABLE `cv`
-  ADD CONSTRAINT `cv_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `education`
---
-ALTER TABLE `education`
-  ADD CONSTRAINT `education_ibfk_1` FOREIGN KEY (`cv_id`) REFERENCES `languages` (`cv_id`);
-
---
--- Constraints for table `hobbies`
+-- Các ràng buộc cho bảng `hobbies`
 --
 ALTER TABLE `hobbies`
   ADD CONSTRAINT `hobbies_ibfk_1` FOREIGN KEY (`id`) REFERENCES `education` (`id`),
   ADD CONSTRAINT `hobbies_ibfk_2` FOREIGN KEY (`cv_id`) REFERENCES `education` (`cv_id`);
 
 --
--- Constraints for table `jobs`
---
-ALTER TABLE `jobs`
-  ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `companies` (`company_id`);
-
---
--- Constraints for table `languages`
+-- Các ràng buộc cho bảng `languages`
 --
 ALTER TABLE `languages`
-  ADD CONSTRAINT `languages_ibfk_1` FOREIGN KEY (`id`) REFERENCES `skills` (`id`),
-  ADD CONSTRAINT `languages_ibfk_2` FOREIGN KEY (`cv_id`) REFERENCES `skills` (`cv_id`);
+  ADD CONSTRAINT `languages_ibfk_1` FOREIGN KEY (`cv_id`) REFERENCES `education` (`cv_id`);
 
 --
--- Constraints for table `skills`
+-- Các ràng buộc cho bảng `skills`
 --
 ALTER TABLE `skills`
-  ADD CONSTRAINT `skills_ibfk_1` FOREIGN KEY (`id`) REFERENCES `work_experience` (`id`);
+  ADD CONSTRAINT `skills_ibfk_1` FOREIGN KEY (`id`) REFERENCES `languages` (`id`),
+  ADD CONSTRAINT `skills_ibfk_2` FOREIGN KEY (`cv_id`) REFERENCES `languages` (`cv_id`);
+
+--
+-- Các ràng buộc cho bảng `user_apply`
+--
+ALTER TABLE `user_apply`
+  ADD CONSTRAINT `fk_user_apply_project` FOREIGN KEY (`id_project`) REFERENCES `project` (`id_project`),
+  ADD CONSTRAINT `fk_user_apply_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

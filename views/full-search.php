@@ -54,17 +54,16 @@ while ($row = mysqli_fetch_assoc($result)) {
   echo "<img src='" . $row['attached_file'] . "' alt=''>";
   echo "</div>";
   echo "<div class='info-1'>";
-  echo "<a href='info-job.php' style='font-size: 18px;'>" . $row['job_title'] . "</a>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "' style='font-size: 18px;'>" . $row['job_title'] . "</a>";
   echo "<p>Mức lương: " . $row['budget'] . " triệu đồng</p>";
-  echo "<a href='info-job.php'>" . $row['company_name'] . "</a>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "'>" . $row['company_name'] . "</a>";
   echo "<p>Địa điểm: <a href=''>" . $row['workplace'] . "</a></p>";
   echo "</div>";
   echo "<div class='to-infojob'>";
-  echo "<a href='info-job.php'> Xem thông tin </a>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "'> Xem thông tin </a>";
   echo "</div>";
   echo "</div>";
 }
-
 // Đóng kết nối với cơ sở dữ liệu
 mysqli_close($conn);
 ?>
