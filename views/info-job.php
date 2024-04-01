@@ -6,22 +6,27 @@ require_once('../config/config.php');
 if(isset($_GET['id_project'])) {
     // Lưu id_project vào session
     $_SESSION['id_project'] = $_GET['id_project'];
+}
 
+// Kiểm tra xem có id_project trong session hay không
+if(isset($_SESSION['id_project'])) {
     // Truy vấn cơ sở dữ liệu để lấy thông tin chi tiết của công việc tương ứng
     $id_project = $_SESSION['id_project'];
     $sql = "SELECT * FROM project WHERE id_project = $id_project";
     $result = mysqli_query($conn, $sql);
 
     // Kiểm tra kết quả truy vấn
-    if($result) {
+    if($result && mysqli_num_rows($result) > 0) {
         // Lấy thông tin chi tiết của công việc và hiển thị
         $row = mysqli_fetch_assoc($result);
         // Hiển thị thông tin chi tiết của công việc
     } else {
-        echo "Lỗi truy vấn cơ sở dữ liệu: " . mysqli_error($conn);
+        echo "<script>alert('Không tìm thấy công việc phù hợp.'); window.location.href = 'index.php';</script>";
+        exit; // Dừng xử lý script
     }
 } else {
-    echo "Không có id_project được chuyển từ trang trước";
+    echo "<script>alert('Không có id_project được chuyển từ trang trước.'); window.location.href = 'index.php';</script>";
+    exit; // Dừng xử lý script
 }
 
 // Xử lý khi người dùng nhấn vào nút "Ứng tuyển ngay"
@@ -36,21 +41,31 @@ if(isset($_GET['apply'])) {
     } else {
         // Thông báo lỗi hoặc chuyển hướng đến trang đăng nhập
         // Ví dụ: header('Location: login.php');
-        exit("Vui lòng đăng nhập trước khi ứng tuyển.");
+        echo '<script>alert("Vui lòng đăng nhập trước khi ứng tuyển."); window.location.href = "login.php";</script>';
+        exit;
     }
 
     $id_project = $_SESSION['id_project'];
 
-    // Thực hiện truy vấn để lưu id_user vào bảng user_apply
-    $sql = "INSERT INTO user_apply (user_id, id_project) VALUES ('$id_user', '$id_project')";
-    $result = mysqli_query($conn, $sql);
+    // Thực hiện truy vấn để kiểm tra xem người dùng đã ứng tuyển công việc này chưa
+    $check_sql = "SELECT * FROM user_apply WHERE user_id = $id_user AND id_project = $id_project";
+    $check_result = mysqli_query($conn, $check_sql);
 
-    if($result) {
-        // Thông báo cho người dùng biết rằng họ đã ứng tuyển thành công
-        echo "Bạn đã ứng tuyển thành công!";
+    if(mysqli_num_rows($check_result) > 0) {
+        // Người dùng đã ứng tuyển công việc này rồi
+        echo '<script>alert("Bạn đã ứng tuyển công việc này rồi!");</script>';
     } else {
-        // Xử lý khi có lỗi xảy ra trong quá trình lưu vào cơ sở dữ liệu
-        echo "Có lỗi xảy ra khi ứng tuyển!";
+        // Người dùng chưa ứng tuyển, tiến hành thêm vào cơ sở dữ liệu
+        $insert_sql = "INSERT INTO user_apply (user_id, id_project) VALUES ('$id_user', '$id_project')";
+        $insert_result = mysqli_query($conn, $insert_sql);
+
+        if($insert_result) {
+            // Thông báo cho người dùng biết rằng họ đã ứng tuyển thành công
+            echo '<script>alert("Bạn đã ứng tuyển thành công!");</script>';
+        } else {
+            // Xử lý khi có lỗi xảy ra trong quá trình lưu vào cơ sở dữ liệu
+            echo '<script>alert("Có lỗi xảy ra khi ứng tuyển!");</script>';
+        }
     }
 }
 ?>
