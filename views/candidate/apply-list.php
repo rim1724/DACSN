@@ -95,24 +95,7 @@
             <button>Hủy ứng tuyển</button>
         </div>
     </div>
-   
-    <div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div>
+
 </div>
 <div id="pagination"></div>
 </div>
@@ -139,23 +122,7 @@
             <button>Xóa ứng viên</button>
         </div>
     </div>
-    <div class="cancel">
-    <div class="img-cancel-1">
-            <img src="../../assets/img/user.jpg" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Tên ứng viên: Nguyễn Văn A</a> <br>
-        <a href="../../views/info-job.php">Công việc ứng tuyển: Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Kinh nghiệm: 2 năm</p>  
-        </div>
-        <a href="../../views/info-job.php" style="color:red;">Xem sơ yếu lí lịch ứng viên (CV)</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Xóa ứng viên</button>
-        </div>
-    </div>
+
 </div>
 <div id="pagination"></div>
 </div>

@@ -172,14 +172,14 @@ include('header_can.php'); ?>
                                         <img src="../../assets/img/user.jpg" alt="">
                                     </div>
                                     <div class="upload">
-                                        <input type="file" id="img-uploader" name="img">
+                                        <input type="file" id="img" name="img">
                                     </div>
                                     </dd>
                                     <dt>
                                         Tên công ty <span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                        <input type="text" name="name-company" placeholder="Công ty A" style="width:250px; height:19px;">
+                                        <input type="text" name="name_company" placeholder="Công ty A" style="width:250px; height:19px;">
                                     </dd>
                                     <dt>
                                         Ngành nghề <span class="redtext">*</span>

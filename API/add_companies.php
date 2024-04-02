@@ -16,7 +16,13 @@ if (isset($_POST['submit-form'])) {
   $conn = connect_to_database();
 
   // Validate required fields (adjust as needed)
-  $required_fields = ['company_id', 'name_company', 'company_industry', 'address_company', 'phone_nompany', 'nation_company', 'img_company'];
+  $required_fields = [
+    'name_company',
+    'company_industry',
+    'address_company',
+    'phone_company',
+    'nation_company',
+  ];
   $missing_fields = [];
   foreach ($required_fields as $field) {
     if (empty($_POST[$field])) {
@@ -27,37 +33,34 @@ if (isset($_POST['submit-form'])) {
   if (!empty($missing_fields)) {
     echo json_encode([
       'success' => false,
-      'message' => 'Missing required fields: ' . implode(', ', $missing_fields)
+      'message' => 'Missing required fields: ' . implode(', ', $missing_fields),
     ]);
     exit;
   }
 
   // Extract form data
-  $company_id = $_POST['company_id'];
   $name_company = $_POST['name_company'];
   $company_industry = $_POST['company_industry'];
   $address_company = $_POST['address_company'];
-  $phone_nompany = $_POST['phone_nompany'];
+  $phone_company = $_POST['phone_company'];
   $nation_company = $_POST['nation_company'];
-  $img_company = $_POST['img_company'];
-  
 
   // Image Upload Handling (Optional)
   $image_uploaded = false;
   $image_path = null;
 
-  if (isset($_FILES['img_company']) && $_FILES['img_company']['error'] === 0) {
-    $image_name = $_FILES['img_company']['name'];
-    $image_type = $_FILES['img_company']['type'];
-    $image_tmp_name = $_FILES['img_company']['tmp_name'];
-    $image_size = $_FILES['img_company']['size'];
+  if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
+    $image_name = $_FILES['img']['name'];
+    $image_type = $_FILES['img']['type'];
+    $image_tmp_name = $_FILES['img']['tmp_name'];
+    $image_size = $_FILES['img']['size'];
 
     // Validate image type (adjust as needed)
     $allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif'];
     if (!in_array($image_type, $allowed_mime_types)) {
       echo json_encode([
         'success' => false,
-        'message' => 'Invalid image type. Only JPG, PNG, and GIF allowed.'
+        'message' => 'Invalid image type. Only JPG, PNG, and GIF allowed.',
       ]);
       exit;
     }
@@ -66,7 +69,7 @@ if (isset($_POST['submit-form'])) {
     if ($image_size > 5000000) { // 1 MB limit (adjust as needed)
       echo json_encode([
         'success' => false,
-        'message' => 'Image size exceeds 5 MB limit.'
+        'message' => 'Image size exceeds 5 MB limit.',
       ]);
       exit;
     }
@@ -78,7 +81,7 @@ if (isset($_POST['submit-form'])) {
     if (defined('IMAGE_UPLOAD_PATH')) {
       $image_path = IMAGE_UPLOAD_PATH . $image_filename;
     } else {
-      // If no upload path defined, store in the same directory as this script
+      // If no upload path defined, store in the same directory as this script (not recommended for production)
       $image_path = $image_filename;
     }
 
@@ -87,7 +90,7 @@ if (isset($_POST['submit-form'])) {
     } else {
       echo json_encode([
         'success' => false,
-        'message' => 'Failed to upload image.'
+        'message' => 'Failed to upload image.',
       ]);
       exit;
     }
@@ -99,27 +102,27 @@ if (isset($_POST['submit-form'])) {
 
   if ($result->num_rows > 0) {
     // Table exists, proceed with insert
-    $stmt = $conn->prepare("INSERT INTO companies (company_id, name_company, company_industry, address_company, phone_nompany, nation_company, img_company) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('ssssssssss', $company_id, $name_company, $company_industry, $address_company, $phone_nompany, $nation_company, $img_company); // Removed one 's'
+    $stmt = $conn->prepare("INSERT INTO companies (name_company, company_industry, address_company, phone_company, nation_company, img) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('sssssss', $name_company, $company_industry, $address_company, $phone_company, $nation_company, $image_uploaded ? $image_path : null); // Bind image path only if uploaded
     // Execute SQL statement
     if ($stmt->execute()) {
       echo json_encode([
         'success' => true,
-        'message' => 'companies added successfully.'
+        'message' => 'Company added successfully.',
       ]);
       header('location: ../views/index-main.php');
-      ;
+      exit;
     } else {
       echo json_encode([
         'success' => false,
-        'message' => 'Failed to add companies. Error: ' . $stmt->error
+        'message' => 'Failed to add company. Error: ' . $stmt->error,
       ]);
     }
   } else {
     // Table doesn't exist, handle the error
     echo json_encode([
       'success' => false,
-      'message' => 'The table \'companies\' does not exist in the database.'
+      'message' => 'The table \'companies\' does not exist in the database.',
     ]);
   }
 
@@ -128,7 +131,7 @@ if (isset($_POST['submit-form'])) {
 } else {
   echo json_encode([
     'success' => false,
-    'message' => 'Invalid request.'
+    'message' => 'Invalid request.',
   ]);
 }
 

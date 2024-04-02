@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 02, 2024 lúc 08:21 AM
+-- Thời gian đã tạo: Th4 02, 2024 lúc 09:36 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -121,8 +121,8 @@ CREATE TABLE `companies` (
   `name-company` varchar(255) NOT NULL,
   `company_industry` varchar(255) DEFAULT NULL,
   `address_company` varchar(255) DEFAULT NULL,
-  `phone_company` int(255) NOT NULL,
-  `nation_company` int(255) NOT NULL,
+  `phone_company` varchar(255) NOT NULL,
+  `nation_company` varchar(255) NOT NULL,
   `img_company` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -131,8 +131,8 @@ CREATE TABLE `companies` (
 --
 
 INSERT INTO `companies` (`company_id`, `name-company`, `company_industry`, `address_company`, `phone_company`, `nation_company`, `img_company`) VALUES
-(1, 'TechCorp', 'Technology', 'Silicon Valley', 0, 0, ''),
-(2, 'HealthTech', 'Healthcare', 'New York', 0, 0, '');
+(1, 'TechCorp', 'Technology', 'Silicon Valley', '0', '0', ''),
+(2, 'HealthTech', 'Healthcare', 'New York', '0', '0', '');
 
 -- --------------------------------------------------------
 
@@ -369,6 +369,14 @@ CREATE TABLE `project` (
   `employment_type` tinyint(1) NOT NULL,
   `attached_file` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `project`
+--
+
+INSERT INTO `project` (`id_project`, `user_id`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
+(26, 32, 'IT SUPPORT', '1', '1', '1', '1', '0000-00-00', '1', '1', '1', 1, 0, '../uploads/660bb2cc2383a.png'),
+(27, 32, '2', '2', '2', '2', '2', '0000-00-00', '2', '2', '2', 2, 0, '../uploads/660bb332df993.png');
 
 -- --------------------------------------------------------
 
@@ -617,6 +625,12 @@ ALTER TABLE `candidate`
   MODIFY `id_candidate` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
+-- AUTO_INCREMENT cho bảng `companies`
+--
+ALTER TABLE `companies`
+  MODIFY `company_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT cho bảng `cv`
 --
 ALTER TABLE `cv`
@@ -632,7 +646,7 @@ ALTER TABLE `education`
 -- AUTO_INCREMENT cho bảng `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -693,3 +707,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

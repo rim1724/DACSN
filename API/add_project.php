@@ -1,6 +1,6 @@
 <?php
 require_once '../config/config.php';
-
+// Hàm để thực thi truy vấn SQL
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Kiểm tra các trường bắt buộc
   $required_fields = ['service', 'specific_service', 'job_title', 'job_description', 'required_skills', 'deadline', 'work_type', 'workplace', 'payment_method', 'budget', 'employment_type'];
@@ -53,8 +53,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
   }
 
+  // Lấy user_id từ session
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
+  $user_id = $_SESSION['user_id'];
+
   // Chuẩn bị truy vấn SQL với tham số được đặt tên để đảm bảo an toàn
   $sql = "INSERT INTO project (
+    user_id, 
     service,
     specific_service,
     job_title,
@@ -69,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     employment_type
   )
   VALUES (
+    :user_id,
     :service,
     :specific_service,
     :job_title,
@@ -88,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // Gán tham số với giá trị từ form
   $stmt = $pdo->prepare($sql);
+  $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);  // Bind user_id with retrieved value
   $stmt->bindParam(':service', $_POST['service'], PDO::PARAM_STR);
   $stmt->bindParam(':specific_service', $_POST['specific_service'], PDO::PARAM_STR);
   $stmt->bindParam(':job_title', $_POST['job_title'], PDO::PARAM_STR);
@@ -107,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $response = array('message' => 'Lưu thành công');
     header('location:../views/index-main.php');
   } catch (PDOException $e) {
-    $response = array('message' => 'Lỗi khi thực thi truy vấn: ' . $e->getMessage());
+    $response = array('message' => 'Loi khi thuc thi truy van: ' . $e->getMessage());
   }
   
   // Đóng kết nối cơ sở dữ liệu
@@ -115,10 +124,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   
   echo json_encode($response);
   exit;
-  }
-  
-  // Nếu không phải yêu cầu POST, trả về phản hồi JSON (không chắc $projects là gì)
-  header('Content-Type: application/json');
-  echo json_encode($projects);
-  ?>
-  
+}
