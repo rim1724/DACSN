@@ -80,6 +80,7 @@
                      // User is logged in as a candidate (role = 0)
                      ?>
                      <li><a href="info-user.php" style="padding-left: 67px;">Đổi thông tin</a></li>
+                     <li><a href="../employer/view_cv.php" style="padding-left: 67px;">CV đã tạo</a></li>
                      <li><a href="change-password.php" style="padding-left: 63px; width: 108px;">Đổi mật khẩu</a></li>
                      <?php
                      } else {

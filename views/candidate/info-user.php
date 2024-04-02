@@ -6,11 +6,6 @@ include('header_can.php'); ?>
         <div class="bulkhead-container">
             <p>Nhà tuyển dụng đăng dự án <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhân sự vào tìm kiếm <i class="fa-solid fa-caret-right" style="padding-right: 15px; padding-left: 15px;"></i> Nhận công việc từ nhà tuyển dụng</p>
         </div>
-  
-
-
-
-
 <!--Đổi thông tin cá nhân-->
 <div class="change-all">
 <div class="listall">

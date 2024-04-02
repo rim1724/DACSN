@@ -92,15 +92,6 @@
 </div> 
 </div>
 </div>
-
-
-
-
-
-
-
-
-
                 <!--footer-->
                 <div class="footer">
                     <img src="../../assets/img/logo-web.png" alt="">
@@ -118,19 +109,12 @@
                         <i class="fa-solid fa-circle-arrow-up" style=" font-size: 30px;"></i>
                 
                       </div>
-        
-        
-        
-                
             </body>
-        
-        
-    
-        
+
         <!--Script back top-->
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <script src="../../js/back-top.js">
-        </script>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="../../js/back-top.js">
+</script>
 
 
 

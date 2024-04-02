@@ -1,3 +1,25 @@
+<?php
+session_start();
+session_status();
+require_once('../../config/config.php');
+function getPersonalInfo($field) {
+  global $conn; // Assuming $conn is established elsewhere
+
+  $user_id = $_SESSION['user_id'];
+	// $cv_id = $_SESSION['cv_id'];
+
+  $sql = "SELECT $field FROM cv WHERE user_id = $user_id";
+  $result = $conn->query($sql);
+
+  if ($result->num_rows > 0) {
+    $row = $result->fetch_assoc(); 
+    return $row[$field];
+  } else {
+    return "Information not found"; // Handle case where information is missing
+  }
+}
+$career_objective = getPersonalInfo('career_objective');
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -20,36 +42,38 @@
 		<div class="container">
 			<div class="sider">
 				<div class="sider-content">
-					<h1 class="tag-fill">Thông tin cá nhân</h1>
+				<h1 class="tag-fill">Thông tin cá nhân</h1>
 					<div class="tag-content">
 						<ul>
-							<li>Họ và tên: Nguyễn Văn A</li>
-							<li>Giới tính: Nam</li>
-							<li>Ngày sinh: 1/1/2004</li>
-							<li>Email: A@gmail.com</li>
-							<li>Số điện thoại: 0925468524</li>
-						</ul>
+							<li>Họ và tên: <?php echo getPersonalInfo('full_name'); ?></li>
+							<li>Giới tính: <?php echo getPersonalInfo('gender'); ?></li>
+							<li>Ngày sinh: <?php echo getPersonalInfo('dob'); ?></li>
+							<li>Email: <?php echo getPersonalInfo('email'); ?></li>
+							<li>Số điện thoại: <?php echo getPersonalInfo('phone'); ?></li>
+							</ul>
 					</div>
+
 				</div>
 				<div class="sider-content">
 					<h1 class="tag-fill">Kĩ năng</h1>
 					<div class="tag-content progress-container">
 						<p class="progress-title">Ngoại ngữ</p>
-						<div class="progress-wrap">
-							<div class="progress" style="width: 80%"></div>
-						</div>
+						<ul>
+							<li><?php include('../../php/languages.php') ?></li>
+							</ul>
+				
 					</div>
 					<div class="tag-content progress-container">
-						<p class="progress-title">Giao tiếp</p>
-						<div class="progress-wrap">
-							<div class="progress" style="width: 50%"></div>
-						</div>
+						<p class="progress-title">Chuyên môn</p>
+						<ul>
+							<li><?php include('../../php/skills.php') ?></li>
+							</ul>
 					</div>
 					<div class="tag-content progress-container">
 						<p class="progress-title">Làm việc nhóm</p>
-						<div class="progress-wrap">
-							<div class="progress" style="width: 80%"></div>
-						</div>
+						<ul>
+							<li><?php include('../../php/soft_skills.php') ?></li>
+							</ul>
 					</div>
 					<div class="tag-content progress-container">
 						<p class="progress-title">Thuyết trình</p>
@@ -93,17 +117,7 @@
 				<div class="description-content">
 					<h1 class="tag">Mục tiêu nghề nghiệp</h1>
 					<ul>
-						<li>
-							<h3>Mục tiêu cá nhân</h3>
-							<p class="text-content">
-								đạt đucợ gì đấy trong tương lai
-							</p>
-                            <h3>Mục tiêu tập thể</h3>
-							<p class="text-content">
-								cố gắng hòa đông và giúp công ty đi lên
-							</p>
-				
-						</li>
+					<p>Mục tiêu nghề nghiệp: <?php echo $career_objective; ?></p>
 					</ul>
 				</div>
 				<div class="description-content">
