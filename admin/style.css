@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(https://img6.thuthuatphanmem.vn/uploads/2022/06/22/hinh-nen-ppt-don-gian_040355696.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 3px solid rgba(118 175 189 / 50%);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    display: flex;
+    justify-content: center;
+}
+h2{
+    font-size: 2em;
+    color: #2bcfcd;
+    text-align: center;
+    margin: 50px 0 15px;
+    
+}
+.a{
+    color: #fff;
+}
+.imputbox{
+    position: relative;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+input:focus ~ label,
+input:valid ~ label,
+input:not(:placeholder-shown) ~ label {
+    top: -5px;
+    font-size: 0.8em;
+}
+.inputbox input{
+    width: 90%;
+    height: 50%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 10px 0 10px;
+   
+}
+.imputbox label{
+    position: absolute;
+    top: 25%;
+    left: 500px;
+    margin-top: 20px;
+   
+}
+
+.forget{
+    margin: 35px 0 15px ;
+    font-size: .9em;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.forget label input{
+    margin-right: 3px;
+
+}
+.forget label a:hover{
+    text-decoration: underline;
+}
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #2bcfcd;
+    
+}
+button a{
+    text-decoration: none;
+    color: #2bcfcd;
+} 
+.register{
+    font-size: .9em;
+    color:grey;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.register p a{
+    text-decoration: none;
+    color: #2bcfcd;
+    font-weight: 600;
+}
+.register p a:hover{
+    text-decoration: underline;
+}
