@@ -1,5 +1,7 @@
-<?php include('header.php') ?>
+<?php include('header.php') ;
+require_once('../config/config.php')?>
 <link rel="stylesheet" href="../assets/css/full-search.css">
+
 
 
         <!--vach ngan-->
@@ -22,154 +24,54 @@
                 <div class="list-find">
                     <div class="find">
                         <form action="" class="find-box">
-                            <input type="text" class="search-text">
+                            <input type="text" name="ok" class="search-text">
                             <button class="search-icon"><i class="fa-solid fa-magnifying-glass fa-xl" ></i></button>
                         </form>
                     </div>
                     <div class="list">
-                        <div class="congviec1">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv1.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
-                        <div class="congviec2">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv1.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
-                        <div class="congviec3">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv1.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
-                        <div class="congviec4">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv2.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="info-job.php" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="info-job.php">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
-                        <div class="congviec5">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv2.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
-                        <div class="congviec6">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv2.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
-                        <div class="congviec7">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv1.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div><div class="congviec8">
-                            <div class="img-1">
-                                <img src="../assets/img/anhcv2.png" alt="">
-                            </div>
-                            <div class="info-1">
-                            <a href="" style="font-size: 18px;">HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</a>
-                            <p>Mức lương: 20-30 triệu đồng</p>  
-                            <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT  </a>
-                            <p>Địa điểm: <a href="">Thành phố Hà Nội</a></p>
-                        </div>
-                        </div>
+                        <?php
+// Kết nối với cơ sở dữ liệu
+$conn = new mysqli(DB_HOST, DB_USER, getenv('DB_PASSWORD'), DB_NAME);
+
+// Kiểm tra kết nối
+if (!$conn) {
+  die("Kết nối thất bại: " . mysqli_connect_error());
+}
+
+// Truy vấn dữ liệu
+$sql = "SELECT * FROM project";
+$result = mysqli_query($conn, $sql);
+
+// Kiểm tra kết quả truy vấn
+if (!$result) {
+  die("Truy vấn thất bại: " . mysqli_error($conn));
+}
+
+// Duyệt qua kết quả và hiển thị dữ liệu
+while ($row = mysqli_fetch_assoc($result)) {
+  echo "<div class='congviec1'>";
+  echo "<div class='img-1'>";
+  echo "<img src='" . $row['attached_file'] . "' alt=''>";
+  echo "</div>";
+  echo "<div class='info-1'>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "' style='font-size: 18px;'>" . $row['job_title'] . "</a>";
+  echo "<p>Mức lương: " . $row['budget'] . " triệu đồng</p>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "'>" . $row['company_name'] . "</a>";
+  echo "<p>Địa điểm: <a href=''>" . $row['workplace'] . "</a></p>";
+  echo "</div>";
+  echo "<div class='to-infojob'>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "'> Xem thông tin </a>";
+  echo "</div>";
+  echo "</div>";
+}
+// Đóng kết nối với cơ sở dữ liệu
+mysqli_close($conn);
+?>
                     </div>
-                </div>
-            </div>
-            <div class="information">
-                <div class="info1">
-                <div class="apply">
-                <div class="img-info"><img src="../assets/img/anhcv1.png" alt=""></div>
-                <div class="button-apply"><a href="info-job.php">Ứng tuyển</a></div>
-                </div>
-                <h2>HO - Khối CNTT - Chuyên viên Giám sát an toàn thông tin (SOC)</h2>
-                <p>Lĩnh vực: IT</p>
-                <p>Công việc: Tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin</p>
-                <p>Mức lương: 20-30 triệu đồng</p>
-                <p>Địa điểm: TP Hồ Chí Minh</p>
-                <p>Hình thức làm việc: Trực tiếp(Full-Time)</p>
-
-
-                <h3>Mô tả công việc</h3>
-                <ul>
-                    <li>Cài đặt, cấu hình và quản trị các thiết bị bảo mật (Firewall, WAF, IPS, DLP, v.v) theo chính sách nhằm đảm bảo an toàn cho hạ tầng CNTT.</li>
-                    <li>Phối hợp quản trị hệ thống phòng chống mã độc, hỗ trợ giải quyết các vấn đề liên quan đến mã độc trên máy chủ, máy trạm.</li>
-                    <li>Dò quét điểm yếu kỹ thuật; kiểm thử an ninh mạng, hệ thống máy chủ và tìm kiếm phương án khắc cụ các điểm yếu.</li>
-                    <li>Tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin.</li>
-                    <li>Giám sát, quản trị vận hành và khắc phục các vấn đề về an toàn thông tin.</li>
-                    <li>Nghiên cứu, thử nghiệm và đề xuất các giải pháp bảo mật nhằm nâng cao hiệu quả bảo vệ an toàn thông tin.</li>
-                    <li>Thực hiện báo cáo tình hình an toàn thông tin cho cấp trên theo định kỳ, hoặc khi được yêu cầu trực tiếp.</li>
-                </ul>
-                
-
-
-                <h3>Yêu cầu đối với các ứng viên:</h3>
-                <ul>
-                    <li>Tuổi từ 22-30 tuổi.</li>
-                    <li>Ưu tiên người có kinh nghiệm, chưa có kinh nghiệm sẽ được đào tạo.</li>
-                    <li>Năng động, tự tin, nhiệt tình và trách nhiệm cao trong công việc.</li>
-                    <li>Ưu tiên tuyển dụng người có bằng cấp tốt và các chứng chỉ ngoại ngữ</li>
-                </ul>
-
-
-
-                <h3>Yêu cầu kĩ năng: </h3>  
-                <ul>
-                    <li>Kỹ năng giao tiếp tốt</li>
-                    <li>Khả năng làm việc nhóm, làm việc độc lập</li>
-                    <li>Khả năng chịu áp lực công việc lớn</li>
-                    <li>Quản lý thời gian và sắp xếp công việc hiệu quả</li>
-                </ul> 
-                
-                <h3>Cách thức ứng tuyển </h3> 
-                <p>Ứng viên nộp hồ sơ trực tuyến bằng cách bấm Ứng tuyển ở phía trên.</p>
-                </div>
-            </div>
             </div>
         </div>
-
-
+        </div>
+        </div>
 
 
 
@@ -235,36 +137,6 @@
 
 
 
-
-
-
-
-
-
-<!--Liên kết onclick-->                                               <!--làm k được :))))))))-->
-<script>
-   // Khởi tạo biến lưu trữ trạng thái hiển thị
-let currentInfo = "info1";
-
-// Thêm sự kiện click cho các thẻ `a` trong các thẻ `congviec`
-const congviecEls = document.querySelectorAll(".congviec");
-for (const congviec of congviecEls) {
-  const aEl = congviec.querySelector("a");
-  aEl.addEventListener("click", function (e) {
-    e.preventDefault(); // Ngăn chặn chuyển hướng trang
-
-    const infoId = e.target.closest(".congviec").querySelector(".info").id;
-    if (infoId === currentInfo) return;
-
-    // Ẩn thông tin hiện tại
-    document.getElementById(currentInfo).classList.add("hidden");
-
-    // Hiển thị thông tin mới
-    currentInfo = infoId;
-    document.getElementById(infoId).classList.remove("hidden");
-  });
-}
-</script>
 
 
 

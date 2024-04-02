@@ -90,8 +90,22 @@
             </ul>
             </li>
             </ul>     
-            <div class="button">
-                <a href="post-project.php">Đăng dự án</a>
+            <div class="button" >
+            <?php 
+            if(!isset($_SESSION['user_id'])){
+             ?>
+            <a href="sign-in.html">Đăng nhập</a>
+            <?php
+            }else{ 
+                if (isset($_SESSION['user_id']) && $_SESSION['role'] === 0) {
+             ?>
+                <a href="../candidate/cv.php">Tạo CV</a>
+            <?php
+             }else{
+            ?> 
+                <a href="employer/post-project.php">Đăng dự án</a>
+            <?php
+            }}?>
             </div>  
             </nav>
             </div>

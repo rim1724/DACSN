@@ -41,8 +41,8 @@
                     ?>
                                 <li class="hover2"><a href="info-user.php">Thông tin cá nhân</a></li>
                                 <li class="hover2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
-                                <li class="see2"><a href="apply-list.php">Danh sách công việc đã tuyển</a></li>
-                                <li class="hover2"><a href="verified-phonenumber.php">Xác thực thông tin</a></li>
+                                <li class="see2"><a href="apply-list.php">Danh sách công việc đã ứng tuyển</a></li>
+                                <li class="hover2"><a href="cv-list.php">Xác thực thông tin</a></li>
 
                     <?php
                     } else {
@@ -77,7 +77,7 @@
                     if (isset($_SESSION['user_id']) && $_SESSION['role'] === 0) {
                     // User is logged in as a candidate (role = 0)
                     ?>
-                                <div class="list-apply">
+<div class="list-apply">
     <div class="cancel">
         <div class="img-cancel">
             <img src="../../assets/img/anhcv1.png" alt="" >
@@ -95,183 +95,8 @@
             <button>Hủy ứng tuyển</button>
         </div>
     </div>
+   
     <div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
-        <div class="img-cancel">
-            <img src="../../assets/img/anhcv1.png" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a> <br>
-        <a href="">NGÂN HÀNG THƯƠNG MẠI CỔ PHẦN BƯU ĐIỆN LIÊN VIỆT</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Fresher, Intern, Junior, Senior</p>  
-        </div>
-        <a href="" style="color:red;">Xem thêm thông tin</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Hủy ứng tuyển</button>
-        </div>
-    </div><div class="cancel">
         <div class="img-cancel">
             <img src="../../assets/img/anhcv1.png" alt="" >
         </div>
@@ -315,70 +140,6 @@
         </div>
     </div>
     <div class="cancel">
-    <div class="img-cancel-1">
-            <img src="../../assets/img/user.jpg" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Tên ứng viên: Nguyễn Văn A</a> <br>
-        <a href="../../views/info-job.php">Công việc ứng tuyển: Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Kinh nghiệm: 2 năm</p>  
-        </div>
-        <a href="../../views/info-job.php" style="color:red;">Xem sơ yếu lí lịch ứng viên (CV)</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Xóa ứng viên</button>
-        </div>
-    </div><div class="cancel">
-    <div class="img-cancel-1">
-            <img src="../../assets/img/user.jpg" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Tên ứng viên: Nguyễn Văn A</a> <br>
-        <a href="../../views/info-job.php">Công việc ứng tuyển: Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Kinh nghiệm: 2 năm</p>  
-        </div>
-        <a href="../../views/info-job.php" style="color:red;">Xem sơ yếu lí lịch ứng viên (CV)</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Xóa ứng viên</button>
-        </div>
-    </div><div class="cancel">
-    <div class="img-cancel-1">
-            <img src="../../assets/img/user.jpg" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Tên ứng viên: Nguyễn Văn A</a> <br>
-        <a href="../../views/info-job.php">Công việc ứng tuyển: Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Kinh nghiệm: 2 năm</p>  
-        </div>
-        <a href="../../views/info-job.php" style="color:red;">Xem sơ yếu lí lịch ứng viên (CV)</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Xóa ứng viên</button>
-        </div>
-    </div><div class="cancel">
-    <div class="img-cancel-1">
-            <img src="../../assets/img/user.jpg" alt="" >
-        </div>
-        <div class="info-cancel">
-        <a href="" style="font-size: 20px; color:blue">Tên ứng viên: Nguyễn Văn A</a> <br>
-        <a href="../../views/info-job.php">Công việc ứng tuyển: Chuyên viên Kiểm thử An toàn thông tin (Pentest)</a>
-        <div class="non-click">
-        <p>Thành phố Hà Nội</p>
-        <p style="margin-left: auto;">Kinh nghiệm: 2 năm</p>  
-        </div>
-        <a href="../../views/info-job.php" style="color:red;">Xem sơ yếu lí lịch ứng viên (CV)</a>
-        </div>
-        <div class="btn-cancel">
-            <button>Xóa ứng viên</button>
-        </div>
-    </div><div class="cancel">
     <div class="img-cancel-1">
             <img src="../../assets/img/user.jpg" alt="" >
         </div>

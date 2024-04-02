@@ -1,5 +1,5 @@
  // Định nghĩa số lượng mục trên mỗi trang
- var itemsPerPage = 4;
+ var itemsPerPage = 6;
 
  // Lấy danh sách tất cả các mục con có class bắt đầu bằng 'congviec'
  var jobItems = document.querySelectorAll('[class^="congviec"]');

@@ -1,6 +1,6 @@
 <?php include('header_can.php') ?>
 
-<link rel="stylesheet" href="../../assets/css/verified-phonenumber.css">
+<link rel="stylesheet" href="../../assets/css/cv-list.css">
 
         <!--vach ngan-->
 
@@ -44,7 +44,7 @@
                                 <li class="hover2"><a href="info-user.php">Thông tin cá nhân</a></li>
                                 <li class="hover2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
                                 <li class="hover2"><a href="apply-list.php">Danh sách công việc đã ứng tuyển</a></li>
-                                <li class="see2"><a href="cv-list.php">Xác thực thông tin</a></li>
+                                <li class="see2"><a href="cv-list.php">Danh sách CV đã tạo</a></li>
 
                     <?php
                     } else {
@@ -66,32 +66,34 @@
         
     </div>
 
-<div class="verify">
-    <div class="title">
-        <h2>Xác thực ID tài khoản</h2>
-        <p>Xác thực chính xác thông tin cá nhân là cách giúp bạn nhận được sự tin tưởng từ những nhà tuyển dụng.</p>
-    </div>
-    <div class="verify-main">
-        <div class="type">
-            <i class="fa-solid fa-circle-check" style="margin-left: 15px;margin-right: 15px;margin-top: 10px;"></i> Xác thực số điện thoại
+    <div class="list-apply">
+    <div class="cancel">
+        <div class="info-cancel">
+        <a href="../../views/info-job.php" style="font-size: 20px; color:blue">Hồ sơ năng lực</a> <br>
+        <p>Tình trạng: Đã ứng tuyển vào <a href="../info-job.php">công ty A</a> (để if nếu có thì để tên nếu không thì không)</p>
+        <div class="non-click">
+        <p>Viết ngày: 30/03/2024</p>
+         
         </div>
-        <div class="sdt">
-            <p>Lợi ích của việc xác thực thông tin bằng số điện thoại</p>
-            <ul>
-                <li>Tăng độ tin cậy khi thực hiện việc đăng tin tuyển dụng hay tìm công việc</li>
-                <li>Có thể liên hệ trực tiếp bằng số điện thoại đã xác minh</li>
-                <li>Giúp mọi người tránh mất thời gian, tiền bạc khi gặp những đơn tuyển dụng giả</li>
-            </ul>
-            <input type="text" placeholder="0000000000">
-            <div class="button-sdt">
-                <a href="">Xác thực SĐT</a>
-            </div>
-            
+        <a href="../../views/employer/view-cv.php" style="color:red;">Thay đổi thông tin CV</a>
+        </div>
+        <div class="btn-cancel">
+            <button>Xóa CV</button>
         </div>
     </div>
-</div> 
+</div>
+<div id="pagination"></div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
                 <!--footer-->
                 <div class="footer">
                     <img src="../../assets/img/logo-web.png" alt="">
@@ -109,15 +111,22 @@
                         <i class="fa-solid fa-circle-arrow-up" style=" font-size: 30px;"></i>
                 
                       </div>
+        
+        
+        
+                
             </body>
-
+        
+        
+    
+        
         <!--Script back top-->
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-<script src="../../js/back-top.js">
-</script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="../../js/back-top.js">
+        </script>
 
 
 
-            
+<script src="../../js/pagination-applylist.js"></script>
                 
         </html>
