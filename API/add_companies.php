@@ -46,11 +46,11 @@ if (isset($_POST['submit-form'])) {
   $image_uploaded = false;
   $image_path = null;
 
-  if (isset($_FILES['img']) && $_FILES['img']['error'] === 0) {
-    $image_name = $_FILES['img']['name'];
-    $image_type = $_FILES['img']['type'];
-    $image_tmp_name = $_FILES['img']['tmp_name'];
-    $image_size = $_FILES['img']['size'];
+  if (isset($_FILES['img_company']) && $_FILES['img_company']['error'] === 0) {
+    $image_name = $_FILES['img_company']['name'];
+    $image_type = $_FILES['img_company']['type'];
+    $image_tmp_name = $_FILES['img_company']['tmp_name'];
+    $image_size = $_FILES['img_company']['size'];
 
     // Validate image type (adjust as needed)
     $allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif'];
@@ -99,8 +99,8 @@ if (isset($_POST['submit-form'])) {
 
   if ($result->num_rows > 0) {
     // Table exists, proceed with insert
-    $stmt = $conn->prepare("INSERT INTO companies (company_id, name_company, company_industry, address_company, phone_nompany, nation_company) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('ssssssssss', $fullname, $email, $phone, $city, $address, $realfullname, $id_identify, $received_date, $birthday, $image_path); // Removed one 's'
+    $stmt = $conn->prepare("INSERT INTO companies (company_id, name_company, company_industry, address_company, phone_nompany, nation_company, img_company) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('ssssssssss', $company_id, $name_company, $company_industry, $address_company, $phone_nompany, $nation_company, $img_company); // Removed one 's'
     // Execute SQL statement
     if ($stmt->execute()) {
       echo json_encode([

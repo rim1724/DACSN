@@ -81,7 +81,7 @@
                     // User is logged in, show profile and logout links
                     ?>
                     <li><a href="../candidate/info-user.php" style="padding-left: 67px;">Đổi thông tin</a></li>
-                    <li><a href="view_cv.php" style="padding-left: 67px;">CV đã tạo</a></li>
+                    <li><a href="../candidate/cv-list.php" style="padding-left: 92px;">CV đã tạo</a></li>
                     <li><a href="../candidate/change-password.php" style="padding-left: 63px; width: 108px;">Đổi mật khẩu</a></li>
                     <li><a href="../../php/sign-out.php">Đăng xuất</a></li>
                     <?php
