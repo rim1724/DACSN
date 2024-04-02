@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 01, 2024 lúc 09:05 AM
+-- Thời gian đã tạo: Th4 02, 2024 lúc 07:56 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -118,19 +118,21 @@ INSERT INTO `candidate` (`id_candidate`, `img`, `id_identify`, `fullname`, `emai
 
 CREATE TABLE `companies` (
   `company_id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `industry` varchar(255) DEFAULT NULL,
-  `location` varchar(255) DEFAULT NULL,
-  `website` varchar(255) DEFAULT NULL
+  `name-company` varchar(255) NOT NULL,
+  `company_industry` varchar(255) DEFAULT NULL,
+  `address_company` varchar(255) DEFAULT NULL,
+  `phone_company` int(255) NOT NULL,
+  `nation_company` int(255) NOT NULL,
+  `img_company` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `companies`
 --
 
-INSERT INTO `companies` (`company_id`, `name`, `industry`, `location`, `website`) VALUES
-(1, 'TechCorp', 'Technology', 'Silicon Valley', 'http://www.techcorp.com'),
-(2, 'HealthTech', 'Healthcare', 'New York', 'http://www.healthtech.com');
+INSERT INTO `companies` (`company_id`, `name-company`, `company_industry`, `address_company`, `phone_company`, `nation_company`, `img_company`) VALUES
+(1, 'TechCorp', 'Technology', 'Silicon Valley', 0, 0, ''),
+(2, 'HealthTech', 'Healthcare', 'New York', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -353,7 +355,7 @@ INSERT INTO `languages` (`id`, `cv_id`, `language`, `proficiency`) VALUES
 
 CREATE TABLE `project` (
   `id_project` int(255) NOT NULL,
-  `user_id` int(2) NOT NULL,
+  `user_id` int(255) NOT NULL,
   `service` varchar(50) NOT NULL,
   `specific_service` varchar(1000) NOT NULL,
   `job_title` varchar(100) NOT NULL,
@@ -367,19 +369,6 @@ CREATE TABLE `project` (
   `employment_type` tinyint(1) NOT NULL,
   `attached_file` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `project`
---
-
-INSERT INTO `project` (`id_project`, `user_id`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
-(7, 0, 'check', 'chek', 'check', 'chek', 'check', '0000-00-00', 'check', 'check', 'check', 0, 0, '../uploads/65f9062516d2c.docx'),
-(8, 0, 'Lập trình web', 'Tạo website', 'Thiết kế front-end cho 1 trang web', '...', 'ngoại ngữ, kĩ năng lập trình ,...', '0000-00-00', 'Full-Time', 'huế', 'Theo tháng', 50, 0, '../uploads/6607b7a182ebc.png'),
-(9, 0, 'AAAA', 'BBBB', 'CCCCCC', 'DDDDĐ', 'EEEEEEEEEe', '0000-00-00', 'GGGGGGGGGGG', 'HHHHHHH', 'IIIIIIIi', 0, 0, '../uploads/6607c8c789c74.png'),
-(10, 0, 'dsdgfadsg', 'dfgsfdg', 'dfsgsfdgda', 'dfsgdgdfsg', 'dfsgfdsgfds', '0000-00-00', 'dfsgfdsgdsgdfsg', 'dfgsfdsgds', 'ddsgfdg', 0, 0, '../uploads/6607d4d86ffea.png'),
-(11, 0, 'gffdfd', 'fdgggrw', '2353254', '2453232', '325325', '0000-00-00', '325325', '32532532', '5325325', 321434, 0, '../uploads/6607d4edf35ba.png'),
-(12, 0, 'IT SUPPORT', 'hhhh', 'IT SUPPORT/HELPDESK INTERN FULL_TIME (CÓ XE ĐƯA ĐÓN HCM/ BIEN HOA)', 'Kịp thời phát hiện và xử lý các vấn đề liên quan đến sự cố máy tính. Theo dõi và tư vấn nâng cấp cho hệ thống mạng thông tin nội bộ trong trường hợp cần thiết. Bảo trì hệ thống mạng và máy tính của công ty. Thu thập địa chỉ email + NetSuite và mật khẩu của tất cả nhân viên Hướng dẫn cho tất cả các phần mềm sử dụng trong nhà máy, Chính sách CNTT, Chính sách thay thế máy tính Cam kết bảo mật thông tin cho tất cả nhân viên Hướng dẫn nhân viên cách sử dụng hệ thống phần mềm của công ty, cập nhật và quản lý chính sách IT', 'Kỹ năng & Chuyên môn Không yêu cầu kinh nghiệm SV năm 3 hoặc tốt nghiệp Trung cấp nghề/ Cao đẳng/ ĐH trở lên chuyên ngành Công nghệ thông tin, Quản trị mạng, Điện tử viễn thông,... (Có thể làm việc full-time) Nắm vững về hệ thống phần cứng máy vi tính Có kinh nghiệm hoặc hiểu biết về các ngôn ngữ lập trình C#, ReactJS, Python,... hoặc ngôn ngữ khác. là 1 lợi thế Tiếng Anh cơ bản (Đọc-Viết căn bản)', '0000-00-00', 'fadfsf', 'fsaffff', 'fsaf', 0, 0, '../uploads/6607d56c21680.jpg'),
-(13, 0, '45656456', '5465464566', '546456456456', '456456456', '6546456', '0000-00-00', '6456546', '45645646456', '45645', 6546460, 0, '../uploads/6607d582bcefa.png');
 
 -- --------------------------------------------------------
 
@@ -428,7 +417,8 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`, 
 (29, 'phuoc', '$argon2id$v=19$m=65536,t=4,p=1$RWxhYjVaMjhDNjdLLkJvTw$VSBzsECaka+mh9Gy7kBELnLxEPAJnQLTF+s9ip/yI7M', '', 'phuoc@gmail.com', 0),
 (30, 'moi', '$argon2id$v=19$m=65536,t=4,p=1$RlhoYmpJNTdzYzYzSFF3Wg$2/A4WHxNkokn1GzT8owV4LTqVJLIIqR+9reI5NJFsGA', '', 'moi@gmail.com', 0),
 (31, 'hung', '$argon2id$v=19$m=65536,t=4,p=1$Y01PSUNHcnNnZHRkemNadg$0KZsbh7IesJ5yOu+fLU7I4BKvB1KlnpHzwRvcOjwdaA', '', 'hung@gmail.com', 0),
-(32, 'catlo', '$argon2id$v=19$m=65536,t=4,p=1$NkVoTDJ1WlFCdlEza09ydg$w6iG6mIYEpILEIwhTLBlEU2sHHIGDth0X17RCLDqePQ', '', 'catlo@gmail.com', 1);
+(32, 'catlo', '$argon2id$v=19$m=65536,t=4,p=1$NkVoTDJ1WlFCdlEza09ydg$w6iG6mIYEpILEIwhTLBlEU2sHHIGDth0X17RCLDqePQ', '', 'catlo@gmail.com', 1),
+(33, 'rim', '$argon2id$v=19$m=65536,t=4,p=1$ajNZZEVreFNSTWVYZWp3cg$Nz+kgjgVCvzq44Iss7bFAHFU130wguZsjvCgVWrGxQ8', '', 'rim@gmail.com', 0);
 
 -- --------------------------------------------------------
 
@@ -580,7 +570,8 @@ ALTER TABLE `languages`
 -- Chỉ mục cho bảng `project`
 --
 ALTER TABLE `project`
-  ADD PRIMARY KEY (`id_project`);
+  ADD PRIMARY KEY (`id_project`),
+  ADD KEY `fk_project_users` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `skills`
@@ -641,19 +632,19 @@ ALTER TABLE `education`
 -- AUTO_INCREMENT cho bảng `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `user_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `user_apply`
 --
 ALTER TABLE `user_apply`
-  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -677,6 +668,12 @@ ALTER TABLE `hobbies`
 --
 ALTER TABLE `languages`
   ADD CONSTRAINT `languages_ibfk_1` FOREIGN KEY (`cv_id`) REFERENCES `education` (`cv_id`);
+
+--
+-- Các ràng buộc cho bảng `project`
+--
+ALTER TABLE `project`
+  ADD CONSTRAINT `fk_project_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 --
 -- Các ràng buộc cho bảng `skills`

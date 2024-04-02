@@ -158,7 +158,7 @@ include('header_can.php'); ?>
                     // User is logged in with a different role (not candidate)
                     // You can add conditional logic here to display specific options based on other roles
                     ?>
-                               <form action="../../API/add_candidate.php" method="post" enctype="multipart/form-data">   
+                               <form action="../../API/add_companies.php" method="post" enctype="multipart/form-data">   
                                 <div class="doithongtin">
                                 <div class="phan1">
                                 <h1>Thông tin chung</h1>
@@ -168,7 +168,7 @@ include('header_can.php'); ?>
                                         Ảnh đại diện công ty <span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                    <div class="img">
+                                    <div class="img_company">
                                         <img src="../../assets/img/user.jpg" alt="">
                                     </div>
                                     <div class="upload">
@@ -179,31 +179,31 @@ include('header_can.php'); ?>
                                         Tên công ty <span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                        <input type="text" name="namecompany" placeholder="Công ty A" style="width:250px; height:19px;">
+                                        <input type="text" name="name-company" placeholder="Công ty A" style="width:250px; height:19px;">
                                     </dd>
                                     <dt>
                                         Ngành nghề <span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                        <input type="text" name="companyindustry" placeholder="Môi giới, Công nghệ, ..." style="width:250px; height:19px;">
+                                        <input type="text" name="company_industry" placeholder="Môi giới, Công nghệ, ..." style="width:250px; height:19px;">
                                     </dd>
                                     <dt>
                                         Sđt của công ty <span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                        <input type="text" name="phonecompany" placeholder="0000000000" style="width:250px; height:19px;">
+                                        <input type="text" name="phone_company" placeholder="0000000000" style="width:250px; height:19px;">
                                     </dd>
                                     <dt>
                                         Quốc tịch công ty <span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                        <input type="text" name="nationcompany"  placeholder="Huế" style="width:250px; height:19px;">
+                                        <input type="text" name="nation_company"  placeholder="Huế" style="width:250px; height:19px;">
                                     </dd>
                                     <dt>
                                         Địa chỉ công ty<span class="redtext">*</span>
                                     </dt>
                                     <dd>
-                                        <input type="text" name="addresscompany" placeholder="1 Đ. Cộng Hòa, Phường 4"style="width:250px; height:19px;">
+                                        <input type="text" name="address_company" placeholder="1 Đ. Cộng Hòa, Phường 4"style="width:250px; height:19px;">
                                     </dd>
                                 </dl>
                                 <div class="phan2">
