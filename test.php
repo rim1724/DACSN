@@ -124,7 +124,7 @@ echo "</div>";
                       // Hiển thị thông tin các user_id
                       echo "<div class='cancel'>";
   echo "<div class='img-cancel-1'>";
-  echo "<img src='" . $row['img'] . "' alt=''>";
+  echo "<img src='" . $row['attached_file'] . "' alt=''>";
   echo "</div>";
   echo "<div class='info-cancel'>";
   echo "<a href='../info-job.php?id_project=" . $row['id_project'] . "' style='font-size: 20px; color:blue'>Tên ứng viên:" . $row['fullname'] . "</a>";

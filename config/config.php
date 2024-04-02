@@ -6,7 +6,7 @@ define('DB_PASSWORD', '');
 define('DB_NAME', 'dacsn-n12');
 define('DB_PASS', '');
 define('DB_USERNAME', 'root');
-define('IMAGE_UPLOAD_PATH', '/path/to/uploads/');
+define('IMAGE_UPLOAD_PATH', 'DACSN-N12/uploads/');
 
 
 $conn = new mysqli(DB_HOST, DB_USER, getenv('DB_PASSWORD'), DB_NAME);
