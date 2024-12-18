@@ -56,7 +56,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   echo "<div class='info-1'>";
   echo "<a href='info-job.php?id_project=" . $row['id_project'] . "' style='font-size: 18px;'>" . $row['job_title'] . "</a>";
   echo "<p>Mức lương: " . $row['budget'] . " triệu đồng</p>";
-  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "'>" . $row['company_name'] . "</a>";
+  echo "<a href='info-job.php?id_project=" . $row['id_project'] . "'>Eupfin Việt Nam</a>";
   echo "<p>Địa điểm: <a href=''>" . $row['workplace'] . "</a></p>";
   echo "</div>";
   echo "<div class='to-infojob'>";

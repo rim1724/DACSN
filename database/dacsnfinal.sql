@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 02, 2024 lúc 01:04 PM
+-- Thời gian đã tạo: Th4 03, 2024 lúc 06:06 AM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -38,7 +38,9 @@ CREATE TABLE `achievements` (
 --
 
 INSERT INTO `achievements` (`id`, `cv_id`, `achievement`) VALUES
-(1, 27, 'd co');
+(5, 42, 'SDFDSFSDF'),
+(6, 43, 'SDFDSFSDF'),
+(7, 44, '123');
 
 -- --------------------------------------------------------
 
@@ -58,7 +60,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `username`, `password`, `email`) VALUES
-(1, 'hoanggiakiet', 'kiet', 'giakiethoang07102004@gmail.com');
+(1, 'hoanggiakiet', 'kiet', 'giakiethoang07102004@gmail.com'),
+(2, 'rim1724', '123456', 'rimrim@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -110,13 +113,6 @@ CREATE TABLE `candidate` (
   `birthday` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Đang đổ dữ liệu cho bảng `candidate`
---
-
-INSERT INTO `candidate` (`id_candidate`, `img`, `id_identify`, `fullname`, `email`, `phone`, `city`, `address`, `realfullname`, `user_id`, `received_date`, `birthday`) VALUES
-(2, '[value-2]', 0, '[value-4]', '[value-5]', 0, '[value-7]', '[value-8]', '[value-9]', 30, '0000-00-00', '0000-00-00');
-
 -- --------------------------------------------------------
 
 --
@@ -132,14 +128,6 @@ CREATE TABLE `companies` (
   `nation_company` varchar(255) NOT NULL,
   `img_company` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Đang đổ dữ liệu cho bảng `companies`
---
-
-INSERT INTO `companies` (`company_id`, `name_company`, `company_industry`, `address_company`, `phone_company`, `nation_company`, `img_company`) VALUES
-(1, 'TechCorp', 'Technology', 'Silicon Valley', '0', '0', ''),
-(2, 'HealthTech', 'Healthcare', 'New York', '0', '0', '');
 
 -- --------------------------------------------------------
 
@@ -167,7 +155,9 @@ CREATE TABLE `cv` (
 --
 
 INSERT INTO `cv` (`cv_id`, `user_id`, `full_name`, `img`, `email`, `phone`, `dob`, `gender`, `city`, `address`, `myseo`, `career_objective`) VALUES
-(27, 29, 'viet hung', 'C:\\xampp\\htdocs\\dacsn-n12\\API/../uploads/660be55618ee2.jpg', 'rim1724@gmail.com', '0690012346', '2004-06-03', 'male', 'hue', 'hue', 'alo', 'alo');
+(42, 29, 'dgsdfg', 'C:\\xampp\\htdocs\\dacsn-n12\\API/../uploads/660cb51c199b3.png', 'hunglinhngoc319@gmail.com', 'dsfs', '2222-02-02', 'male', 'DSFF', 'DSFSF', 'sdfdsfdsf', 'fsdfdsfdsf'),
+(43, 29, 'hung', 'C:\\xampp\\htdocs\\dacsn-n12\\API/../uploads/660cb53b8d8f8.png', 'hungrim17@gmail.com', '0906005547', '2222-02-02', 'male', 'hue', 'hue', 'sdfdsfdsf', 'fsdfdsfdsf'),
+(44, 33, 'phuoc', 'C:\\xampp\\htdocs\\dacsn-n12\\API/../uploads/660ccb980f4e8.png', 'hungvietnguyen1724@gmail.com', '0931543215', '0123-03-12', 'male', 'hue', '123', '123', '123');
 
 -- --------------------------------------------------------
 
@@ -189,7 +179,9 @@ CREATE TABLE `education` (
 --
 
 INSERT INTO `education` (`id`, `cv_id`, `school`, `degree`, `start_date`, `end_date`) VALUES
-(101, 27, 'thpt abc', 'thạc sĩ', '1212-04-21', '2555-03-06');
+(105, 42, 'sdfd', 'fdfsdf', '1566-03-03', '1612-12-03'),
+(106, 43, 'sdfd', 'fdfsdf', '1566-03-03', '1612-12-03'),
+(107, 44, '132123', '1231231', '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -208,7 +200,9 @@ CREATE TABLE `hobbies` (
 --
 
 INSERT INTO `hobbies` (`id`, `cv_id`, `hobby`) VALUES
-(0, 27, 'game');
+(1, 42, 'dfdsfds'),
+(2, 43, 'dfdsfds'),
+(3, 44, '123');
 
 -- --------------------------------------------------------
 
@@ -254,7 +248,9 @@ CREATE TABLE `languages` (
 --
 
 INSERT INTO `languages` (`id`, `cv_id`, `language`, `proficiency`) VALUES
-(0, 27, 'tieng trung cua', 'advanced');
+(1, 42, 'dsfsdf', 'advanced'),
+(2, 43, 'dsfsdf', 'advanced'),
+(3, 44, '123', 'intermediate');
 
 -- --------------------------------------------------------
 
@@ -286,7 +282,9 @@ CREATE TABLE `project` (
 INSERT INTO `project` (`id_project`, `user_id`, `service`, `specific_service`, `job_title`, `job_description`, `required_skills`, `deadline`, `work_type`, `workplace`, `payment_method`, `budget`, `employment_type`, `attached_file`) VALUES
 (29, 35, 'IT', 'Phát triển và bảo trì các ứng dụng phần mềm, tham gia vào quá trình thiết kế và triển khai hệ thống.', 'Nhà Phát triển Phần mềm', 'Đánh giá hệ thống phần mềm mới ra mắt và hiện có, cải thiện chất lượng cho hệ thống máy tính hiện có, xác định và sửa chữa các lỗi và lỗ hổng xuất hiện để bảo trì cho hệ thống hiện có, viết mã cho phần mềm và tạo bản cập nhật mới, viết bản hướng dẫn về cách vận hành và thông số kỹ thuật của hệ thống, tham vấn với người quản lý dự án hoặc khách hàng về tiến độ phát triển phần mềm để cùng xem xét các đề xuất, cải tiến hoặc yêu cầu có thể được đưa ra, gửi báo cáo về tiến độ của dự án', ',Có khả năng làm việc với máy tính hiệu quả, hiểu rõ và sử dụng thành thạo một số ngôn ngữ lập trình khác nhau, kỹ năng giải quyết vấn đề, kỹ năng xã hội, khả năng định hướng chi tiết, kỹ năng giao tiếp, kỹ năng phân tích.', '0000-00-00', 'Full-Time', 'Hồ Chí Minh', 'Theo tháng', 45, 0, '../uploads/660bd6ec6878f.png'),
 (30, 35, 'IT', 'Đảm bảo an ninh và bảo mật thông tin hệ thống, phát hiện và ngăn chặn các cuộc tấn công mạng.', 'Chuyên viên An toàn Thông tin', 'Cài đặt, cấu hình và quản trị các thiết bị bảo mật (Firewall, WAF, IPS, DLP, v.v) theo chính sách nhằm đảm bảo an toàn cho hạ tầng CNTT, phối hợp quản trị hệ thống phòng chống mã độc, hỗ trợ giải quyết các vấn đề liên quan đến mã độc trên máy chủ, máy trạm, dò quét điểm yếu kỹ thuật; kiểm thử an ninh mạng, hệ thống máy chủ và tìm kiếm phương án khắc cụ các điểm yếu, tham gia xây dựng, và hỗ trợ triển khai các chính sách, quy trình, tiêu chuẩn kỹ thuật liên quan đến an toàn thông tin, giám sát, quản trị vận hành và khắc phục các vấn đề về an toàn thông tin.', 'Có khả năng giao tiếp tốt bằng tiếng Anh, có kỹ năng làm việc nhóm, thuyết trình.', '0000-00-00', 'Full-Time', 'Hà Nội', 'Theo tháng', 35, 0, '../uploads/660bd80173412.png'),
-(31, 29, 'IT', 'Phát triển phần mềm nhúng cho các thiết bị điện tử, thiết kế và triển khai các hệ thống nhúng.', 'Kỹ sư Phần mềm Nhúng', 'Viết code, test code, viết các document, v.vv.. cho sản phẩm, thực hiện test board mạch và thiết kế PCB', 'Thành thạo các loại ngôn ngữ lập trình, quan trọng là ngôn ngữ C, đây được xem là ngôn ngữ hàng đầu của ngành lập trình nhúng, có kiến thức về cấu trúc dữ liệu, giải thuật, hệ điều hành linux, có kiến thức về điều khiển, vi xử lý, Timer, logic, Adc, v.vv..', '0000-00-00', 'Part-Time', 'Đà Nẵng', 'Theo job', 10, 0, '../uploads/660bda30b8cde.png');
+(31, 29, 'IT', 'Phát triển phần mềm nhúng cho các thiết bị điện tử, thiết kế và triển khai các hệ thống nhúng.', 'Kỹ sư Phần mềm Nhúng', 'Viết code, test code, viết các document, v.vv.. cho sản phẩm, thực hiện test board mạch và thiết kế PCB', 'Thành thạo các loại ngôn ngữ lập trình, quan trọng là ngôn ngữ C, đây được xem là ngôn ngữ hàng đầu của ngành lập trình nhúng, có kiến thức về cấu trúc dữ liệu, giải thuật, hệ điều hành linux, có kiến thức về điều khiển, vi xử lý, Timer, logic, Adc, v.vv..', '0000-00-00', 'Part-Time', 'Đà Nẵng', 'Theo job', 10, 0, '../uploads/660bda30b8cde.png'),
+(32, 34, 'IT', 'Thực hiện các ca kiểm thử, lập kế hoạch kiểm thử và xây dựng các báo cáo kiểm thử.', 'Chuyên viên Thử nghiệm Phần mềm', 'Tìm kiếm các lỗi của hệ thống phần mềm, trực tiếp thẩm định, xác minh xem hệ thống phần mềm này có đáp ứng các yêu cầu kỹ thuật và yêu cầu nghiệp vụ hay không, hoàn thiện sản phẩm nhằm đáp ứng tối đa những yêu cầu đặt ra của khách hàng cả về mặt số lượng lẫn chất lượng, thiết kế, phát triển và thực hiện các kịch bản kiểm thử, sử dụng các công cụ và phương pháp kiểm thử phù hợp để đánh giá chất lượng sản phẩm, phối hợp với các nhóm phát triển để hiểu rõ yêu cầu và thông số kỹ thuật của sản phẩm, ghi chép và báo cáo tất cả các lỗi và sự cố tìm thấy trong quá trình kiểm thử, đề xuất các giải pháp để giải quyết hoặc khắc phục lỗi.', 'Tập trung vào công việc-tập trung hoàn thành từng mục tiêu, tránh xao nhãng vào nhiều đầu việc khác, tạo danh sách kiểm tra-đặt ra danh sách chi tiết những gì cần kiểm tra, đảm bảo không sót bước nào và sử dụng các công cụ như Trello, Asana hoặc danh sách kiểm tra truyền thống, thực hiện kiểm tra định kỳ-đặt ra thời gian cụ thể trong ngày hoặc tuần để kiểm tra công việc mình đã làm, yêu cầu phản hồi-khi hoàn thành một nhiệm vụ, hãy yêu cầu đồng nghiệp hoặc người khác kiểm tra và đưa ra phản hồi, tập trung vào việc học từ lỗi-khi gặp lỗi, đừng chỉ sửa chữa mà hãy phân tích nguyên nhân và học từ đó.', '0000-00-00', 'Full-Time', 'Huế', 'Theo tháng', 47, 0, '../uploads/660c12f1682e9.png'),
+(33, 34, 'IT', 'Phân tích yêu cầu hệ thống, thiết kế cấu trúc hệ thống và xây dựng tài liệu hệ thống.', 'Chuyên viên Phân tích Hệ thống', 'Duy trì và khắc phục sự cố kho dữ liệu, nghiên cứu và đánh giá các công nghệ mới nổi, bao gồm cả phần cứng và phần mềm, thảo luận về nhu cầu của người dùng, xác định các lỗ hổng hoặc các khu vực hoạt động kém để tăng năng suất, hiệu quả và độ chính xác, chuẩn bị lợi ích chi phí và báo cáo phân tích để nâng cấp, trao đổi các quyết định chiến lược với các nhân viên khác của bộ phận CNTT, đào tạo người dùng cuối và viết sổ tay hướng dẫn cho nhân viên hoặc khách hàng sử dụng', 'Kỹ năng phân tích-Kỹ năng giao tiếp-Sự sáng tạo-Kỹ năng kỹ thuật', '0000-00-00', 'Part-Time', 'TP.HCM', 'Theo Job', 12, 0, '../uploads/660c3431e9da9.png');
 
 -- --------------------------------------------------------
 
@@ -306,7 +304,9 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`id`, `cv_id`, `technical_skills`, `soft_skills`) VALUES
-(0, 27, 'dfsfsdg', 'fgythryj');
+(1, 42, 'dsf', 'dsfsdf'),
+(2, 43, 'dsf', 'dsfsdf'),
+(3, 44, '132', '2132');
 
 -- --------------------------------------------------------
 
@@ -344,16 +344,20 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `re_password`, `email`, 
 --
 
 CREATE TABLE `user_apply` (
-  `user_id` int(2) NOT NULL,
-  `id_project` int(2) NOT NULL
+  `id_apply` int(11) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `id_project` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `user_apply`
 --
 
-INSERT INTO `user_apply` (`user_id`, `id_project`) VALUES
-(29, 29);
+INSERT INTO `user_apply` (`id_apply`, `user_id`, `id_project`) VALUES
+(4, 32, 31),
+(5, 33, 29),
+(6, 33, 30),
+(7, 29, 32);
 
 -- --------------------------------------------------------
 
@@ -376,7 +380,9 @@ CREATE TABLE `work_experience` (
 --
 
 INSERT INTO `work_experience` (`id`, `cv_id`, `company`, `position`, `start_date`, `end_date`, `description`) VALUES
-(0, 27, 'cnms', 'ádsadsa', '2023-04-12', '2030-02-13', 'hung');
+(1, 42, 'SDFSDF', 'dsfdf', '6666-03-03', '9566-05-09', 'dsfsdfsdf'),
+(2, 43, 'k co', 'dsfdf', '6666-03-03', '9566-05-09', 'dsfsdfsdf'),
+(3, 44, '123123', '12313212', '0000-00-00', '1231-03-12', '123132');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -475,8 +481,9 @@ ALTER TABLE `users`
 -- Chỉ mục cho bảng `user_apply`
 --
 ALTER TABLE `user_apply`
-  ADD PRIMARY KEY (`user_id`),
-  ADD KEY `fk_user_apply_project` (`id_project`);
+  ADD PRIMARY KEY (`id_apply`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `id_project` (`id_project`);
 
 --
 -- Chỉ mục cho bảng `work_experience`
@@ -493,13 +500,13 @@ ALTER TABLE `work_experience`
 -- AUTO_INCREMENT cho bảng `achievements`
 --
 ALTER TABLE `achievements`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `candidate`
 --
 ALTER TABLE `candidate`
-  MODIFY `id_candidate` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_candidate` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `companies`
@@ -511,19 +518,37 @@ ALTER TABLE `companies`
 -- AUTO_INCREMENT cho bảng `cv`
 --
 ALTER TABLE `cv`
-  MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `cv_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT cho bảng `education`
 --
 ALTER TABLE `education`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+
+--
+-- AUTO_INCREMENT cho bảng `hobbies`
+--
+ALTER TABLE `hobbies`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `languages`
+--
+ALTER TABLE `languages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `project`
 --
 ALTER TABLE `project`
-  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_project` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT cho bảng `skills`
+--
+ALTER TABLE `skills`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
@@ -535,7 +560,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `user_apply`
 --
 ALTER TABLE `user_apply`
-  MODIFY `user_id` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id_apply` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `work_experience`
+--
+ALTER TABLE `work_experience`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
@@ -587,8 +618,8 @@ ALTER TABLE `skills`
 -- Các ràng buộc cho bảng `user_apply`
 --
 ALTER TABLE `user_apply`
-  ADD CONSTRAINT `fk_user_apply_project` FOREIGN KEY (`id_project`) REFERENCES `project` (`id_project`),
-  ADD CONSTRAINT `fk_user_apply_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
+  ADD CONSTRAINT `user_apply_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
+  ADD CONSTRAINT `user_apply_ibfk_2` FOREIGN KEY (`id_project`) REFERENCES `project` (`id_project`);
 
 --
 -- Các ràng buộc cho bảng `work_experience`

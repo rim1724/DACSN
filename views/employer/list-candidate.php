@@ -1,7 +1,11 @@
 <?php
-include('header_can.php');
+include('header_emloy.php');
 require_once('../../config/config.php');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start(); // Start session if not already started
+}
 ?>
+
 <link rel="stylesheet" href="../../assets/css/apply-list.css">
 <!--vach ngan-->
 
@@ -26,9 +30,6 @@ require_once('../../config/config.php');
         <div class="listmini">
             <ul>
                 <?php
-                if (session_status() === PHP_SESSION_NONE) {
-                    session_start(); // Start session if not already started
-                }
 
                 if (!isset($_SESSION['user_id'])) {
                     // User is not logged in, show login link
@@ -62,90 +63,51 @@ require_once('../../config/config.php');
 
             </ul>
         </div>
-        <?php
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
-        // Kiểm tra đăng nhập
-        if (!isset($_SESSION['user_id'])) {
-            // Nếu chưa đăng nhập, có thể điều hướng đến trang đăng nhập hoặc hiển thị thông báo lỗi
-            header("Location: login.php");
-            exit;
-        }
-
-        // Nếu đã đăng nhập, thực hiện kiểm tra vai trò
-        if ($_SESSION['role'] === 0) {
-            // Role 0: ứng viên
+        <div class="list-aplly">
+            <?php
+            // Kết nối đến cơ sở dữ liệu
+            $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+            // Kiểm tra kết nối
+            if ($conn->connect_error) {
+                die("Kết nối đến cơ sở dữ liệu thất bại: " . $conn->connect_error);
+            }
 
             // Truy vấn để lấy thông tin từ bảng user_apply và bảng project
             $sql = "SELECT * FROM user_apply INNER JOIN project ON user_apply.id_project = project.id_project WHERE user_apply.user_id = ?";
-        } else {
-            // Role khác 0: nhà tuyển dụng hoặc các vai trò khác
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $_SESSION['user_id']);
+            $stmt->execute();
+            $result = $stmt->get_result();
 
-            // Truy vấn để lấy thông tin từ bảng users và bảng candidate
-            $sql = "SELECT users.user_id, users.username, candidate.*, project.* FROM users INNER JOIN candidate ON users.user_id = candidate.user_id INNER JOIN user_apply ON users.user_id = user_apply.user_id INNER JOIN project ON user_apply.id_project = project.id_project WHERE users.user_id = ?";
-        }
-
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $_SESSION['user_id']);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        
-
-        // Hiển thị thông tin từ kết quả truy vấn
-        while ($row = $result->fetch_assoc()) {
-            // Hiển thị thông tin của từng bản ghi từ cơ sở dữ liệu
-            if ($_SESSION['role'] === 0) { 
-                // Hiển thị thông tin cho ứng viênHủy ứng tuyển
-                echo "<div class='cancel'>";
-                echo "<div class='img-cancel'>";
-                echo "<img src='../" . $row['attached_file'] . "' alt=''>";
-                echo "</div>";
-                echo "<div class='info-cancel'>";
-                echo "<a href='../info-job.php?id_project=" . $row['id_project'] . "' style='font-size: 20px; color:blue'>Tên ứng viên:" . $row['job_title'] . "</a>";
-                echo "<div class='non-click'>";
-                echo "<p>Địa điểm: " . $row['workplace'] . "</p>";
-                echo "<p style='margin-left: auto;'>Fresher, Intern, Junior, Senior</p>";
-                echo "</div>";
-                echo "<a href='info-job.php?id_project=" . $row['id_project'] . "' style='color:red;'> Xem thêm thông tin </a>";
-                echo "<div class='btn-cancel'>";
-                echo "<a href=\"../../php/cancel.php\">Hủy ứng tuyển</a>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
-                echo "<div id='pagination'></div>";
-                echo "</div>";
-            } else {
-                // Hiển thị thông tin cho nhà tuyển dụng
+            // Hiển thị thông tin cho nhà tuyển dụng
+            while ($row = $result->fetch_assoc()) {
                 echo "<div class='cancel'>";
                 echo "<div class='img-cancel-1'>";
                 echo "<img src='../" . $row['img'] . "' alt=''>";
                 echo "</div>";
                 echo "<div class='info-cancel'>";
-                echo "<a href='../info-job.php?id_project=" . $row['id_project'] . "' style='font-size: 20px; color:blue'>Tên ứng viên:" . $row['fullname'] . "</a>";
-                echo "<a href='../info-job.php?id_project=" . $row['id_project'] . "'>Công việc ứng tuyển:" . $row['job_title'] . "</a>";
+                echo "<div >";
+                echo "<a href='cv.php?user_id=" . $row['user_id'] . "' style='font-size: 20px; color:blue'>Tên ứng viên:" . $row['fullname'] . "</a>";
+                echo "<a href='cv.php?user_id=" . $row['user_id'] . "'>Công việc ứng tuyển:" . $row['job_title'] . "</a>";
                 echo "<div class='non-click'>";
                 echo "<p>Địa điểm: " . $row['workplace'] . "</p>";
                 echo "</div>";
-                echo "<a href='info-job.php?id_project=" . $row['id_project'] . "' style='color:red;'> Xem sơ yếu lí lịch ứng viên (CV) </a>";
+                echo "<a href='cv.php?user_id=" . $row['user_id'] . "' style='color:red;'> Xem sơ yếu lí lịch ứng viên (CV) </a>";
+                echo "</div>";
                 echo "<div class='btn-cancel'>";
                 echo "<button>Xóa ứng viên</button>";
                 echo "</div>";
                 echo "</div>";
                 echo "</div>";
-                echo "<div id='pagination'></div>";
-                echo "</div>";
             }
-        }
 
-        // Đóng kết nối
-        $stmt->close();
-        $conn->close();
-        ?>
-
+            // Đóng kết nối
+            $stmt->close();
+            $conn->close();
+            ?>
 
 
+        </div>
     </div>
 </div>
 

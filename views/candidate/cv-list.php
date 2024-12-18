@@ -69,7 +69,7 @@
     <div class="list-apply">
     <div class="cancel">
         <div class="info-cancel">
-        <a href="../../views/info-job.php" style="font-size: 20px; color:blue">Hồ sơ năng lực</a> <br>
+        <a href="../employer/view_cv.php" style="font-size: 20px; color:blue">Hồ sơ năng lực</a> <br>
         <p>Tình trạng: Đã ứng tuyển vào <a href="../info-job.php">công ty A</a> (để if nếu có thì để tên nếu không thì không)</p>
         <div class="non-click">
         <p>Viết ngày: 30/03/2024</p>

@@ -12,7 +12,6 @@ if(isset($_GET['id_project'])) {
     // Lưu id_project vào session
     $_SESSION['id_project'] = $_GET['id_project'];
 }
-
 // Kiểm tra xem có id_project trong session hay không
 if(isset($_SESSION['id_project'])) {
     // Truy vấn cơ sở dữ liệu để lấy thông tin chi tiết của công việc tương ứng

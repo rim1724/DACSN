@@ -1,7 +1,7 @@
 <?php
 
-// Database connection
-require_once '../config/config.php';
+// Database connection (assuming 'config.php' is in the same directory)
+require_once '../config/config.php';  // Adjust path if necessary
 
 function connect_to_database() {
   $conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -96,14 +96,17 @@ if (isset($_POST['submit-form'])) {
     }
   }
 
+  $image_to_bind = $image_uploaded ? $image_path : null;
+
   // **Fix: Check if table exists before inserting**
   $sql = "SHOW TABLES LIKE 'companies'";
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
     // Table exists, proceed with insert
-    $stmt = $conn->prepare("INSERT INTO companies (name_company, company_industry, address_company, phone_company, nation_company, img) VALUES (?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param('sssssss', $name_company, $company_industry, $address_company, $phone_company, $nation_company, $image_uploaded ? $image_path : null); // Bind image path only if uploaded
+    $stmt = $conn->prepare("INSERT INTO companies (name_company, company_industry, address_company, phone_company, nation_company, img_company) VALUES (?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param('ssssss', $name_company, $company_industry, $address_company, $phone_company, $nation_company, $image_to_bind);
+
     // Execute SQL statement
     if ($stmt->execute()) {
       echo json_encode([
@@ -118,20 +121,7 @@ if (isset($_POST['submit-form'])) {
         'message' => 'Failed to add company. Error: ' . $stmt->error,
       ]);
     }
-  } else {
-    // Table doesn't exist, handle the error
-    echo json_encode([
-      'success' => false,
-      'message' => 'The table \'companies\' does not exist in the database.',
-    ]);
-  }
-
-  // Close database connection
-  $conn->close();
-} else {
-  echo json_encode([
-    'success' => false,
-    'message' => 'Invalid request.',
-  ]);
-}
-
+    
+    // Close database connection
+    $conn->close();
+  }}

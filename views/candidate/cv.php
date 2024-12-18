@@ -32,8 +32,8 @@
                     // User is logged in as a candidate (role = 0)
                     ?>
                                 <li class="hover2"><a href="info-user.php">Thông tin cá nhân</a></li>
-                                <li class="hover2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
-                                <li class="see2"><a href="apply-list.php">Danh sách công việc đã ứng tuyển</a></li>
+                                <li class="see2"><a href="cv.php">Hồ sơ năng lực(CV)</a></li>
+                                <li class="hover2"><a href="apply-list.php">Danh sách công việc đã ứng tuyển</a></li>
                                 <li class="hover2"><a href="cv-list.php">Xác thực thông tin</a></li>
 
                     <?php
